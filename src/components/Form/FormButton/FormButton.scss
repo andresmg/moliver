@@ -1,0 +1,29 @@
+@import '../../../stylesheets/variables';
+
+.Button {
+  padding: 0.8rem 3.2rem;
+  margin: auto;
+  display: block;
+  transition: all 200ms ease;
+
+  &__enter {
+    margin-top: 2rem;
+    background: $dark-blue;
+    border: 0;
+    color: $white;
+    padding: 1.2rem;
+    width: 100%;
+    font-size: 1.8rem;
+  }
+
+  &:hover {
+    background: $yellow;
+  }
+}
+
+button {
+  &:disabled {
+    opacity: 0.3;
+    background: $dark-blue;
+  }
+}

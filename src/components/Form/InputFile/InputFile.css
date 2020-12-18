@@ -1,0 +1,18 @@
+input {
+  overflow: hidden;
+}
+
+.file-group .custom-file-label:after {
+  background: #211e35;
+  color: #fff;
+  border-radius: 0;
+  height: 3.8rem;
+  display: flex;
+  align-items: center;
+}
+
+.file-group .custom-file-input {
+  height: 4rem;
+  align-items: center;
+  display: flex;
+}

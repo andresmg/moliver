@@ -1,0 +1,24 @@
+@import '../../../stylesheets/variables';
+
+input {
+  overflow: hidden;
+}
+
+.file-group {
+  .custom-file-label {
+    &:after {
+      background: $dark-blue;
+      color: $white;
+      border-radius: 0;
+      height: 3.8rem;
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  .custom-file-input {
+      height: 4rem;
+      align-items: center;
+      display: flex;
+  }
+}

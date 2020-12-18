@@ -1,25 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import AuthenticatedRoute from './AuthenticatedRoute'
+import {Redirect, Route, Switch} from 'react-router-dom'
+import Footer from './components/Footer/Footer'
+import Header from './components/Header/Header'
+import Home from './components/Layouts/Home/Home'
+import {useAuthContext} from './contexts/AuthContext'
+import Login from './components/Layouts/Login/Login'
+import Register from './components/Layouts/Register/Register'
+import MyInfo from './components/Users/Guest/MyInfo'
 
 function App() {
+
+  const {user} = useAuthContext()
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header />
+      <Switch>
+        <Route exact path="/" component={Home} />
+        <Route exact path="/login" login component={Login} />
+        <Route exact path="/register" login component={Register} />
+        <Route exact path='/activate/:token' render={(props) => <Login {...props} confirmed />} />
+        <AuthenticatedRoute exact path="/mi-info" render={(props) => <MyInfo {...props} user={user} />} />
+        {user && <Redirect to='/mi-info' />}
+        {!user && <Redirect to='/login' />}
+      </Switch>
+      <Footer />
     </div>
-  );
+  )
 }
 
-export default App;
+export default App

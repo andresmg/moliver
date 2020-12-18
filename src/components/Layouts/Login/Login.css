@@ -1,0 +1,37 @@
+.navbar.dark {
+  background: #96c5ac;
+}
+
+.login-block {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 6rem;
+  align-self: center;
+}
+
+.alert.alert-danger {
+  background: none;
+  border: 0;
+  color: #96c5ac;
+  margin: 2rem auto;
+  text-align: center;
+}
+
+.options {
+  margin: 3rem auto 0 auto;
+}
+
+.options a {
+  color: #2e4157;
+}
+
+.options a:first-child {
+  border-right: solid 0.1rem #2e4157;
+  padding-right: 1rem;
+  margin-right: 1rem;
+}
+
+@media (max-width: 576px) {
+  .options a:first-child {
+    border-right: 0;
+  }
+}
