@@ -1,1 +1,54 @@
-/* No CSS */
+.user-info {
+  background: rgba(66, 137, 221, 0.5);
+  margin-top: 4rem;
+  color: #fff;
+  padding: 1rem 0;
+}
+
+.user-info .user-info-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.user-info .user-info-row .name {
+  color: #fff;
+}
+
+.user-info .user-info-row .name-initials {
+  background: #aa8acf;
+  border-radius: 50%;
+  width: 7rem;
+  height: 7rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-size: 2.4rem;
+  font-weight: 700;
+  border: solid 0.4rem #fff;
+  position: absolute;
+  left: 2rem;
+  top: -4.5rem;
+}
+
+.biopsy-card {
+  background: #fff;
+  margin: 1rem 0;
+}
+
+.biopsy-card .biopsy-info {
+  padding: 2rem 0;
+}
+
+.biopsy-card .biopsy-info span {
+  color: #11b495;
+}
+
+@media (max-width: 576px) {
+  .user-info .user-info-row .name-initials {
+    left: unset;
+    right: 2rem;
+  }
+}

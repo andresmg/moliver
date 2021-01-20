@@ -12,12 +12,11 @@ const Header = () => {
     return (
         <div className="container-fluid">
             <div className="row">
-                <nav className={user ? "navbar navbar-expand-lg __grayHeader" : "navbar navbar-expand-lg"}>
+                <nav className="navbar navbar-expand-lg">
                     <div className="header-user">
                         <div className="navbar-brand">
-                            <div className="victs-logo"></div>
+                            <h1>Margarita Oliver</h1>
                         </div>
-                        {user && <Link to='/my-info' className="user-hi">Hi {user.name}</Link>}
                     </div>
                     <button
                         className="navbar-toggler"
@@ -58,13 +57,13 @@ const Header = () => {
                             {user &&
                                 <span className="user-logs">
                                     <li>
-                                        <NavLink to="/" className="nav-link logout" onClick={logout}>Logout</NavLink>
+                                        <NavLink to="/" className="nav-link logout" onClick={logout}>Salir</NavLink>
                                     </li>
                                 </span>}
                             {!user &&
                                 <>
                                     <li className="nav-item">
-                                        <NavLink activeClassName="active" className="nav-link" to="/">Home</NavLink>
+                                        <NavLink activeClassName="active" className="nav-link" to="/">Inicio</NavLink>
                                     </li>
                                     <li className="nav-item">
                                         <NavLink activeClassName="active" className="nav-link" to="/blog">Blog</NavLink>

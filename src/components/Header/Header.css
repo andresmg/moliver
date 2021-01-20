@@ -1,1 +1,124 @@
-/* No CSS */
+.navbar {
+  font-weight: 400;
+  align-items: center;
+  width: 100%;
+  padding: 0;
+  padding-right: 2rem;
+  background: #11b495;
+}
+
+.navbar .logout {
+  color: #fff;
+  font-weight: 700;
+}
+
+.navbar .user-logs {
+  border-left: 0;
+}
+
+.navbar .header-user {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar .header-user .user-hi {
+  color: #fff;
+  border-left: solid 0.1rem #4289dd;
+  padding-left: 2rem;
+}
+
+.navbar .navbar-brand {
+  padding: 3rem 1rem 3rem 3rem;
+}
+
+.navbar .navbar-brand h1 {
+  color: #fff;
+}
+
+.navbar .navbar-collapse {
+  justify-content: flex-end;
+}
+
+.navbar .navbar-collapse ul {
+  justify-content: flex-end;
+}
+
+.navbar .nav-item {
+  margin-right: 3rem;
+}
+
+.navbar .nav-item a {
+  color: #fff;
+  transition: all 200ms ease;
+}
+
+.navbar .nav-item a:hover {
+  color: #4289dd;
+}
+
+.navbar .nav-item .active {
+  color: #4289dd;
+}
+
+.navbar .user-logs {
+  display: flex;
+}
+
+.navbar .user-logs .login {
+  background: #4289dd;
+  padding: 0.8rem 3.2rem;
+  border-radius: 2.6rem 2.1rem 1.7rem 2rem;
+  position: relative;
+  margin-left: 3rem;
+}
+
+.navbar .user-logs .login:hover, .navbar .user-logs .login.active {
+  color: #2a3743;
+}
+
+.navbar .navbar-toggler {
+  color: #fff;
+  outline: none;
+  margin-right: 1.6rem;
+}
+
+.navbar .navbar-toggler svg {
+  width: 2.4rem;
+}
+
+@media (max-width: 576px) {
+  .navbar .user-logs {
+    border-left: 0;
+    display: flex;
+    flex-direction: column;
+    border-top: solid 0.1rem #c0c8cf;
+  }
+  .navbar .user-logs .nav-item:first-child {
+    display: flex;
+  }
+  .navbar .user-logs .login {
+    margin-left: 0;
+    padding: 0;
+    padding-top: 1rem;
+    color: #4289dd;
+    background: none;
+    font-weight: 900;
+  }
+  .navbar .navbar-collapse {
+    padding: 0 2rem;
+    position: absolute;
+    width: 100%;
+    top: 8.4rem;
+    left: 0;
+    z-index: 50;
+  }
+  .module.bg h1 {
+    margin-bottom: 4rem;
+    line-height: 3rem;
+    font-size: 10rem;
+  }
+  .module.bg h1 strong {
+    font-size: 7rem;
+  }
+}

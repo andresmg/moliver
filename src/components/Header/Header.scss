@@ -1,1 +1,137 @@
+@import '../../stylesheets/variables';
 
+.navbar {
+  font-weight: 400;
+  align-items: center;
+  width: 100%;
+  padding: 0;
+  padding-right: 2rem;
+  background: $green;
+
+  .logout {
+    color: $white;
+    font-weight: 700;
+  }
+
+  .user-logs {
+    border-left: 0;
+  }
+
+  .header-user {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .user-hi {
+      color: $white;
+      border-left: solid 0.1rem $blue;
+      padding-left: 2rem;
+    }
+  }
+
+  .navbar-brand {
+    padding: 3rem 1rem 3rem 3rem;
+
+    h1 {
+      color: $white;
+    }
+  }
+
+  .navbar-collapse {
+    justify-content: flex-end;
+
+    ul {
+      justify-content: flex-end;
+    }
+  }
+
+  .nav-item {
+    margin-right: 3rem;
+    a {
+      color: $white;
+      transition: all 200ms ease;
+
+      &:hover {
+        color: $blue;
+      }
+    }
+
+    .active {
+      color: $blue;
+    }
+  }
+
+  .user-logs {
+    display: flex;
+
+    .login {
+      background: $blue;
+      padding: 0.8rem 3.2rem;
+      border-radius: 2.6rem 2.1rem 1.7rem 2rem;
+      position: relative;
+      margin-left: 3rem;
+
+      &:hover,
+      &.active {
+        color: $text;
+      }
+    }
+  }
+
+  .navbar-toggler {
+    color: $white;
+    outline: none;
+    margin-right: 1.6rem;
+    svg {
+      width: 2.4rem;
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .navbar {
+    .user-logs {
+      border-left: 0;
+      display: flex;
+      flex-direction: column;
+      border-top: solid 0.1rem $light-gray;
+
+      .nav-item {
+        &:first-child {
+          display: flex;
+        }
+      }
+
+      .login {
+        margin-left: 0;
+        padding: 0;
+        padding-top: 1rem;
+        color: $blue;
+        background: none;
+        font-weight: 900;
+      }
+    }
+
+    .navbar-collapse {
+      padding: 0 2rem;
+      position: absolute;
+      width: 100%;
+      top: 8.4rem;
+      left: 0;
+      z-index: 50;
+    }
+  }
+
+  .module {
+    &.bg {
+      h1 {
+        margin-bottom: 4rem;
+        line-height: 3rem;
+        font-size: 10rem;
+        strong {
+          font-size: 7rem;
+        }
+      }
+    }
+  }
+}

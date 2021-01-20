@@ -1,0 +1,10 @@
+.primary {
+  border: 0;
+  background: #11b495;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.4rem 3.2rem;
+  border-radius: 4rem;
+}

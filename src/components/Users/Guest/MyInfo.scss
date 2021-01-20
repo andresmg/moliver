@@ -1,0 +1,60 @@
+@import '../../../stylesheets/variables';
+
+.user-info {
+  background: rgba($blue, 0.5);
+  margin-top: 4rem;
+  color: $white;
+  padding: 1rem 0;
+
+  .user-info-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+
+    .name {
+      color: $white;
+    }
+
+    .name-initials {
+      background: $purple;
+      border-radius: 50%;
+      width: 7rem;
+      height: 7rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: $white;
+      font-size: 2.4rem;
+      font-weight: 700;
+      border: solid 0.4rem $white;
+      position: absolute;
+      left: 2rem;
+      top: -4.5rem;
+    }
+  }
+}
+
+.biopsy-card {
+  background: $white;
+  margin: 1rem 0;
+
+  .biopsy-info {
+    padding: 2rem 0;
+
+    span {
+      color: $green;
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .user-info {
+    .user-info-row {
+      .name-initials {
+        left: unset;
+        right: 2rem;
+      }
+    }
+  }
+}
