@@ -11,6 +11,25 @@
   .logout {
     color: $white;
     font-weight: 700;
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    &:after {
+      content: '';
+      background: url(../../images/exit.svg) no-repeat center center;
+      display: inline-block;
+      width: 2rem;
+      height: 2rem;
+      margin-left: 1rem;
+      transition: all 200ms ease-in-out;
+    }
+
+    &:hover {
+      &:after {
+        margin-left: 1.6rem;
+      }
+    }
   }
 
   .user-logs {

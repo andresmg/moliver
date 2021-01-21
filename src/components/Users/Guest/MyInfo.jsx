@@ -1,6 +1,7 @@
 import './MyInfo.css'
 import React, {useState} from 'react'
 import Button from '../../Button/Button'
+import Modal from '../../Modal/Modal'
 
 export default function MyInfo({user}) {
 
@@ -8,6 +9,8 @@ export default function MyInfo({user}) {
 
     const [userData] = useState(user)
     const [search, setSearch] = useState('')
+    const [bool, setBool] = useState(false)
+    const [biopsyData, setBiopsyData] = useState('')
 
     const months = ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic']
 
@@ -21,8 +24,18 @@ export default function MyInfo({user}) {
         )
     })
 
+    const showModal = (data) => {
+        setBool(!bool)
+        setBiopsyData(data)
+    }
+
+    const hideModal = () => {
+        setBool(!bool)
+    }
+
     return (
         <>
+            {bool && <Modal onClick={hideModal} data={biopsyData} />}
             <section className="container-fluid user-info">
                 <div className="container">
                     <div className="row user-info-row">
@@ -52,11 +65,7 @@ export default function MyInfo({user}) {
                         <p><span>Referencia</span> {el.reference}</p>
                         <p><span>Material remitido</span> {el.material}</p>
                         <p><span>Diagnóstico clínico</span> {el.clinic_diagnosis}</p>
-                        <p><span>Informe</span></p>
-                        <p>{el.report}</p>
-                        <p><span>Diagnósticos</span></p>
-                        <p>{el.diagnostics}</p>
-                        <Button className="primary">Ver detalle</Button>
+                        <Button className="primary" onClick={() => showModal(el)}>Ver resultados de la biopsia</Button>
                     </section>
                 </section>
             )}

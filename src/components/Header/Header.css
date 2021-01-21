@@ -10,6 +10,23 @@
 .navbar .logout {
   color: #fff;
   font-weight: 700;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.navbar .logout:after {
+  content: '';
+  background: url(../../images/exit.svg) no-repeat center center;
+  display: inline-block;
+  width: 2rem;
+  height: 2rem;
+  margin-left: 1rem;
+  transition: all 200ms ease-in-out;
+}
+
+.navbar .logout:hover:after {
+  margin-left: 1.6rem;
 }
 
 .navbar .user-logs {
