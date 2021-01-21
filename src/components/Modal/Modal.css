@@ -11,6 +11,38 @@
   align-items: center;
 }
 
+.modal .icon:before {
+  content: '';
+  width: 6rem;
+  height: 6rem;
+  background: url(../../images/biopsy.svg) no-repeat center center;
+  float: left;
+  margin-right: 1rem;
+}
+
+.modal .b-number {
+  color: #fff;
+  font-weight: 700;
+  background: #11b495;
+  float: left;
+  padding: 0 1.6rem;
+  border-radius: 4rem;
+}
+
+.modal .b-number, .modal .b-date {
+  font-size: 1.6rem;
+}
+
+.modal .patient-info {
+  background: #11b495;
+  color: #fff;
+  padding: 1rem 2rem;
+  border-radius: 4rem;
+  margin-top: 3rem;
+  margin-bottom: 2rem;
+  font-size: 1.6rem;
+}
+
 .modal hr {
   margin-top: 2rem;
 }
@@ -24,7 +56,21 @@
 .modal .modal-body {
   background: #fff;
   padding: 3rem;
-  border: solid 0.1rem #4289dd;
+  border-radius: 0.8rem;
+  position: relative;
+  border: solid 0.2rem #11b495;
+}
+
+.modal .modal-body button {
+  margin: 3rem auto 0 auto;
+}
+
+.modal .modal-body span {
+  color: #11b495;
+}
+
+.modal .modal-body span h1 {
+  color: #2a3743;
 }
 
 .modal .close {

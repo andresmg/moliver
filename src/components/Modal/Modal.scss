@@ -12,6 +12,38 @@
   justify-content: center;
   align-items: center;
 
+  .icon:before {
+    content: '';
+    width: 6rem;
+    height: 6rem;
+    background: url(../../images/biopsy.svg) no-repeat center center;
+    float: left;
+    margin-right: 1rem;
+  }
+
+  .b-number {
+    color: $white;
+    font-weight: 700;
+    background: $green;
+    float: left;
+    padding: 0 1.6rem;
+    border-radius: 4rem;
+  }
+
+  .b-number, .b-date {
+      font-size: 1.6rem;
+  }
+
+  .patient-info {
+    background: $green;
+    color: $white;
+    padding: 1rem 2rem;
+    border-radius: 4rem;
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+    font-size: 1.6rem;
+  }
+
   hr {
     margin-top: 2rem;
   }
@@ -25,7 +57,21 @@
   .modal-body {
     background: $white;
     padding: 3rem;
-    border: solid 0.1rem $blue;
+    border-radius: 0.8rem;
+    position: relative;
+    border: solid 0.2rem $green;
+
+    button {
+        margin: 3rem auto 0 auto;
+    }
+
+    span {
+        color: $green;
+
+        h1 {
+            color: $text;
+        }
+    }
   }
 
   .close {
