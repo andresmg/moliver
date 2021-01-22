@@ -1,6 +1,8 @@
 import './Modal.css'
 import React from 'react'
+import {PDFDownloadLink} from '@react-pdf/renderer'
 import Button from '../Button/Button'
+import PdfDoc from '../PdfDoc/PdfDoc'
 
 export default function Modal({data, onClick}) {
     console.log(data)
@@ -44,6 +46,10 @@ export default function Modal({data, onClick}) {
                         <p><span>Diagnósticos</span></p>
                         <p>{data.diagnostics}</p>
                         <Button className="primary" onClick={downloadPdf}>Descargar PDF</Button>
+
+                        <PDFDownloadLink document={<PdfDoc data={data} />} fileName={`${data.number}.pdf`}>
+                            {({blob, url, loading, error}) => (loading ? 'Cargando documento...' : 'Descargar PDF')}
+                        </PDFDownloadLink>
                     </div>
                 </div>
             </div>
