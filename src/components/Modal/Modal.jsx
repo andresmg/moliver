@@ -9,10 +9,6 @@ export default function Modal({data, onClick}) {
 
     const months = ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic']
 
-    const downloadPdf = () => {
-        console.log('descargar PDF')
-    }
-
     return (
         <div className="modal">
             <div className="container">
@@ -45,11 +41,11 @@ export default function Modal({data, onClick}) {
                         <p>{data.report}</p>
                         <p><span>Diagnósticos</span></p>
                         <p>{data.diagnostics}</p>
-                        <Button className="primary" onClick={downloadPdf}>Descargar PDF</Button>
-
-                        <PDFDownloadLink document={<PdfDoc data={data} />} fileName={`${data.number}.pdf`}>
-                            {({blob, url, loading, error}) => (loading ? 'Cargando documento...' : 'Descargar PDF')}
-                        </PDFDownloadLink>
+                        <div className="btn-row">
+                            <PDFDownloadLink className="primary" document={<PdfDoc data={data} />} fileName={`${data.number}.pdf`}>
+                                {({blob, url, loading, error}) => (loading ? 'Cargando documento...' : 'Descargar PDF')}
+                            </PDFDownloadLink>
+                        </div>
                     </div>
                 </div>
             </div>

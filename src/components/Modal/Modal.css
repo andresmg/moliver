@@ -29,7 +29,8 @@
   border-radius: 4rem;
 }
 
-.modal .b-number, .modal .b-date {
+.modal .b-number,
+.modal .b-date {
   font-size: 1.6rem;
 }
 
@@ -71,6 +72,24 @@
 
 .modal .modal-body span h1 {
   color: #2a3743;
+}
+
+.modal .modal-body .btn-row {
+  display: flex;
+  justify-content: center;
+}
+
+.modal .modal-body .btn-row .primary {
+  display: inline-block;
+  margin: 2rem auto 0 auto;
+  left: 50%;
+  transition: all 200ms ease-in-out;
+}
+
+.modal .modal-body .btn-row .primary:hover {
+  color: #fff;
+  text-decoration: none;
+  background: #4289dd;
 }
 
 .modal .close {

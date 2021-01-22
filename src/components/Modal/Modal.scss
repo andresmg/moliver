@@ -30,8 +30,9 @@
     border-radius: 4rem;
   }
 
-  .b-number, .b-date {
-      font-size: 1.6rem;
+  .b-number,
+  .b-date {
+    font-size: 1.6rem;
   }
 
   .patient-info {
@@ -62,15 +63,33 @@
     border: solid 0.2rem $green;
 
     button {
-        margin: 3rem auto 0 auto;
+      margin: 3rem auto 0 auto;
     }
 
     span {
-        color: $green;
+      color: $green;
 
-        h1 {
-            color: $text;
+      h1 {
+        color: $text;
+      }
+    }
+
+    .btn-row {
+      display: flex;
+      justify-content: center;
+
+      .primary {
+        display: inline-block;
+        margin: 2rem auto 0 auto;
+        left: 50%;
+        transition: all 200ms ease-in-out;
+
+        &:hover {
+          color: $white;
+          text-decoration: none;
+          background: $blue;
         }
+      }
     }
   }
 
