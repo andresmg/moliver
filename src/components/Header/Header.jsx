@@ -1,6 +1,6 @@
 import './Header.css'
 import React from 'react'
-import {Link, NavLink} from 'react-router-dom'
+import {NavLink} from 'react-router-dom'
 import {useAuthContext} from '../../contexts/AuthContext'
 
 
@@ -10,7 +10,7 @@ const Header = () => {
     const {logout} = useAuthContext()
 
     return (
-        <div className="container-fluid">
+        <div className="container">
             <div className="row">
                 <nav className="navbar navbar-expand-lg">
                     <div className="header-user">

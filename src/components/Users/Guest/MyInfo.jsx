@@ -36,39 +36,53 @@ export default function MyInfo({user}) {
     return (
         <>
             {bool && <Modal onClick={hideModal} data={biopsyData} />}
-            <section className="container-fluid user-info">
-                <div className="container">
+            <section className="container head-bg">
+                <div className="user-info">
+                    <div className="user-profile"></div>
                     <div className="row user-info-row">
-                        <div className="name-initials">
-                            {userData.name.match(/\b(\w)/g).join('')}
-                        </div>
-                        <div className="col-12 col-sm-3 name">Hola, <h1>{userData.name}</h1></div>
-                        <div className="col-6 col-sm-3 dni"><strong>CI</strong> {userData.dni}</div>
-                        <div className="col-6 col-sm-3 age"><strong>Edad</strong> {new Date().getFullYear() - new Date(userData.birthdate).getFullYear()}</div>
+                        <div className="col-12 col-sm-10 name"><h1>{userData.name}</h1></div>
+                        <div className="col-6  dni"><strong>CI</strong> {userData.dni}</div>
+                        <div className="col-4 age"><strong>Edad</strong> {new Date().getFullYear() - new Date(userData.birthdate).getFullYear()}</div>
                     </div>
                 </div>
             </section>
-            <div className="container-fluid margin-top gym-centers">
-                <div className="row p-0">
-                    <div className="col-12 gyms-bg"></div>
+
+            <section className="container">
+                <div className="col-12">
+                    <h1 className="title">Mis <span>biopsias</span></h1>
                 </div>
+            </section>
+
+            <section className="container gray-bg">
                 <div className="row">
-                    <div className="col-12 form-group">
-                        <input type="text" className="form-control" placeholder="Buscar por número de biopsia o referencia" onChange={handleChange} value={search} /></div>
+                    <div className="col-12 form-group search-icon">
+                        <input type="text" className="form-control" placeholder="Buscar por número de biopsia o referencia" onChange={handleChange} value={search} />
+                    </div>
                 </div>
-            </div>
-            {filteredBiopsies.map(el =>
-                <section className="container-fluid biopsy-card">
-                    <section className="container biopsy-info">
-                        <p><span>Biopsia</span> {el.number}</p>
-                        <p><span>Fecha</span> {new Date(el.date).getDate()} {months[new Date(el.date).getMonth()]} {new Date(el.date).getFullYear()} </p>
-                        <p><span>Referencia</span> {el.reference}</p>
-                        <p><span>Material remitido</span> {el.material}</p>
-                        <p><span>Diagnóstico clínico</span> {el.clinic_diagnosis}</p>
-                        <Button className="primary" onClick={() => showModal(el)}>Ver resultados de la biopsia</Button>
-                    </section>
+            </section>
+            <section className="container-fluid biopsy-card">
+                <section className="container biopsy-info">
+                    <div class="row row-cols-1 row-cols-md-3 g-4">
+                        {filteredBiopsies.map(el =>
+                            <div class="col">
+                                <div class="card h-100">
+                                    <div class="card-body">
+                                        <p class="card-text biopsia">{el.number}</p>
+
+                                        <p className="card-text text-right mb-3"><strong>{new Date(el.date).getDate()} {months[new Date(el.date).getMonth()]} {new Date(el.date).getFullYear()} </strong></p>
+                                        <p className="card-text doctor-icon"><span className="">Referencia</span><br/> {el.reference}</p>
+                                        <p className="card-text"><span className="scalpel-icon">Material remitido</span><br/> {el.material}</p>
+                                        <p className="card-text"><span className="note-icon">Diagnóstico clínico</span><br/> {el.clinic_diagnosis}</p>
+                                    </div>
+                                    <div class="card-footer">
+                                        <Button className="primary plus-icon" onClick={() => showModal(el)}>Ver resultados de la biopsia</Button>
+                                    </div>
+                                </div>
+                            </div>
+                        )}
+                    </div>
                 </section>
-            )}
+            </section>
         </>
     )
 }

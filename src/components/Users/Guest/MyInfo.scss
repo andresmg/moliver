@@ -1,38 +1,53 @@
 @import '../../../stylesheets/variables';
 
 .user-info {
-  background: rgba($blue, 0.5);
-  margin-top: 4rem;
-  color: $white;
-  padding: 1rem 0;
+  background: $white;
+  padding: 1rem;
+  padding-left: 6.4rem;
+  margin-top: 2rem;
+  border-radius: 1.6rem;
+  position: absolute;
+  bottom: -3rem;
+  right: 3rem;
+  box-shadow: 0px 14px 42px -5px rgba(0, 0, 0, 0.5);
 
   .user-info-row {
     display: flex;
     align-items: center;
-    justify-content: center;
     position: relative;
 
     .name {
-      color: $white;
+      h1 {
+        color: $purple;
+        font-weight: 300;
+      }
     }
 
-    .name-initials {
-      background: $purple;
-      border-radius: 50%;
-      width: 7rem;
-      height: 7rem;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      color: $white;
-      font-size: 2.4rem;
-      font-weight: 700;
-      border: solid 0.4rem $white;
-      position: absolute;
-      left: 2rem;
-      top: -4.5rem;
+    strong {
+      color: #443754;
     }
   }
+
+  .user-profile {
+    width: 5rem;
+    height: 7.6rem;
+    background: $purple url(../../../images/user-profile.svg) no-repeat center
+      center / contain;
+    background-size: 2rem 2rem;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 1.6rem 0 0 1.6rem;
+    border: 0;
+  }
+}
+
+.head-bg {
+  height: 30rem;
+  background: url(../../../images/page-bg.jpg) no-repeat center center / cover;
+  border-radius: 1.6rem;
+  position: relative;
 }
 
 .biopsy-card {
@@ -45,16 +60,135 @@
     span {
       color: $green;
     }
+
+    .card {
+      font-size: 1.6rem;
+      border-radius: 0.8rem;
+      padding: 2rem;
+      border: 0;
+      box-shadow: 0px 14px 42px -5px rgba(0, 0, 0, 0.5);
+
+      .card-body {
+        position: relative;
+
+        .biopsia {
+          position: absolute;
+          top: -3rem;
+          background: $purple;
+          color: white;
+          padding: 0.2rem 1.6rem;
+          border-radius: 0.8rem;
+        }
+
+        .card-text {
+          margin-bottom: 2rem;
+        }
+      }
+
+      .card-footer {
+        background: none;
+        border: 0;
+        display: flex;
+        justify-content: center;
+      }
+    }
+  }
+}
+
+.doctor-icon,
+.cal-icon,
+.micro-icon,
+.scalpel-icon,
+.note-icon,
+.search-icon {
+  position: relative;
+  &:before {
+    content: '';
+    width: 2rem;
+    height: 5rem;
+    margin-right: 2rem;
+    float: left;
+  }
+}
+.doctor-icon {
+  &:before {
+    background: url(../../../images/doctor.svg) no-repeat center center /
+      contain;
+  }
+}
+.cal-icon {
+  &:before {
+    background: url(../../../images/calendar.svg) no-repeat center center /
+      contain;
+  }
+}
+.micro-icon {
+  &:before {
+    background: url(../../../images/microscope.svg) no-repeat center center /
+      contain;
+  }
+}
+.scalpel-icon {
+  &:before {
+    background: url(../../../images/scalpel.svg) no-repeat center center /
+      contain;
+  }
+}
+.note-icon {
+  &:before {
+    background: url(../../../images/note.svg) no-repeat center center / contain;
+  }
+}
+.search-icon {
+  &:before {
+    background: url(../../../images/search-icon.svg) no-repeat center center /
+      contain;
+    position: absolute;
+    top: 50%;
+    margin-top: -2.5rem;
+    left: 2.4rem;
+    z-index: 0;
+  }
+
+  .form-control {
+    padding-left: 3.6rem;
+    background: transparent;
+    border: 0;
+  }
+}
+
+.plus-icon {
+  &:after {
+    content: '';
+    width: 2rem;
+    height: 2rem;
+    display: inline-block;
+    margin-left: 1rem;
+  }
+}
+
+.plus-icon {
+  &:after {
+    background: url(../../../images/plus-white.svg) no-repeat center center /
+      contain;
+  }
+}
+
+.gray-bg {
+  border-radius: 1.6rem;
+}
+
+.form-group {
+  margin-top: 1rem;
+}
+
+.title {
+  margin-top: 6rem;
+
+  span {
+    font-weight: 300;
   }
 }
 
 @media (max-width: 576px) {
-  .user-info {
-    .user-info-row {
-      .name-initials {
-        left: unset;
-        right: 2rem;
-      }
-    }
-  }
 }
