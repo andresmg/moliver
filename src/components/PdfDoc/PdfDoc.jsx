@@ -1,5 +1,5 @@
 import React from 'react'
-import {Document, Page, Text, View, Font, StyleSheet, Image} from '@react-pdf/renderer'
+import {Document, Page, Text, Font, StyleSheet} from '@react-pdf/renderer'
 
 export default function PdfDoc({data}) {
 

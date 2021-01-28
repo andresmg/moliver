@@ -19,6 +19,8 @@ http.interceptors.response.use(
     }
 )
 
+//admin.routes
+export const getAllbiopsies = () => http.get('/biopsies')
 
 //user.routes
 export const login = ({email, password}) =>

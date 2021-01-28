@@ -4,3 +4,15 @@
 .gray-bg {
   background: $bg;
 }
+
+.loader {
+  background: url(../images/loader.gif) no-repeat left center / contain;
+  padding-left: 8rem;
+  height: 8rem;
+  display: flex;
+  align-items: center;
+  span {
+    color: $text;
+    margin-left: 1rem;
+  }
+}

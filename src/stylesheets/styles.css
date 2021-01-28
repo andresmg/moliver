@@ -30,3 +30,16 @@ h6 {
 .gray-bg {
   background: #f3f6f8;
 }
+
+.loader {
+  background: url(../images/loader.gif) no-repeat left center/contain;
+  padding-left: 8rem;
+  height: 8rem;
+  display: flex;
+  align-items: center;
+}
+
+.loader span {
+  color: #2a3743;
+  margin-left: 1rem;
+}

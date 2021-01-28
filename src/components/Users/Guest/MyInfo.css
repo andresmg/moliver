@@ -90,6 +90,10 @@
   justify-content: center;
 }
 
+.biopsy-card .biopsy-info .biopsy-block {
+  margin-bottom: 3rem;
+}
+
 .doctor-icon,
 .cal-icon,
 .micro-icon,

@@ -1,7 +1,6 @@
 import './Modal.css'
 import React from 'react'
 import {PDFDownloadLink} from '@react-pdf/renderer'
-import Button from '../Button/Button'
 import PdfDoc from '../PdfDoc/PdfDoc'
 
 export default function Modal({data, onClick}) {
