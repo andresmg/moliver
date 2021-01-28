@@ -77,11 +77,16 @@
           background: $purple;
           color: white;
           padding: 0.2rem 1.6rem;
+          padding-bottom: 0.6rem;
           border-radius: 0.8rem;
         }
 
         .card-text {
           margin-bottom: 2rem;
+
+          &:last-child {
+            margin-bottom: 0;
+          }
         }
       }
 
@@ -90,6 +95,7 @@
         border: 0;
         display: flex;
         justify-content: center;
+        flex-direction: column;
       }
     }
 
@@ -98,11 +104,13 @@
     }
 
     .patient-name {
-      background: rgba($blue, 0.6);
+      background: #92b8eb;
       padding: 0.2rem 1.6rem;
-      border-radius: 1.2rem;
+      border-radius: 0.8rem;
       color: $white;
       font-size: 1.8rem;
+      position: absolute;
+      top: -0.5rem;
 
       &:before {
         content: '';

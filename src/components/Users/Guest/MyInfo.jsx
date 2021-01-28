@@ -9,6 +9,7 @@ export default function MyInfo({user}) {
     console.log(user)
 
     const [userData] = useState(user)
+    const [admin, setAdmin] = useState(false)
     const [userBiopsies, setUserBiopsies] = useState(user.biopsies)
     const [search, setSearch] = useState('')
     const [bool, setBool] = useState(false)
@@ -31,10 +32,16 @@ export default function MyInfo({user}) {
     const showModal = (data) => {
         setBool(!bool)
         setBiopsyData(data)
+        if (user.role === 'Admin') {
+            setAdmin(!admin)
+        }
     }
 
     const hideModal = () => {
         setBool(!bool)
+        if (user.role === 'Admin') {
+            setAdmin(!admin)
+        }
     }
 
 
@@ -52,7 +59,7 @@ export default function MyInfo({user}) {
 
     return (
         <>
-            {bool && <Modal onClick={hideModal} data={biopsyData} />}
+            {bool && <Modal onClick={hideModal} data={biopsyData} admin={admin} />}
             <section className="container head-bg">
                 <div className="user-info">
                     <div className="user-profile"></div>
@@ -92,7 +99,7 @@ export default function MyInfo({user}) {
                                     <div class="card h-100">
                                         <div class="card-body">
                                             <p class="card-text biopsia">{el.number}</p>
-                                            <p className="card-text text-right mb-3"><strong>{new Date(el.date).getDate()} {months[new Date(el.date).getMonth()]} {new Date(el.date).getFullYear()} </strong></p>
+                                            <p className={user.role === 'Admin' ? "card-text text-right mb-3 mt-5" : "card-text text-right mb-3"}><strong>{new Date(el.date).getDate()} {months[new Date(el.date).getMonth()]} {new Date(el.date).getFullYear()} </strong></p>
                                             {user.role === 'Admin' && <p className="patient-name">{el.user.name}</p>}
                                             <p className="card-text doctor-icon"><span className="">Referencia</span><br /> {el.reference}</p>
                                             <p className="card-text"><span className="scalpel-icon">Material remitido</span><br /> {el.material}</p>

@@ -1,6 +1,5 @@
-.primary {
+.primary, .secondary {
   border: 0;
-  background: #11b495;
   color: #fff;
   display: flex;
   justify-content: center;
@@ -8,4 +7,12 @@
   padding: 0.8rem 3.2rem;
   border-radius: 4rem;
   font-size: 1.6rem;
+}
+
+.primary {
+  background: #11b495;
+}
+
+.secondary {
+  background: #df2f45;
 }

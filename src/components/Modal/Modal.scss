@@ -117,7 +117,38 @@
       display: inline-block;
       vertical-align: middle;
       margin-right: 1rem;
-      background: url(../../images/download.svg) no-repeat center center / contain;
+      background: url(../../images/download.svg) no-repeat center center /
+        contain;
     }
+  }
+
+  .edit,
+  .delete {
+    display: flex;
+    justify-content: center;
+
+    &:before {
+      content: '';
+      display: inline-block;
+      width: 2rem;
+      height: 2rem;
+      margin-right: 1rem;
+    }
+  }
+
+  .edit {
+    &:before {
+      background: url(../../images/edit.svg) no-repeat center center;
+    }
+  }
+
+  .delete {
+    &:before {
+      background: url(../../images/delete.svg) no-repeat center center;
+    }
+  }
+
+  hr {
+    margin-bottom: 1rem;
   }
 }

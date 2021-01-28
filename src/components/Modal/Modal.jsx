@@ -2,8 +2,9 @@ import './Modal.css'
 import React from 'react'
 import {PDFDownloadLink} from '@react-pdf/renderer'
 import PdfDoc from '../PdfDoc/PdfDoc'
+import Button from '../Button/Button'
 
-export default function Modal({data, onClick}) {
+export default function Modal({data, onClick, admin}) {
     console.log(data)
 
     const months = ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic']
@@ -40,12 +41,23 @@ export default function Modal({data, onClick}) {
                         <p>{data.report}</p>
                         <p><span>Diagnósticos</span></p>
                         <p>{data.diagnostics}</p>
-                        
+
                         <div className="btn-row">
                             <PDFDownloadLink className="primary downloadPDF" document={<PdfDoc data={data} />} fileName={`${data.number}.pdf`}>
                                 {({blob, url, loading, error}) => (loading ? 'Cargando documento...' : 'Descargar PDF')}
                             </PDFDownloadLink>
                         </div>
+
+
+                        {admin &&
+                            <>
+                                <hr />
+                                <div className="row justify-content-between">
+                                    <Button className="col-5 edit primary">Editar biopsia</Button>
+                                    <Button className="col-5 delete secondary">Eliminar biopsia</Button>
+                                </div>
+                            </>
+                        }
                     </div>
                 </div>
             </div>

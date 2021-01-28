@@ -1,8 +1,7 @@
 @import '../../stylesheets/variables';
 
-.primary {
+.primary, .secondary {
   border: 0;
-  background: $green;
   color: $white;
   display: flex;
   justify-content: center;
@@ -10,4 +9,12 @@
   padding: 0.8rem 3.2rem;
   border-radius: 4rem;
   font-size: 1.6rem;
+}
+
+.primary {
+  background: $green;
+}
+
+.secondary {
+  background: $red;
 }
