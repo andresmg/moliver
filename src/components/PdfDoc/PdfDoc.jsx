@@ -3,6 +3,8 @@ import {Document, Page, Text, Font, StyleSheet} from '@react-pdf/renderer'
 
 export default function PdfDoc({data}) {
 
+    console.log(data)
+
     const months = ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic']
 
     Font.register({
@@ -104,9 +106,9 @@ export default function PdfDoc({data}) {
                     src="../../images/acordeon-bg.jpg"
                 ></Image> */}
                 <Text style={styles.franja}>
-                    <Text style={styles.data}>{data.user[0].name}                                           </Text>
-                    <Text style={styles.data}>CI {data.user[0].dni}                                             </Text>
-                    <Text style={styles.data}>Edad {new Date().getFullYear() - new Date(data.user[0].birthdate).getFullYear()}</Text>
+                    <Text style={styles.data}>{data.user.name}                                           </Text>
+                    <Text style={styles.data}>CI {data.user.dni}                                             </Text>
+                    <Text style={styles.data}>Edad {new Date().getFullYear() - new Date(data.user.birthdate).getFullYear()}</Text>
                 </Text>
                 <Text style={styles.small}>Referencia</Text>
                 <Text style={styles.smallText}>{data.reference}</Text>

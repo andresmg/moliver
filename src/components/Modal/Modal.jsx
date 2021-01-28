@@ -27,9 +27,9 @@ export default function Modal({data, onClick}) {
                         </div>
                         <div className="patient-info">
                             <div className="row">
-                                <div className="col-4 name">{data.user[0].name}</div>
-                                <div className="col-4 text-center"><strong>CI</strong> {data.user[0].dni}</div>
-                                <div className="col-4 text-right"><strong>Edad</strong> {new Date().getFullYear() - new Date(data.user[0].birthdate).getFullYear()}</div>
+                                <div className="col-4 name">{data.user.name}</div>
+                                <div className="col-4 text-center"><strong>CI</strong> {data.user.dni}</div>
+                                <div className="col-4 text-right"><strong>Edad</strong> {new Date().getFullYear() - new Date(data.user.birthdate).getFullYear()}</div>
                             </div>
                         </div>
 
@@ -40,8 +40,9 @@ export default function Modal({data, onClick}) {
                         <p>{data.report}</p>
                         <p><span>Diagnósticos</span></p>
                         <p>{data.diagnostics}</p>
+                        
                         <div className="btn-row">
-                            <PDFDownloadLink className="primary" document={<PdfDoc data={data} />} fileName={`${data.number}.pdf`}>
+                            <PDFDownloadLink className="primary downloadPDF" document={<PdfDoc data={data} />} fileName={`${data.number}.pdf`}>
                                 {({blob, url, loading, error}) => (loading ? 'Cargando documento...' : 'Descargar PDF')}
                             </PDFDownloadLink>
                         </div>

@@ -96,6 +96,23 @@
     .biopsy-block {
       margin-bottom: 3rem;
     }
+
+    .patient-name {
+      background: rgba($blue, 0.6);
+      padding: 0.2rem 1.6rem;
+      border-radius: 1.2rem;
+      color: $white;
+      font-size: 1.8rem;
+
+      &:before {
+        content: '';
+        background: url(../../../images/user-profile-white.svg) no-repeat center center / contain;
+        width: 1.6rem;
+        height: 1.6rem;
+        display: inline-block;
+        margin-right: 1rem;
+      }
+    }
   }
 }
 
