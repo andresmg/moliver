@@ -82,14 +82,13 @@
 .modal .modal-body .btn-row .primary {
   display: inline-block;
   margin: 2rem auto 0 auto;
-  left: 50%;
   transition: all 200ms ease-in-out;
 }
 
 .modal .modal-body .btn-row .primary:hover {
   color: #fff;
   text-decoration: none;
-  background: #4289dd;
+  background: rgba(17, 180, 149, 0.8);
 }
 
 .modal .close {
@@ -108,37 +107,69 @@
   cursor: pointer;
 }
 
+.modal .downloadPDF {
+  position: relative;
+  padding-left: 5rem;
+}
+
 .modal .downloadPDF:before {
   content: '';
-  width: 2rem;
-  height: 2rem;
+  background-image: url(../../images/download.svg);
   display: inline-block;
-  vertical-align: middle;
   margin-right: 1rem;
-  background: url(../../images/download.svg) no-repeat center center/contain;
+  position: absolute;
+  width: 3rem;
+  height: 3rem;
+  background-size: 2rem 2rem;
+  background-color: white;
+  background-repeat: no-repeat;
+  background-position: center;
+  left: 1rem;
+  top: 0.5rem;
+  border-radius: 50%;
 }
 
 .modal .edit,
 .modal .delete {
   display: flex;
   justify-content: center;
+  transition: all 200ms ease-in-out;
 }
 
 .modal .edit:before,
 .modal .delete:before {
   content: '';
   display: inline-block;
-  width: 2rem;
-  height: 2rem;
   margin-right: 1rem;
+  position: absolute;
+  width: 3rem;
+  height: 3rem;
+  background-size: 2rem 2rem;
+  background-color: white;
+  background-repeat: no-repeat;
+  background-position: center;
+  left: 1rem;
+  border-radius: 50%;
 }
 
 .modal .edit:before {
-  background: url(../../images/edit.svg) no-repeat center center;
+  background-image: url(../../images/edit.svg);
+}
+
+.modal .edit:hover {
+  color: #fff;
+  text-decoration: none;
+  background: rgba(17, 180, 149, 0.8);
 }
 
 .modal .delete:before {
-  background: url(../../images/delete.svg) no-repeat center center;
+  background-image: url(../../images/delete.svg);
+}
+
+.modal .delete:hover {
+  color: #fff;
+  text-decoration: none;
+  background: rgba(223, 47, 69, 0.8);
 }
 
 .modal hr {
