@@ -28,6 +28,9 @@ export const login = ({email, password}) =>
 export const logOut = () => http.post("/logout")
 export const activateUser = (token) => http.get(`/activate/${token}`)
 
+//biopsy.routes
+export const dropBiopsy = (id) => http.get(`/biopsy/${id}/delete`)
+export const updateBiopsy = (id) => http.patch(`/biopsy/${id}/delete`)
 
 //crud.routes
 export const register = ({name, email, password}) =>

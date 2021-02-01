@@ -24,7 +24,7 @@ export default function MyInfo({user}) {
 
     const filteredBiopsies = userBiopsies.filter(biopsy => {
         return (
-            (biopsy.number.toLowerCase()).indexOf(search.toLocaleLowerCase()) > -1 || (biopsy.reference.toLowerCase()).indexOf(search.toLocaleLowerCase()) > -1 || (biopsy.user.name.toLowerCase()).indexOf(search.toLocaleLowerCase()) > -1
+            (biopsy.number.toLowerCase()).indexOf(search.toLocaleLowerCase()) > -1 || (biopsy.reference.toLowerCase()).indexOf(search.toLocaleLowerCase()) > -1 || (biopsy.user.name.toLowerCase()).indexOf(search.toLocaleLowerCase()) > -1 || (biopsy.user.dni.toLowerCase()).indexOf(search.toLocaleLowerCase()) > -1
         )
     })
 
@@ -86,7 +86,7 @@ export default function MyInfo({user}) {
             <section className="container gray-bg">
                 <div className="row">
                     <div className="col-12 form-group search-icon">
-                        <input type="text" className="form-control" placeholder={user.role === 'Admin' ? "Buscar por número de biopsia, referencia o nombre del paciente" : "Buscar por número de biopsia o referencia"} onChange={handleChange} value={search} />
+                        <input type="text" className="form-control" placeholder={user.role === 'Admin' ? "Buscar por número de biopsia, referencia, cédula o nombre del paciente" : "Buscar por número de biopsia o referencia"} onChange={handleChange} value={search} />
                     </div>
                 </div>
             </section>
@@ -99,9 +99,14 @@ export default function MyInfo({user}) {
                                     <div class="card h-100">
                                         <div class="card-body">
                                             <p class="card-text biopsia">{el.number}</p>
-                                            <p className={user.role === 'Admin' ? "card-text text-right mb-3 mt-5" : "card-text text-right mb-3"}><strong>{new Date(el.date).getDate()} {months[new Date(el.date).getMonth()]} {new Date(el.date).getFullYear()} </strong></p>
-                                            {user.role === 'Admin' && <p className="patient-name">{el.user.name}</p>}
-                                            <p className="card-text doctor-icon"><span className="">Referencia</span><br /> {el.reference}</p>
+                                            <p className={user.role === 'Admin' ? "card-text biopsy-date mb-3 mt-5" : "card-text biopsy-date mb-3"}><strong>{new Date(el.date).getDate()} {months[new Date(el.date).getMonth()]} {new Date(el.date).getFullYear()} </strong></p>
+                                            {user.role === 'Admin' &&
+                                                <>
+                                                    <p className="patient-name">{el.user.name} <span className="patient-dni"><strong>CI </strong>{el.user.dni}</span></p>
+
+                                                </>
+                                            }
+                                            <p className={user.role === 'Admin' ? "card-text doctor-icon mt-5" : "card-text doctor-icon"}><span className="">Referencia</span><br /> {el.reference}</p>
                                             <p className="card-text"><span className="scalpel-icon">Material remitido</span><br /> {el.material}</p>
                                             <p className="card-text"><span className="note-icon">Diagnóstico clínico</span><br /> {el.clinic_diagnosis}</p>
                                         </div>

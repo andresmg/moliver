@@ -23,7 +23,7 @@
 .modal .b-number {
   color: #fff;
   font-weight: 700;
-  background: #11b495;
+  background: #8ad3c0;
   float: left;
   padding: 0 1.6rem;
   border-radius: 4rem;
@@ -35,7 +35,7 @@
 }
 
 .modal .patient-info {
-  background: #11b495;
+  background: #8ad3c0;
   color: #fff;
   padding: 1rem 2rem;
   border-radius: 4rem;
@@ -59,7 +59,7 @@
   padding: 3rem;
   border-radius: 0.8rem;
   position: relative;
-  border: solid 0.2rem #11b495;
+  border: solid 0.2rem #8ad3c0;
 }
 
 .modal .modal-body button {
@@ -67,7 +67,7 @@
 }
 
 .modal .modal-body span {
-  color: #11b495;
+  color: #8ad3c0;
 }
 
 .modal .modal-body span h1 {
@@ -88,7 +88,7 @@
 .modal .modal-body .btn-row .primary:hover {
   color: #fff;
   text-decoration: none;
-  background: rgba(17, 180, 149, 0.8);
+  background: rgba(138, 211, 192, 0.8);
 }
 
 .modal .close {
@@ -159,7 +159,7 @@
 .modal .edit:hover {
   color: #fff;
   text-decoration: none;
-  background: rgba(17, 180, 149, 0.8);
+  background: rgba(138, 211, 192, 0.8);
 }
 
 .modal .delete:before {
