@@ -33,8 +33,8 @@ export const dropBiopsy = (id) => http.get(`/biopsy/${id}/delete`)
 export const updateBiopsy = (id) => http.patch(`/biopsy/${id}/delete`)
 
 //crud.routes
-export const register = ({name, email, password}) =>
-    http.post("/register", {name, email, password})
+export const register = ({name, email, password, dni}) =>
+    http.post("/register", {name, email, password, dni})
 
 export const updateUser = ({
     name,

@@ -83,6 +83,7 @@ const Login = (props) => {
                                 onChange={onChange}
                                 name="email"
                                 type="text"
+                                label="Correo electrónico"
                                 className={`form-control ${touch.email && error.email ? "is-invalid" : ""}`}
                                 placeholder="Enter email"
 
@@ -94,6 +95,7 @@ const Login = (props) => {
                                 onChange={onChange}
                                 name="password"
                                 type="password"
+                                label="Contraseña"
                                 className={`form-control ${touch.password && error.password ? "is-invalid" : ""}`}
                                 placeholder="Enter password"
                             />

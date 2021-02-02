@@ -1,13 +1,13 @@
 import './InputWithLabel.css'
 import React from 'react'
 
-export default function InputWithLabel({value, name, onChange, onBlur, type, className, placeholder, role}) {
+export default function InputWithLabel({value, name, onChange, onBlur, type, className, placeholder, role, label}) {
 
 
 
     return (
         <div className={role === 'Gym' ? 'form-group disabled' : "form-group"}>
-            <label className="label" htmlFor={name}>{name}</label>
+            <label className="label" htmlFor={name}>{label}</label>
 
             <input
                 value={value}

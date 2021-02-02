@@ -15,11 +15,13 @@ const Register = (props) => {
             data: {
                 name: "",
                 email: "",
+                dni: "",
                 password: ""
             },
             error: {
                 name: true,
                 email: true,
+                dni: true,
                 password: true
             },
             touch: {},
@@ -27,6 +29,7 @@ const Register = (props) => {
         {
             name: v => v.length,
             email: v => v.length,
+            dni: v => v.length,
             password: v => v.length
         }
     )
@@ -41,6 +44,7 @@ const Register = (props) => {
         event.preventDefault()
 
         try {
+            console.log(data)
             await register(data)
             history.push('/login')
         } catch (err) {
@@ -65,6 +69,7 @@ const Register = (props) => {
                                 onChange={onChange}
                                 name="name"
                                 type="text"
+                                label="Nombre completo"
                                 className={`form-control ${touch.name && error.name ? "is-invalid" : ""}`}
                                 placeholder="Ingresa tu nombre completo"
 
@@ -77,8 +82,21 @@ const Register = (props) => {
                                 onChange={onChange}
                                 name="email"
                                 type="text"
+                                label="Correo electrónico"
                                 className={`form-control ${touch.email && error.email ? "is-invalid" : ""}`}
                                 placeholder="Ingresa tu correo"
+
+                            />
+
+                            <InputWithLabel
+                                value={data.dni}
+                                onBlur={onBlur}
+                                onChange={onChange}
+                                name="dni"
+                                type="text"
+                                label="Nombre completo"
+                                className={`form-control ${touch.dni && error.dni ? "is-invalid" : ""}`}
+                                placeholder="Ingresa tu cédula"
 
                             />
 
@@ -88,6 +106,7 @@ const Register = (props) => {
                                 onChange={onChange}
                                 name="password"
                                 type="password"
+                                label="Contraseña"
                                 className={`form-control ${touch.password && error.password ? "is-invalid" : ""}`}
                                 placeholder="Ingresa tu contraseña"
                             />

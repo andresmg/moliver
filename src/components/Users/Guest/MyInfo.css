@@ -63,12 +63,12 @@
   border-radius: 0.8rem;
   border: 0;
   box-shadow: 0px 14px 42px -5px rgba(0, 0, 0, 0.5);
-  margin-bottom: 3rem;
+  margin-bottom: 1rem;
 }
 
 .biopsy-card .biopsy-info .card .card-body {
   position: relative;
-  padding-top: 6rem;
+  padding-top: 8rem;
 }
 
 .biopsy-card .biopsy-info .card .card-body .biopsia, .biopsy-card .biopsy-info .card .card-body .biopsy-date {
