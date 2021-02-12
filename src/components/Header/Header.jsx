@@ -15,7 +15,7 @@ const Header = () => {
                 <nav className="navbar navbar-expand-lg">
                     <div className="header-user">
                         <div className="navbar-brand">
-                            <h1>Margarita Oliver</h1>
+                            <NavLink to="/mi-info"><h1>Margarita Oliver</h1></NavLink>
                         </div>
                     </div>
                     <button
@@ -53,7 +53,13 @@ const Header = () => {
                                     <li className="nav-item">
                                         <NavLink className="nav-link" to="/historias">Mis historias</NavLink>
                                     </li>
-                                </>}
+                                </>
+                            }
+                            {user && user.role === 'Admin' &&
+                                <li className="nav-item">
+                                    <NavLink className="nav-link" to="/nueva-biopsia">Agregar biopsia</NavLink>
+                                </li>
+                            }
                             {user &&
                                 <span className="user-logs">
                                     <li>

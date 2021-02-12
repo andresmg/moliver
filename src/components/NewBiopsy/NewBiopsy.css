@@ -1,0 +1,10 @@
+.biopsy-bg {
+  height: 30rem;
+  background: url(../../images/fondo-biopsy.jpg) no-repeat bottom center/cover;
+  border-radius: 1.6rem;
+  position: relative;
+}
+
+.tox .tox-statusbar {
+  display: none !important;
+}

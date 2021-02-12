@@ -30,7 +30,8 @@ export const activateUser = (token) => http.get(`/activate/${token}`)
 
 //biopsy.routes
 export const dropBiopsy = (id) => http.get(`/biopsy/${id}/delete`)
-export const updateBiopsy = (id) => http.patch(`/biopsy/${id}/delete`)
+export const updateBiopsy = (id) => http.patch(`/biopsy/${id}/update`)
+export const addBiopsy = ({clinic_diagnosis, diagnostics, dni, material, name, reference, report}) => http.post('/biopsy/add', {clinic_diagnosis, diagnostics, dni, material, name, reference, report})
 
 //crud.routes
 export const register = ({name, email, password, dni}) =>

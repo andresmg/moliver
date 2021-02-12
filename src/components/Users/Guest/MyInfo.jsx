@@ -6,8 +6,6 @@ import {getAllbiopsies} from '../../../services/ApiClient'
 
 export default function MyInfo({user}) {
 
-    console.log(user)
-
     const [userData] = useState(user)
     const [admin, setAdmin] = useState(false)
     const [userBiopsies, setUserBiopsies] = useState(user.biopsies)
@@ -50,7 +48,6 @@ export default function MyInfo({user}) {
             const fetchData = async () => {
                 const allBiopsies = await getAllbiopsies()
                 setUserBiopsies(allBiopsies)
-                console.log(allBiopsies)
             }
             fetchData()
         }
@@ -92,13 +89,13 @@ export default function MyInfo({user}) {
             </section>
             <section className="container-fluid biopsy-card">
                 <section className="container biopsy-info">
-                    <div class="row row-cols-1 row-cols-md-3 g-4">
+                    <div className="row row-cols-1 row-cols-md-3 g-4">
                         {filteredBiopsies.length === 0 ?
                             <h1 className="col-12 loader">Sin <span>resultados</span></h1> : filteredBiopsies.map(el =>
-                                <div class="col biopsy-block">
-                                    <div class="card h-100">
-                                        <div class="card-body">
-                                            <p class="card-text biopsia">{el.number}</p>
+                                <div className="col biopsy-block">
+                                    <div className="card h-100">
+                                        <div className="card-body">
+                                            <p className="card-text biopsia">{el.number}</p>
                                             <p className={user.role === 'Admin' ? "card-text biopsy-date mb-3 mt-5" : "card-text biopsy-date mb-3"}><strong>{new Date(el.date).getDate()} {months[new Date(el.date).getMonth()]} {new Date(el.date).getFullYear()} </strong></p>
                                             {user.role === 'Admin' &&
                                                 <>
@@ -110,7 +107,7 @@ export default function MyInfo({user}) {
                                             <p className="card-text"><span className="scalpel-icon">Material remitido</span><br /> {el.material}</p>
                                             <p className="card-text"><span className="note-icon">Diagnóstico clínico</span><br /> {el.clinic_diagnosis}</p>
                                         </div>
-                                        <div class="card-footer">
+                                        <div className="card-footer">
                                             <Button className="primary plus-icon" onClick={() => showModal(el)}>Ver resultados de la biopsia</Button>
                                         </div>
                                     </div>

@@ -8,6 +8,7 @@ import {useAuthContext} from './contexts/AuthContext'
 import Login from './components/Layouts/Login/Login'
 import Register from './components/Layouts/Register/Register'
 import MyInfo from './components/Users/Guest/MyInfo'
+import NewBiopsy from './components/NewBiopsy/NewBiopsy'
 
 function App() {
 
@@ -22,6 +23,7 @@ function App() {
         <Route exact path="/register" login component={Register} />
         <Route exact path='/activate/:token' render={(props) => <Login {...props} confirmed />} />
         <AuthenticatedRoute exact path="/mi-info" render={(props) => <MyInfo {...props} user={user} />} />
+        <AuthenticatedRoute exact path="/nueva-biopsia" render={(props) => <NewBiopsy {...props} user={user} />} />
         {user && <Redirect to='/mi-info' />}
         {!user && <Redirect to='/login' />}
       </Switch>

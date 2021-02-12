@@ -10,6 +10,7 @@
   bottom: -3rem;
   right: 3rem;
   box-shadow: 0px 14px 42px -5px rgba(0, 0, 0, 0.5);
+  z-index: 1;
 
   .user-info-row {
     display: flex;
@@ -70,9 +71,10 @@
 
       .card-body {
         position: relative;
-          padding-top: 8rem;
+        padding-top: 8rem;
 
-        .biopsia, .biopsy-date {
+        .biopsia,
+        .biopsy-date {
           position: absolute;
           color: white;
           padding: 0.2rem 1.6rem;
