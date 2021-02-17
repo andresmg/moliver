@@ -68,10 +68,11 @@ const Login = (props) => {
 
     return (
         <>
+            <section className="login container head-bg"></section>
             <div className={props.login ? 'container-fluid my-info' : 'container-fluid my-info login-bg'}>
-                <div className="row center">
+                <div className="row justify-content-center">
                     <div className="col-sm-6 col-xl-4 col-11 login-block">
-                        <h1>log in</h1>
+                        <h1>Ingresa con tu cuenta</h1>
 
                         {activate && <div className="message">Tu usuario ha sido activado exitosamente, por favor ingresa con tu usuario y contraseña.</div>}
 
@@ -107,11 +108,11 @@ const Login = (props) => {
                                 type="submit"
                                 className="Button Button__enter"
                                 disabled={isError}
-                            >Log in</Button>
+                            >Ingresa</Button>
                         </form>
                         <div className="col-12 d-flex justify-content-center options">
-                            <Link to="/register"><strong>Register here</strong></Link>
-                            {/* <Link to="/forgot-password">forgot your password?</Link> */}
+                            <Link to="/register"><strong>Registrate aquí</strong></Link>
+                            <Link to="/forgot-password">¿Olvidaste tu contraseña?</Link>
                         </div>
                     </div>
                 </div>

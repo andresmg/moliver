@@ -23,7 +23,7 @@
 .modal .b-number {
   color: #fff;
   font-weight: 700;
-  background: #8ad3c0;
+  background: #43d9b2;
   float: left;
   padding: 0 1.6rem;
   border-radius: 4rem;
@@ -35,7 +35,7 @@
 }
 
 .modal .patient-info {
-  background: #8ad3c0;
+  background: #43d9b2;
   color: #fff;
   padding: 1rem 2rem;
   border-radius: 4rem;
@@ -59,7 +59,7 @@
   padding: 3rem;
   border-radius: 0.8rem;
   position: relative;
-  border: solid 0.2rem #8ad3c0;
+  border: solid 0.2rem #43d9b2;
   flex: 0 0 auto;
 }
 
@@ -68,7 +68,7 @@
 }
 
 .modal .modal-body span {
-  color: #8ad3c0;
+  color: #43d9b2;
 }
 
 .modal .modal-body span h1 {
@@ -89,7 +89,7 @@
 .modal .modal-body .btn-row .primary:hover {
   color: #fff;
   text-decoration: none;
-  background: rgba(138, 211, 192, 0.8);
+  background: rgba(67, 217, 178, 0.8);
 }
 
 .modal .close {
@@ -161,7 +161,7 @@
 .modal .edit:hover {
   color: #fff;
   text-decoration: none;
-  background: rgba(138, 211, 192, 0.8);
+  background: rgba(67, 217, 178, 0.8);
 }
 
 .modal .delete:before {
@@ -187,11 +187,11 @@
     height: 3rem;
   }
   .modal .patient-info {
-    color: #8ad3c0;
+    color: #43d9b2;
     border-radius: 0;
     background: #fff;
-    border-top: solid 0.1rem #8ad3c0;
-    border-bottom: solid 0.1rem #8ad3c0;
+    border-top: solid 0.1rem #43d9b2;
+    border-bottom: solid 0.1rem #43d9b2;
   }
   .modal .patient-info .text-center {
     text-align: left !important;

@@ -56,10 +56,11 @@ const Register = (props) => {
 
     return (
         <>
+            <section className="login container head-bg"></section>
             <div className={props.login ? 'container-fluid my-info' : 'container-fluid my-info login-bg'}>
-                <div className="row center">
+                <div className="row justify-content-center">
                     <div className="col-sm-6 col-xl-4 col-11 login-block">
-                        <h1>Register</h1>
+                        <h1>Regístrate</h1>
 
                         <form onSubmit={handleSubmit}>
 
@@ -117,7 +118,7 @@ const Register = (props) => {
                                 type="submit"
                                 className="Button Button__enter"
                                 disabled={isError}
-                            >Register</Button>
+                            >Crear cuenta</Button>
                         </form>
                     </div>
                 </div>

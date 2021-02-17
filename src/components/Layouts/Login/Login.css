@@ -1,17 +1,25 @@
-.navbar.dark {
-  background: #96c5ac;
+.login.head-bg {
+  background: url(../../../images/login-bg.jpg) no-repeat center bottom/cover;
 }
 
 .login-block {
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.95);
   padding: 6rem;
   align-self: center;
+  box-shadow: 0px 14px 42px -5px rgba(0, 0, 0, 0.5);
+  border-radius: 1.6rem;
+  margin-top: -10rem;
+  z-index: 6;
+}
+
+.login-block h1 {
+  margin-bottom: 2rem;
 }
 
 .alert.alert-danger {
   background: none;
   border: 0;
-  color: #96c5ac;
+  color: #e96571;
   margin: 2rem auto;
   text-align: center;
 }
@@ -21,13 +29,14 @@
 }
 
 .options a {
-  color: #2e4157;
+  color: #2a3743;
 }
 
 .options a:first-child {
-  border-right: solid 0.1rem #2e4157;
+  border-right: solid 0.1rem #2a3743;
   padding-right: 1rem;
   margin-right: 1rem;
+  color: #43d9b2;
 }
 
 @media (max-width: 576px) {

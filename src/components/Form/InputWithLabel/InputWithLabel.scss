@@ -5,22 +5,32 @@
 
   .label {
     text-transform: capitalize;
+    margin-bottom: 1rem;
   }
 
   .form-control {
     background: $white;
     font-size: 1.6rem;
-    border: solid 0.1rem rgba($text, 0.5);
-    border-radius: 0;
+    border: solid 0.1rem rgba($blue, 0.5);
+    border-radius: 0.8rem;
     height: 4rem;
+    margin-bottom: 2rem;
   }
 }
 
 .invalid-feedback {
-  color: $pink;
+  color: $red;
   font-size: 1.2rem;
 }
 
 .hidden {
   display: none;
+}
+
+//cambia el color del input autocomplete
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px white inset !important;
 }

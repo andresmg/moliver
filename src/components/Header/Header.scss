@@ -84,15 +84,21 @@
     display: flex;
 
     .login {
-      background: $blue;
+      background: $green;
+      color: $white;
       padding: 0.8rem 3.2rem;
-      border-radius: 2.6rem 2.1rem 1.7rem 2rem;
+      border-radius: 4rem;
       position: relative;
       margin-left: 3rem;
 
       &:hover,
       &.active {
-        color: $text;
+        color: $white;
+        background: $blue;
+      }
+
+      &.active {
+        pointer-events: none;
       }
     }
   }

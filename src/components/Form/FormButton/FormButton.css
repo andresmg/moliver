@@ -3,11 +3,12 @@
   margin: auto;
   display: block;
   transition: all 200ms ease;
+  border-radius: 1.6rem;
 }
 
 .Button__enter {
   margin-top: 2rem;
-  background: #211e35;
+  background: #43d9b2;
   border: 0;
   color: #fff;
   padding: 1.2rem;
@@ -16,10 +17,10 @@
 }
 
 .Button:hover {
-  background: #ffcc00;
+  background: #4289dd;
 }
 
 button:disabled {
   opacity: 0.3;
-  background: #211e35;
+  background: #43d9b2;
 }

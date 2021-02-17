@@ -12,7 +12,7 @@
   position: relative;
   display: flex;
   align-items: center;
-  color: #8ad3c0;
+  color: #43d9b2;
 }
 
 .navbar .logout:after {
@@ -83,15 +83,21 @@
 }
 
 .navbar .user-logs .login {
-  background: #4289dd;
+  background: #43d9b2;
+  color: #fff;
   padding: 0.8rem 3.2rem;
-  border-radius: 2.6rem 2.1rem 1.7rem 2rem;
+  border-radius: 4rem;
   position: relative;
   margin-left: 3rem;
 }
 
 .navbar .user-logs .login:hover, .navbar .user-logs .login.active {
-  color: #2a3743;
+  color: #fff;
+  background: #4289dd;
+}
+
+.navbar .user-logs .login.active {
+  pointer-events: none;
 }
 
 .navbar .navbar-toggler {

@@ -1,22 +1,30 @@
-@import '../stylesheets/variables';
+@import '../../../stylesheets/variables';
 
-.navbar {
-  &.dark {
-    background: $dark-green;
+.login {
+  &.head-bg {
+    background: url(../../../images/login-bg.jpg) no-repeat center bottom / cover;
   }
 }
 
 .login-block {
-  background: rgba($white, 0.9);
+  background: rgba($white, 0.95);
   padding: 6rem;
   align-self: center;
+  box-shadow: 0px 14px 42px -5px rgba(0, 0, 0, 0.5);
+  border-radius: 1.6rem;
+  margin-top: -10rem;
+  z-index: 6;
+
+  h1 {
+    margin-bottom: 2rem;
+  }
 }
 
 .alert {
   &.alert-danger {
     background: none;
     border: 0;
-    color: $dark-green;
+    color: $red;
     margin: 2rem auto;
     text-align: center;
   }
@@ -32,6 +40,7 @@
       border-right: solid 0.1rem $text;
       padding-right: 1rem;
       margin-right: 1rem;
+      color: $green;
     }
   }
 }
