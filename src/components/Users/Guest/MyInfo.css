@@ -112,10 +112,6 @@
   border-radius: 0 0 0.8rem 0.8rem;
 }
 
-.biopsy-card .biopsy-info .biopsy-block {
-  margin-bottom: 3rem;
-}
-
 .biopsy-card .biopsy-info .patient-name {
   padding: 0.2rem 1.6rem;
   border-radius: 0 0.8rem 0.8rem 0;
@@ -196,7 +192,7 @@
   position: absolute;
   top: 50%;
   margin-top: -2.5rem;
-  left: 2.4rem;
+  left: 1.6rem;
   z-index: 0;
 }
 
@@ -223,7 +219,7 @@
 }
 
 .form-group {
-  margin-top: 1rem;
+  margin-top: 0rem;
 }
 
 .title {

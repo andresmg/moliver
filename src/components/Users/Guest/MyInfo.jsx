@@ -89,7 +89,7 @@ export default function MyInfo({user}) {
             </section>
             <section className="container-fluid biopsy-card">
                 <section className="container biopsy-info">
-                    <div className="row row-cols-1 row-cols-md-3 g-4">
+                    <div className="row row-cols-1 row-cols-md-3 g-5">
                         {filteredBiopsies.length === 0 ?
                             <h1 className="col-12 loader">Sin <span>resultados</span></h1> : filteredBiopsies.map(el =>
                                 <div className="col biopsy-block">
