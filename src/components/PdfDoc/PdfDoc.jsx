@@ -3,8 +3,6 @@ import {Document, Page, Text, Font, StyleSheet} from '@react-pdf/renderer'
 
 export default function PdfDoc({data}) {
 
-    console.log(data)
-
     const months = ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic']
 
     Font.register({

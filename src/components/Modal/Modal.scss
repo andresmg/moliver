@@ -61,6 +61,7 @@
     border-radius: 0.8rem;
     position: relative;
     border: solid 0.2rem $green;
+    flex: 0 0 auto;
 
     button {
       margin: 3rem auto 0 auto;
@@ -135,6 +136,7 @@
     display: flex;
     justify-content: center;
     transition: all 200ms ease-in-out;
+    position: relative;
 
     &:before {
       content: '';
@@ -178,5 +180,32 @@
 
   hr {
     margin-bottom: 1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .modal {
+    .modal-body {
+      padding: 2rem 1rem;
+    }
+
+    .icon {
+      &:before {
+        width: 3rem;
+        height: 3rem;
+      }
+    }
+
+    .patient-info {
+      color: $green;
+      border-radius: 0;
+      background: $white;
+      border-top: solid 0.1rem $green;
+      border-bottom: solid 0.1rem $green;
+
+      .text-center {
+        text-align: left !important;
+      }
+    }
   }
 }

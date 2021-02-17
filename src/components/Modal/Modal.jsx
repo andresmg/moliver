@@ -7,7 +7,6 @@ import {useHistory} from 'react-router-dom'
 import {dropBiopsy} from '../../services/ApiClient'
 
 export default function Modal({data, onClick, admin}) {
-    console.log(data)
 
     const [isMessage, setIsMessage] = useState('')
     const [bool, setBool] = useState(false)
@@ -32,15 +31,15 @@ export default function Modal({data, onClick, admin}) {
     const hideConfirmModal = () => {
         setBool(!bool)
     }
-    
+
     return (
         <>
             <div className="modal">
                 <div className="container">
                     <div className="row justify-content-center">
                         {bool && !isMessage &&
-                            <div className="col-sm-6 col-12 modal-body">
-                            <span className="close" onClick={hideConfirmModal}></span>
+                            <div className="col-sm-6 col-11 modal-body">
+                                <span className="close" onClick={hideConfirmModal}></span>
                                 <div className="message">
                                     <div className="content text-center">
                                         <p>¿Eliminar la biopsia <strong>{data.number}</strong>?</p>
@@ -51,14 +50,14 @@ export default function Modal({data, onClick, admin}) {
                         }
 
                         {isMessage &&
-                            <div className="col-sm-6 col-12 modal-body">
+                            <div className="col-sm-6 col-11 modal-body">
                                 <div className="message">
                                     <div className="content text-center">{isMessage}</div>
                                 </div>
                             </div>
                         }
                         {!isMessage && bool === false &&
-                            <div className="col-sm-6 col-12 modal-body">
+                            <div className="col-sm-6 col-11 modal-body">
                                 <span className="close" onClick={onClick}></span>
                                 <div className="row">
                                     <div className="col-6">

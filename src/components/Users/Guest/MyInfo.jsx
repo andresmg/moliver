@@ -100,7 +100,6 @@ export default function MyInfo({user}) {
                                             {user.role === 'Admin' &&
                                                 <>
                                                     <p className="patient-name">{el.user.name} <span className="patient-dni"><strong>CI </strong>{el.user.dni}</span></p>
-
                                                 </>
                                             }
                                             <p className={user.role === 'Admin' ? "card-text doctor-icon mt-5" : "card-text doctor-icon"}><span className="">Referencia</span><br /> {el.reference}</p>
