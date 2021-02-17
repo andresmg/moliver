@@ -5,6 +5,20 @@
   position: relative;
 }
 
+.biopsy-bg .user-info {
+  bottom: 6rem;
+  right: 10rem;
+  z-index: 20;
+}
+
 .tox .tox-statusbar {
   display: none !important;
+}
+
+.new-biopsy label {
+  margin-bottom: 1rem;
+}
+
+.new-biopsy .tox {
+  margin-bottom: 3rem;
 }

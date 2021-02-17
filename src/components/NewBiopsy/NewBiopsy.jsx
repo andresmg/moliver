@@ -81,9 +81,9 @@ export default function NewBiopsy({user}) {
                     </div>
                 </div>
             </section>
-            <div className="container my-info">
-                <div className="row center">
-                    <div className="col-12 login-block">
+            <div className="container my-info new-biopsy">
+                <div className="row justify-content-center">
+                    <div className="col-11 login-block">
                         <h1>Nueva biopsia</h1>
 
                         <form onSubmit={handleSubmit}>
