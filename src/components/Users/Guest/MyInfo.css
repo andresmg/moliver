@@ -218,6 +218,10 @@
   border-radius: 1.6rem;
 }
 
+.gray-bg .form-control {
+  margin-bottom: 0;
+}
+
 .form-group {
   margin-top: 0rem;
 }

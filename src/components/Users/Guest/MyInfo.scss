@@ -232,6 +232,10 @@
 
 .gray-bg {
   border-radius: 1.6rem;
+
+  .form-control {
+    margin-bottom: 0;
+  }
 }
 
 .form-group {

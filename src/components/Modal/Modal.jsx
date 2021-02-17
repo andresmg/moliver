@@ -5,8 +5,11 @@ import PdfDoc from '../PdfDoc/PdfDoc'
 import Button from '../Button/Button'
 import {useHistory} from 'react-router-dom'
 import {dropBiopsy} from '../../services/ApiClient'
+import parse from 'html-react-parser'
 
 export default function Modal({data, onClick, admin}) {
+
+   
 
     const [isMessage, setIsMessage] = useState('')
     const [bool, setBool] = useState(false)
@@ -82,9 +85,9 @@ export default function Modal({data, onClick, admin}) {
                                 <p><span>Material remitido</span> {data.material}</p>
                                 <p><span>Diagnóstico clínico</span> {data.clinic_diagnosis}</p>
                                 <p><span>Informe</span></p>
-                                <p>{data.report}</p>
+                                <p>{parse(data.report)}</p>
                                 <p><span>Diagnósticos</span></p>
-                                <p>{data.diagnostics}</p>
+                                <p>{parse(data.diagnostics)}</p>
 
                                 <div className="btn-row">
                                     <PDFDownloadLink className="primary downloadPDF" document={<PdfDoc data={data} />} fileName={`${data.number}.pdf`}>
