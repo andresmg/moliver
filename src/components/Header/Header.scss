@@ -51,8 +51,43 @@
   .navbar-brand {
     padding: 3rem 1rem 3rem 3rem;
 
+    a {
+      text-decoration: none;
+    }
+
     h1 {
       color: $text;
+    }
+
+    .logo-header {
+      display: flex;
+      align-items: center;
+      position: relative;
+      font-size: 3rem;
+      text-transform: uppercase;
+      color: $green;
+
+      &:before {
+        content: '';
+        display: inline-block;
+        background: url(../../images/icon-logo.svg) no-repeat center center /
+          contain;
+        width: 3.2rem;
+        height: 3.2rem;
+        margin-right: 1.6rem;
+      }
+
+      &:after {
+        content: 'Oliver';
+        display: block;
+        font-weight: 300;
+        color: $blue;
+        margin-left: 0.8rem;
+        position: absolute;
+        left: 4rem;
+        top: 2.4rem;
+
+      }
     }
   }
 

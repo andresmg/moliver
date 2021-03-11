@@ -95,7 +95,7 @@ const Register = (props) => {
                                 onChange={onChange}
                                 name="dni"
                                 type="text"
-                                label="Nombre completo"
+                                label="Cédula o documento de identidad"
                                 className={`form-control ${touch.dni && error.dni ? "is-invalid" : ""}`}
                                 placeholder="Ingresa tu cédula"
 

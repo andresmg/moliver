@@ -15,7 +15,9 @@ const Header = () => {
                 <nav className="navbar navbar-expand-lg">
                     <div className="header-user">
                         <div className="navbar-brand">
-                            <NavLink to="/mi-info"><h1>Margarita Oliver</h1></NavLink>
+                            <NavLink to="/mi-info">
+                                <h1 className="logo-header"><strong>Margarita</strong></h1>
+                            </NavLink>
                         </div>
                     </div>
                     <button
@@ -76,10 +78,10 @@ const Header = () => {
                                     </li>
                                     <span className="user-logs">
                                         <li className="nav-item">
-                                            <NavLink className="nav-link login" to="/login">Login</NavLink>
+                                            <NavLink className="nav-link login" to="/login">Ingresa</NavLink>
                                         </li>
                                         <li className="nav-item">
-                                            <NavLink className="nav-link" to="/register">Register</NavLink>
+                                            <NavLink className="nav-link" to="/register">Regístrate</NavLink>
                                         </li>
                                     </span>
                                 </>

@@ -49,8 +49,41 @@
   padding: 3rem 1rem 3rem 3rem;
 }
 
+.navbar .navbar-brand a {
+  text-decoration: none;
+}
+
 .navbar .navbar-brand h1 {
   color: #2a3743;
+}
+
+.navbar .navbar-brand .logo-header {
+  display: flex;
+  align-items: center;
+  position: relative;
+  font-size: 3rem;
+  text-transform: uppercase;
+  color: #43d9b2;
+}
+
+.navbar .navbar-brand .logo-header:before {
+  content: '';
+  display: inline-block;
+  background: url(../../images/icon-logo.svg) no-repeat center center/contain;
+  width: 3.2rem;
+  height: 3.2rem;
+  margin-right: 1.6rem;
+}
+
+.navbar .navbar-brand .logo-header:after {
+  content: 'Oliver';
+  display: block;
+  font-weight: 300;
+  color: #4289dd;
+  margin-left: 0.8rem;
+  position: absolute;
+  left: 4rem;
+  top: 2.4rem;
 }
 
 .navbar .navbar-collapse {
