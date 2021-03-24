@@ -1,0 +1,65 @@
+@import '../../stylesheets/variables';
+
+.patients {
+  .message {
+    margin-top: 6rem;
+    padding: 1rem 2rem;
+    background: rgba($purple, 0.3);
+    border: solid 0.1rem $purple;
+    color: $purple;
+  }
+
+  
+
+  .custom-info {
+    .patient-name {
+      top: 0;
+    }
+
+    .card {
+      .card-body {
+        padding-top: 4rem;
+
+        .card-text {
+          .patient-dni {
+            border-left: solid 0.1rem $white;
+            color: $white;
+            margin-left: 0.8rem;
+            padding-left: 0.8rem;
+          }
+        }
+      }
+    }
+  }
+
+  .email-icon,
+  .phone-icon,
+  .address-icon {
+    position: relative;
+    &:before {
+      content: '';
+      width: 2rem;
+      height: 5rem;
+      margin-right: 1.6rem;
+      float: left;
+    }
+  }
+
+  .email-icon {
+    &:before {
+      background: url(../../images/email.svg) no-repeat center center / contain;
+    }
+  }
+
+  .phone-icon {
+    &:before {
+      background: url(../../images/phone.svg) no-repeat center center / contain;
+    }
+  }
+
+  .address-icon {
+    &:before {
+      background: url(../../images/address.svg) no-repeat center center / contain;
+    }
+  }
+}

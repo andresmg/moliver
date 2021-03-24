@@ -58,9 +58,14 @@ const Header = () => {
                                 </>
                             }
                             {user && user.role === 'Admin' &&
-                                <li className="nav-item">
-                                    <NavLink className="nav-link" to="/nueva-biopsia">Agregar biopsia</NavLink>
-                                </li>
+                                <>
+                                    <li className="nav-item">
+                                        <NavLink className="nav-link" to="/pacientes">Mis pacientes</NavLink>
+                                    </li>
+                                    <li className="nav-item">
+                                        <NavLink className="nav-link" to="/nueva-biopsia">Agregar biopsia</NavLink>
+                                    </li>
+                                </>
                             }
                             {user &&
                                 <span className="user-logs">

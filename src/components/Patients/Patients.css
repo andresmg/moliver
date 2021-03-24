@@ -1,0 +1,50 @@
+.patients .message {
+  margin-top: 6rem;
+  padding: 1rem 2rem;
+  background: rgba(170, 138, 207, 0.3);
+  border: solid 0.1rem #aa8acf;
+  color: #aa8acf;
+}
+
+.patients .custom-info .patient-name {
+  top: 0;
+}
+
+.patients .custom-info .card .card-body {
+  padding-top: 4rem;
+}
+
+.patients .custom-info .card .card-body .card-text .patient-dni {
+  border-left: solid 0.1rem #fff;
+  color: #fff;
+  margin-left: 0.8rem;
+  padding-left: 0.8rem;
+}
+
+.patients .email-icon,
+.patients .phone-icon,
+.patients .address-icon {
+  position: relative;
+}
+
+.patients .email-icon:before,
+.patients .phone-icon:before,
+.patients .address-icon:before {
+  content: '';
+  width: 2rem;
+  height: 5rem;
+  margin-right: 1.6rem;
+  float: left;
+}
+
+.patients .email-icon:before {
+  background: url(../../images/email.svg) no-repeat center center/contain;
+}
+
+.patients .phone-icon:before {
+  background: url(../../images/phone.svg) no-repeat center center/contain;
+}
+
+.patients .address-icon:before {
+  background: url(../../images/address.svg) no-repeat center center/contain;
+}

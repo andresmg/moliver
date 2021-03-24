@@ -51,11 +51,11 @@
   position: relative;
 }
 
-.biopsy-card {
+.custom-card {
   background: $white;
   margin: 1rem 0;
 
-  .biopsy-info {
+  .custom-info {
     padding: 2rem 0;
 
     span {
@@ -162,7 +162,7 @@
     content: '';
     width: 2rem;
     height: 5rem;
-    margin-right: 2rem;
+    margin-right: 1.6rem;
     float: left;
   }
 }

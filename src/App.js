@@ -9,6 +9,7 @@ import Login from './components/Layouts/Login/Login'
 import Register from './components/Layouts/Register/Register'
 import MyInfo from './components/Users/Guest/MyInfo'
 import NewBiopsy from './components/NewBiopsy/NewBiopsy'
+import Patients from './components/Patients/Patients'
 
 function App() {
 
@@ -22,6 +23,7 @@ function App() {
         <Route exact path="/login" login component={Login} />
         <Route exact path="/register" login component={Register} />
         <Route exact path='/activate/:token' render={(props) => <Login {...props} confirmed />} />
+        <AuthenticatedRoute exact path="/pacientes" render={(props) => <Patients {...props} user={user} />} />
         <AuthenticatedRoute exact path="/mi-info" render={(props) => <MyInfo {...props} user={user} />} />
         <AuthenticatedRoute exact path="/nueva-biopsia" render={(props) => <NewBiopsy {...props} user={user} />} />
         {user && <Redirect to='/mi-info' />}
