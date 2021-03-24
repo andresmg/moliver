@@ -1,0 +1,39 @@
+.AddDateModal .form-group label {
+  display: none;
+}
+
+.AddDateModal .modal-body {
+  border: 0;
+  box-shadow: 0 1.4rem 4.2rem -0.5rem rgba(0, 0, 0, 0.5);
+}
+
+.AddDateModal .modal-body .react-datetime-picker {
+  text-align: center;
+  display: flex;
+  margin-top: 3rem;
+}
+
+.AddDateModal .modal-body .react-datetime-picker span {
+  color: #2a3743;
+}
+
+.AddDateModal .modal-body .react-datetime-picker__clear-button, .AddDateModal .modal-body .react-datetime-picker__calendar-button {
+  display: none;
+}
+
+.AddDateModal .modal-body .react-datetime-picker__wrapper {
+  border: 0;
+}
+
+.AddDateModal.close-modal {
+  animation: fadeout 200ms ease-out normal forwards;
+}
+
+@keyframes fadeout {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}

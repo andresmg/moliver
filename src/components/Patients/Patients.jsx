@@ -2,6 +2,7 @@ import './Patients.css'
 import React, {useState, useEffect} from 'react'
 import {getAllPatients} from '../../services/ApiClient'
 import Button from '../Button/Button'
+import AddDateModal from '../AddDateModal/AddDateModal'
 
 export default function Patients({user}) {
 
@@ -9,6 +10,8 @@ export default function Patients({user}) {
     const [message, setMessage] = useState('')
     const [patients, setPatients] = useState([])
     const [search, setSearch] = useState('')
+    const [bool, setBool] = useState(false)
+    const [addUserDate, setAddUserDate] = useState('')
 
     const handleChange = (e) => {
         setSearch(e.target.value)
@@ -20,11 +23,32 @@ export default function Patients({user}) {
         )
     })
 
+    const showModal = (data) => {
+        setBool(!bool)
+        setAddUserDate(data)
+    }
+
+    const hideModal = () => {
+        setBool(!bool)
+    }
+
+    const drawTime = (time) => {
+        let hour = new Date(time).getHours()
+        let minutes = new Date(time).getMinutes()
+        let meridiem = 'AM'
+
+        if (hour > 12) {
+            hour = hour - 12
+            meridiem = 'PM'
+        }
+
+        return `${hour}:${minutes} ${meridiem}`
+    }
+
     useEffect(() => {
         if (user.role === 'Admin') {
             const fetchData = async () => {
                 const allPatients = await getAllPatients()
-                console.log(allPatients)
                 setPatients(allPatients)
             }
             fetchData()
@@ -37,6 +61,7 @@ export default function Patients({user}) {
 
     return (
         <>
+            {bool && <AddDateModal onClick={hideModal} user={addUserDate} />}
             <section className="container head-bg">
                 <div className="user-info">
                     <div className="user-profile"></div>
@@ -80,16 +105,16 @@ export default function Patients({user}) {
                                                     <p className="card-text biopsy-date"><strong>Edad</strong> {new Date().getFullYear() - new Date(el.birthdate).getFullYear()}  año(s)</p>
                                                 </>
                                             }
-                                            <p className={user.role === 'Admin' ? "card-text email-icon mt-5" : "card-text email-icon"}><span className="">Email</span><br /> {el.email}</p>
-                                            <p className={user.role === 'Admin' ? "card-text phone-icon mt-5" : "card-text phone-icon"}><span className="">Teléfono</span><br /> {el.phone}</p>
-                                            <p className={user.role === 'Admin' ? "card-text address-icon mt-5" : "card-text address-icon"}><span className="">Dirección</span><br /> {el.address}, {el.city} - {el.zipcode}</p>
-                                            <ul class="list-group list-group-flush">
-                                                <li class="list-group-item">Próxima cita</li>
-                                                <li class="list-group-item">
-                                            <Button className="secondary plus-icon" onClick={() => console.log('algo')}>Agendar cita</Button></li>
-                                            </ul>
+                                            <p className="card-text email-icon mt-5"><span className="">Email</span><br /> {el.email}</p>
+                                            <p className="card-text phone-icon mt-5"><span className="">Teléfono</span><br /> {el.phone}</p>
+                                            <p className="card-text address-icon mt-5"><span className="">Dirección</span><br /> {el.address}, {el.city} - {el.zipcode}</p>
+                                            {el.next_date.isDate === true && <p className="card-text calendar-icon mt-5"><span className="">Próxima cita</span><br /> {new Date(el.next_date.date).getDate()} / {new Date(el.next_date.date).getMonth() + 1} / {new Date(el.next_date.date).getFullYear()} - {drawTime(el.next_date.date)}</p>
+                                            }
                                         </div>
                                         <div className="card-footer">
+                                            {el.next_date.isDate === false &&
+                                                <p className="card-text purple-bg"><Button className="secondary plus-icon" onClick={() => showModal(el)}>Agendar cita</Button></p>
+                                            }
                                             <Button className="primary plus-icon" onClick={() => console.log('algo')}>Ver historia de {el.name}</Button>
                                         </div>
                                     </div>

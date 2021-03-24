@@ -9,8 +9,6 @@
     color: $purple;
   }
 
-  
-
   .custom-info {
     .patient-name {
       top: 0;
@@ -18,7 +16,7 @@
 
     .card {
       .card-body {
-        padding-top: 4rem;
+        padding: 4rem 0 0 0;
 
         .card-text {
           .patient-dni {
@@ -34,8 +32,11 @@
 
   .email-icon,
   .phone-icon,
-  .address-icon {
+  .address-icon,
+  .calendar-icon {
     position: relative;
+    padding: 0 1rem;
+
     &:before {
       content: '';
       width: 2rem;
@@ -59,7 +60,30 @@
 
   .address-icon {
     &:before {
-      background: url(../../images/address.svg) no-repeat center center / contain;
+      background: url(../../images/address.svg) no-repeat center center /
+        contain;
+    }
+  }
+
+  .calendar-icon {
+    &:before {
+      background: url(../../images/calendar.svg) no-repeat center center /
+        contain;
+    }
+  }
+
+  .card-footer {
+    padding: 0;
+
+    .purple-bg {
+      background: $purple;
+      justify-content: center;
+      display: flex;
+      margin-bottom: 0;
+
+      .secondary {
+        background: $purple;
+      }
     }
   }
 }

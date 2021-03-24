@@ -1,0 +1,46 @@
+@import '../../stylesheets/variables';
+
+.AddDateModal {
+  .form-group {
+    label {
+      display: none;
+    }
+  }
+
+  .modal-body {
+    border: 0;
+    box-shadow: 0 1.4rem 4.2rem -0.5rem rgba(0, 0, 0, 0.5);
+
+    .react-datetime-picker {
+      text-align: center;
+      display: flex;
+      margin-top: 3rem;
+
+      span {
+        color: $text;
+      }
+
+      &__clear-button,
+      &__calendar-button {
+        display: none;
+      }
+
+      &__wrapper {
+        border: 0;
+      }
+    }
+  }
+
+  &.close-modal {
+      animation: fadeout 200ms ease-out normal forwards
+  }
+}
+
+@keyframes fadeout {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}

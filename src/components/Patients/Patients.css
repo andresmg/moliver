@@ -11,7 +11,7 @@
 }
 
 .patients .custom-info .card .card-body {
-  padding-top: 4rem;
+  padding: 4rem 0 0 0;
 }
 
 .patients .custom-info .card .card-body .card-text .patient-dni {
@@ -23,13 +23,16 @@
 
 .patients .email-icon,
 .patients .phone-icon,
-.patients .address-icon {
+.patients .address-icon,
+.patients .calendar-icon {
   position: relative;
+  padding: 0 1rem;
 }
 
 .patients .email-icon:before,
 .patients .phone-icon:before,
-.patients .address-icon:before {
+.patients .address-icon:before,
+.patients .calendar-icon:before {
   content: '';
   width: 2rem;
   height: 5rem;
@@ -47,4 +50,23 @@
 
 .patients .address-icon:before {
   background: url(../../images/address.svg) no-repeat center center/contain;
+}
+
+.patients .calendar-icon:before {
+  background: url(../../images/calendar.svg) no-repeat center center/contain;
+}
+
+.patients .card-footer {
+  padding: 0;
+}
+
+.patients .card-footer .purple-bg {
+  background: #aa8acf;
+  justify-content: center;
+  display: flex;
+  margin-bottom: 0;
+}
+
+.patients .card-footer .purple-bg .secondary {
+  background: #aa8acf;
 }
