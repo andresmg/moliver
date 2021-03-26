@@ -46,7 +46,7 @@ export default function Patients({user}) {
         return `${hour}:${minutes} ${meridiem}`
     }
 
-    const updateUserDate = (data) => {
+    const updateUserDate = async (data) => {
         createDate(data)
         setBool(!bool)
     }
@@ -62,7 +62,7 @@ export default function Patients({user}) {
             setMessage('No tiene los privilegios para visitar esta página.')
         }
         // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [updateUserDate])
+    }, [bool])
 
 
     return (
