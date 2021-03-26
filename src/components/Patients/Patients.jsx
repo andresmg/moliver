@@ -1,10 +1,11 @@
 import './Patients.css'
 import React, {useState, useEffect} from 'react'
-import {getAllPatients} from '../../services/ApiClient'
+import {getAllPatients, createDate} from '../../services/ApiClient'
 import Button from '../Button/Button'
 import AddDateModal from '../AddDateModal/AddDateModal'
 
 export default function Patients({user}) {
+
 
     const [userData] = useState(user)
     const [message, setMessage] = useState('')
@@ -45,6 +46,11 @@ export default function Patients({user}) {
         return `${hour}:${minutes} ${meridiem}`
     }
 
+    const updateUserDate = (data) => {
+        createDate(data)
+        setBool(!bool)
+    }
+
     useEffect(() => {
         if (user.role === 'Admin') {
             const fetchData = async () => {
@@ -56,12 +62,12 @@ export default function Patients({user}) {
             setMessage('No tiene los privilegios para visitar esta página.')
         }
         // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [])
+    }, [updateUserDate])
 
 
     return (
         <>
-            {bool && <AddDateModal onClick={hideModal} user={addUserDate} />}
+            {bool && <AddDateModal onClick={hideModal} user={addUserDate} onSetDate={updateUserDate} />}
             <section className="container head-bg">
                 <div className="user-info">
                     <div className="user-profile"></div>

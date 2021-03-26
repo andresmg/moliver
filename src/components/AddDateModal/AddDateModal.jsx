@@ -3,10 +3,10 @@ import React, {useState} from 'react'
 import {useFormState} from "../../hooks/useFormState"
 import DateTimePicker from "react-datetime-picker"
 import Button from '../Button/Button'
-import {createDate} from '../../services/ApiClient'
-import {useHistory} from 'react-router-dom'
 
-export default function AddDateModal({user, onClick}) {
+
+export default function AddDateModal({user, onClick, onSetDate}) {
+
 
     const {state} = useFormState(
         {
@@ -25,25 +25,17 @@ export default function AddDateModal({user, onClick}) {
 
     const {data, error} = state
 
-    const [setRegisterError] = useState(null)
     // eslint-disable-next-line no-unused-vars
     const [date, setDate] = useState(new Date())
     const [closeModal, setCloseModal] = useState(false)
-    const history = useHistory()
+
 
 
     const isError = Object.values(error).some((err) => err)
 
-    const handleSubmit = async (event) => {
+    const handleSubmit = (event) => {
         event.preventDefault()
-
-        try {
-            await createDate(data)
-            setCloseModal(!closeModal)
-            history.push('/mi-info')
-        } catch (err) {
-            setRegisterError(err.response?.data?.message)
-        }
+        setCloseModal(!closeModal)
     }
 
     const setTime = (e) => {
@@ -77,6 +69,7 @@ export default function AddDateModal({user, onClick}) {
                                     type="submit"
                                     className="Button Button__enter"
                                     disabled={isError}
+                                    onClick={() => onSetDate(data)}
                                 >
                                     Agendar cita
               </Button>
