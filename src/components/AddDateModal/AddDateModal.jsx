@@ -49,8 +49,20 @@ export default function AddDateModal({user, onClick, onSetDate}) {
                 <div className="container">
                     <div className="row justify-content-center">
                         <div className="col-11 col-sm-6 modal-body">
+                            <div className="user-info">
+                                <div className="user-profile"></div>
+                                <div className="row user-info-row">
+                                    <div className="col-12 col-sm-10 name"><h1>{user.name}</h1></div>
+                                    {user.role === 'Admin' ? <div className="col-12"><strong>Admin</strong></div> :
+                                        <>
+                                            <div className="col-6  dni"><strong>CI</strong> {user.dni}</div>
+                                            <div className="col-4 age"><strong>Edad</strong> {new Date().getFullYear() - new Date(user.birthdate).getFullYear()}</div>
+                                        </>
+                                    }
+                                </div>
+                            </div>
                             <span className="close" onClick={onClick}></span>
-                            <h1>Agendar una cita para {user.name}</h1>
+                            <h1>Agendar próxima cita</h1>
                             <form onSubmit={handleSubmit}>
 
 

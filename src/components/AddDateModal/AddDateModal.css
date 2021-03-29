@@ -5,6 +5,7 @@
 .AddDateModal .modal-body {
   border: 0;
   box-shadow: 0 1.4rem 4.2rem -0.5rem rgba(0, 0, 0, 0.5);
+  padding-top: 6rem;
 }
 
 .AddDateModal .modal-body .react-datetime-picker {
@@ -23,6 +24,20 @@
 
 .AddDateModal .modal-body .react-datetime-picker__wrapper {
   border: 0;
+}
+
+.AddDateModal .modal-body .user-info {
+  bottom: unset;
+  top: -6rem;
+  right: unset;
+}
+
+.AddDateModal .modal-body .Button__enter {
+  background: #aa8acf;
+}
+
+.AddDateModal .modal-body .Button__enter:hover {
+  background: #43d9b2;
 }
 
 .AddDateModal.close-modal {
