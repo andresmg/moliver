@@ -34,16 +34,24 @@ export default function Patients({user}) {
     }
 
     const drawTime = (time) => {
-        let hour = new Date(time).getHours()
-        let minutes = new Date(time).getMinutes()
-        let meridiem = 'AM'
-
-        if (hour > 12) {
-            hour = hour - 12
-            meridiem = 'PM'
+        var months = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"]
+        var days = ["Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"]
+        var d = new Date(time)
+        var day = days[d.getDay()]
+        var hr = d.getHours()
+        var min = d.getMinutes()
+        if (min < 10) {
+            min = "0" + min
         }
-
-        return `${hour}:${minutes} ${meridiem}`
+        var ampm = "am"
+        if (hr > 12) {
+            hr -= 12
+            ampm = "pm"
+        }
+        var date = d.getDate()
+        var month = months[d.getMonth()]
+        var year = d.getFullYear()
+        return day + " " + date + " " + month + " " + year + ' - ' + hr + ":" + min + ampm + " " 
     }
 
     const updateUserDate = async (data) => {
@@ -114,7 +122,7 @@ export default function Patients({user}) {
                                             <p className="card-text email-icon mt-5"><span className="">Email</span><br /> {el.email}</p>
                                             <p className="card-text phone-icon mt-5"><span className="">Teléfono</span><br /> {el.phone}</p>
                                             <p className="card-text address-icon mt-5"><span className="">Dirección</span><br /> {el.address}, {el.city} - {el.zipcode}</p>
-                                            {el.next_date.isDate === true && <p className="card-text calendar-icon mt-5"><span className="">Próxima cita</span><br /> {new Date(el.next_date.date).getDate()} / {new Date(el.next_date.date).getMonth() + 1} / {new Date(el.next_date.date).getFullYear()} - {drawTime(el.next_date.date)}</p>
+                                            {el.next_date.isDate === true && <p className="card-text calendar-icon mt-5"><span className="">Próxima cita</span><br /> {drawTime(el.next_date.date)}</p>
                                             }
                                         </div>
                                         <div className="card-footer">

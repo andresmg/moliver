@@ -7,7 +7,6 @@ import Button from '../Button/Button'
 
 export default function AddDateModal({user, onClick, onSetDate}) {
 
-
     const {state} = useFormState(
         {
             data: {
