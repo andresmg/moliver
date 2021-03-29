@@ -86,4 +86,22 @@
       }
     }
   }
+
+  .icons {
+    [class*='-icon'] {
+      border: 0;
+      width: 2.4rem;
+      height: 2.4rem;
+      margin-right: 1rem;
+    }
+
+    .edit-icon {
+      background: url(../../images/edit.svg) no-repeat center center / contain;
+    }
+
+    .delete-icon {
+      background: url(../../images/delete.svg) no-repeat center center / contain;
+      margin-right: 2.4rem;
+    }
+  }
 }

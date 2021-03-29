@@ -23,6 +23,7 @@ http.interceptors.response.use(
 export const getAllbiopsies = () => http.get('/biopsies')
 export const getAllPatients = () => http.get('/patients')
 export const createDate = ({userId, date}) => http.post("/add-date", {userId, date})
+export const deleteDate = (dateId) => http.get(`/delete-date/${dateId}`)
 
 //user.routes
 export const login = ({email, password}) =>

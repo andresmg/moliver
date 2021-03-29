@@ -1,37 +1,10 @@
 import './Patients.css'
 import React, {useState, useEffect} from 'react'
-import {getAllPatients, createDate} from '../../services/ApiClient'
+import {getAllPatients, createDate, deleteDate} from '../../services/ApiClient'
 import Button from '../Button/Button'
 import AddDateModal from '../AddDateModal/AddDateModal'
 
 export default function Patients({user}) {
-
-
-    const [userData] = useState(user)
-    const [message, setMessage] = useState('')
-    const [patients, setPatients] = useState([])
-    const [search, setSearch] = useState('')
-    const [bool, setBool] = useState(false)
-    const [addUserDate, setAddUserDate] = useState('')
-
-    const handleChange = (e) => {
-        setSearch(e.target.value)
-    }
-
-    const filteredPatients = patients.filter(patient => {
-        return (
-            (patient.name.toLowerCase()).indexOf(search.toLocaleLowerCase()) > -1 || (patient.dni.toLowerCase()).indexOf(search.toLocaleLowerCase()) > -1
-        )
-    })
-
-    const showModal = (data) => {
-        setBool(!bool)
-        setAddUserDate(data)
-    }
-
-    const hideModal = () => {
-        setBool(!bool)
-    }
 
     const drawTime = (time) => {
         var months = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"]
@@ -51,12 +24,47 @@ export default function Patients({user}) {
         var date = d.getDate()
         var month = months[d.getMonth()]
         var year = d.getFullYear()
-        return day + " " + date + " " + month + " " + year + ' - ' + hr + ":" + min + ampm + " " 
+        return day + " " + date + " " + month + " " + year + ' - ' + hr + ":" + min + ampm + " "
+    }
+
+    const [userData] = useState(user)
+    const [message, setMessage] = useState('')
+    const [patients, setPatients] = useState([])
+    const [search, setSearch] = useState('')
+    const [bool, setBool] = useState(false)
+    const [addUserDate, setAddUserDate] = useState('')
+
+    const handleChange = (e) => {
+        setSearch(e.target.value)
+    }
+
+    const filteredPatients = patients.filter(patient => {
+        return (
+            (patient.name.toLowerCase()).indexOf(search.toLocaleLowerCase()) > -1 || (patient.dni.toLowerCase()).indexOf(search.toLocaleLowerCase()) > -1
+        )
+    })
+
+    const showModal = (data) => {
+        setAddUserDate(data)
+        setBool(!bool)
+    }
+
+    const hideModal = () => {
+        setBool(!bool)
     }
 
     const updateUserDate = async (data) => {
-        createDate(data)
+        await createDate(data)
+        const allPatients = await getAllPatients()
+        setPatients(allPatients)
         setBool(!bool)
+    }
+
+    const deleteUserDate = async (data) => {
+        const dateId = data.id
+        await deleteDate(dateId)
+        const allPatients = await getAllPatients()
+        setPatients(allPatients)
     }
 
     useEffect(() => {
@@ -70,7 +78,7 @@ export default function Patients({user}) {
             setMessage('No tiene los privilegios para visitar esta página.')
         }
         // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [bool])
+    }, [])
 
 
     return (
@@ -122,11 +130,18 @@ export default function Patients({user}) {
                                             <p className="card-text email-icon mt-5"><span className="">Email</span><br /> {el.email}</p>
                                             <p className="card-text phone-icon mt-5"><span className="">Teléfono</span><br /> {el.phone}</p>
                                             <p className="card-text address-icon mt-5"><span className="">Dirección</span><br /> {el.address}, {el.city} - {el.zipcode}</p>
-                                            {el.next_date.isDate === true && <p className="card-text calendar-icon mt-5"><span className="">Próxima cita</span><br /> {drawTime(el.next_date.date)}</p>
+                                            {el.next_date.isDate === true && <p className="card-text calendar-icon mt-5"><span className="">Próxima cita</span><br />
+                                                <div className="icons d-flex justify-content-between">{drawTime(el.next_date.date)}
+                                                    <span className="d-flex justify-content-start">
+                                                        <Button className="edit-icon" onClick={() => showModal(el)}></Button>
+                                                        <Button className="delete-icon" onClick={() => deleteUserDate(el)}></Button>
+                                                    </span>
+                                                </div>
+                                            </p>
                                             }
                                         </div>
                                         <div className="card-footer">
-                                            {el.next_date.isDate === false &&
+                                            {((new Date(el.next_date.date) < new Date()) || el.next_date.isDate === false) &&
                                                 <p className="card-text purple-bg"><Button className="secondary plus-icon" onClick={() => showModal(el)}>Agendar cita</Button></p>
                                             }
                                             <Button className="primary plus-icon" onClick={() => console.log('algo')}>Ver historia de {el.name}</Button>
