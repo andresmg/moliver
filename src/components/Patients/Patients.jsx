@@ -130,7 +130,7 @@ export default function Patients({user}) {
                                             <p className="card-text email-icon mt-5"><span className="">Email</span><br /> {el.email}</p>
                                             <p className="card-text phone-icon mt-5"><span className="">Teléfono</span><br /> {el.phone}</p>
                                             <p className="card-text address-icon mt-5"><span className="">Dirección</span><br /> {el.address}, {el.city} - {el.zipcode}</p>
-                                            {el.next_date.isDate === true && <p className="card-text calendar-icon mt-5"><span className="">Próxima cita</span><br />
+                                            {(new Date(el.next_date.date) > new Date()) && el.next_date.isDate === true && <p className="card-text calendar-icon mt-5"><span className="">Próxima cita</span><br />
                                                 <div className="icons d-flex justify-content-between">{drawTime(el.next_date.date)}
                                                     <span className="d-flex justify-content-start">
                                                         <Button className="edit-icon" onClick={() => showModal(el)}></Button>
