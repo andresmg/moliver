@@ -66,6 +66,9 @@
   }
 
   .calendar-icon {
+    border-top: solid 0.1rem rgba($text, 0.3);
+    padding-top: 1rem;
+
     &:before {
       background: url(../../images/calendar.svg) no-repeat center center /
         contain;
@@ -90,18 +93,23 @@
   .icons {
     [class*='-icon'] {
       border: 0;
-      width: 2.4rem;
-      height: 2.4rem;
+      width: 4rem;
+      height: 4rem;
+      border-radius: 4rem;
       margin-right: 1rem;
     }
 
     .edit-icon {
-      background: url(../../images/edit.svg) no-repeat center center / contain;
+      background: $green url(../../images/edit_white.svg) no-repeat center
+        center / contain;
+      background-size: 2rem;
     }
 
     .delete-icon {
-      background: url(../../images/delete.svg) no-repeat center center / contain;
+      background: $red url(../../images/delete_white.svg) no-repeat center
+        center / contain;
       margin-right: 2.4rem;
+      background-size: 2rem;
     }
   }
 }
