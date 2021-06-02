@@ -78,4 +78,3 @@ export const updatePassword = ({password, newpassword, id}) =>
     http.post(`/update-password/${id}`, {password, newpassword})
 
 export const deleteUser = (id) => http.get(`/user/${id}/delete`)
-

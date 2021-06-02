@@ -57,13 +57,16 @@ const Login = (props) => {
         }
     }
 
-
     const isError = Object.values(error).some(err => err)
+
     if (user && user.role === 'Guest') {
-        return <Redirect to="/my-info" />
+        return <Redirect to="/mi-info" />
     }
     if (user && user.role === 'Admin') {
-        return <Redirect to="/my-info" />
+        return <Redirect to="/mi-info" />
+    }
+    if (user && user.role === 'Temporary') {
+        return <Redirect to="/update-password" />
     }
 
     return (
