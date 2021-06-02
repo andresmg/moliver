@@ -1,11 +1,20 @@
-label {
-    margin-left: 1rem;
-}
-
-.form-check {
-    margin-bottom: 1rem;
-}
+@import '../../../stylesheets/variables';
 
 .CheckBoxWithLabel {
+
+  p {
+    margin-left: 1rem;
+  }
+
+  label {
+    margin-left: 1rem;
+  }
+
+  .form-check {
+    margin-bottom: 1rem;
+  }
+
+  .CheckBoxWithLabel {
     padding: 0 1.5rem;
+  }
 }

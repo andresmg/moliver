@@ -24,6 +24,7 @@ export const getAllbiopsies = () => http.get('/biopsies')
 export const getAllPatients = () => http.get('/patients')
 export const createDate = ({userId, date}) => http.post("/add-date", {userId, date})
 export const deleteDate = (dateId) => http.get(`/delete-date/${dateId}`)
+export const addPatient = ({name, email, dni, address, zipcode, city, phone, birthdate, sex, insurance_carrier, marital_status}) => http.post('/patient/add', {name, email, dni, address, zipcode, city, phone, birthdate, sex, insurance_carrier, marital_status})
 
 //user.routes
 export const login = ({email, password}) =>

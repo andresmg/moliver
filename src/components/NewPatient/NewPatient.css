@@ -1,1 +1,28 @@
-/* No CSS */
+h3 {
+  color: #43d9b2;
+}
+
+.biopsy-bg {
+  height: 30rem;
+  background: url(../../images/new-patient.jpg) no-repeat center center/cover;
+  border-radius: 1.6rem;
+  position: relative;
+}
+
+.biopsy-bg .user-info {
+  bottom: 6rem;
+  right: 10rem;
+  z-index: 20;
+}
+
+.tox .tox-statusbar {
+  display: none !important;
+}
+
+.new-patient label {
+  margin-bottom: 1rem;
+}
+
+.new-patient .tox {
+  margin-bottom: 3rem;
+}

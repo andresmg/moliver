@@ -1,11 +1,15 @@
-label {
+.CheckBoxWithLabel p {
   margin-left: 1rem;
 }
 
-.form-check {
+.CheckBoxWithLabel label {
+  margin-left: 1rem;
+}
+
+.CheckBoxWithLabel .form-check {
   margin-bottom: 1rem;
 }
 
-.CheckBoxWithLabel {
+.CheckBoxWithLabel .CheckBoxWithLabel {
   padding: 0 1.5rem;
 }
