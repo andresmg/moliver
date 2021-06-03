@@ -119,7 +119,7 @@ export default function Patients({user}) {
                         {filteredPatients.length === 0 ?
                             <h1 className="col-12 loader">Sin <span>resultados</span></h1> : filteredPatients.map(el =>
                                 <div className="col custom-block">
-                                    <div className="card h-100">
+                                    <div className="card">
                                         <div className="card-body">
                                             {user.role === 'Admin' &&
                                                 <>
@@ -127,18 +127,18 @@ export default function Patients({user}) {
                                                     <p className="card-text biopsy-date"><strong>Edad</strong> {new Date().getFullYear() - new Date(el.birthdate).getFullYear()}  año(s)</p>
                                                 </>
                                             }
-                                            <p className="card-text email-icon mt-5"><span className="">Email</span><br /> {el.email}</p>
-                                            <p className="card-text phone-icon mt-5"><span className="">Teléfono</span><br /> {el.phone}</p>
-                                            <p className="card-text address-icon mt-5"><span className="">Dirección</span><br /> {el.address}, {el.city} - {el.zipcode}</p>
-                                            {(new Date(el.next_date.date) > new Date()) && el.next_date.isDate === true && <p className="card-text calendar-icon">
-                                                <span className="">Próxima cita</span><br />
+                                            <div className="card-text email-icon mt-5"><span className="">Email</span><br /> {el.email}</div>
+                                            <div className="card-text phone-icon mt-5"><span className="">Teléfono</span><br /> {el.phone}</div>
+                                            <div className="card-text address-icon mt-5"><span className="">Dirección</span><br /> {el.address}, {el.city} - {el.zipcode}</div>
+                                            {(new Date(el.next_date.date) > new Date()) && el.next_date.isDate === true && <div className="card-text calendar-icon">
+                                                <span className="next-date">Próxima cita</span><br />
                                                 <div className="icons d-flex justify-content-between">{drawTime(el.next_date.date)}
-                                                    <span className="d-flex justify-content-start">
+                                                    <span className="d-flex justify-content-start flex-column position-absolute">
                                                         <Button className="edit-icon" onClick={() => showModal(el)}></Button>
                                                         <Button className="delete-icon" onClick={() => deleteUserDate(el)}></Button>
                                                     </span>
                                                 </div>
-                                            </p>
+                                            </div>
                                             }
                                         </div>
                                         <div className="card-footer">

@@ -72,6 +72,7 @@
       .card-body {
         position: relative;
         padding-top: 8rem;
+        font-size: 1.4rem;
 
         .biopsia,
         .biopsy-date {
@@ -93,7 +94,7 @@
         .biopsy-date {
           background: $green;
           display: inline-block;
-          top: 2.7rem;
+          top: 2.4rem;
         }
 
         .card-text {
@@ -122,24 +123,11 @@
       font-size: 1.2rem;
       position: absolute;
       left: 0;
-
-      &:before {
-        content: '';
-        width: 1.6rem;
-        height: 1.6rem;
-        display: inline-block;
-        margin-right: 1rem;
-      }
     }
 
     .patient-name {
       top: 2.9rem;
       background: #92b8eb;
-
-      &:before {
-        background: url(../../../images/user-profile-white.svg) no-repeat center
-          center / contain;
-      }
 
       span {
         color: $white;

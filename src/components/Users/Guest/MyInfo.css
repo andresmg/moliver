@@ -70,6 +70,7 @@
 .custom-card .custom-info .card .card-body {
   position: relative;
   padding-top: 8rem;
+  font-size: 1.4rem;
 }
 
 .custom-card .custom-info .card .card-body .biopsia,
@@ -92,7 +93,7 @@
 .custom-card .custom-info .card .card-body .biopsy-date {
   background: #43d9b2;
   display: inline-block;
-  top: 2.7rem;
+  top: 2.4rem;
 }
 
 .custom-card .custom-info .card .card-body .card-text {
@@ -121,21 +122,9 @@
   left: 0;
 }
 
-.custom-card .custom-info .patient-name:before {
-  content: '';
-  width: 1.6rem;
-  height: 1.6rem;
-  display: inline-block;
-  margin-right: 1rem;
-}
-
 .custom-card .custom-info .patient-name {
   top: 2.9rem;
   background: #92b8eb;
-}
-
-.custom-card .custom-info .patient-name:before {
-  background: url(../../../images/user-profile-white.svg) no-repeat center center/contain;
 }
 
 .custom-card .custom-info .patient-name span {

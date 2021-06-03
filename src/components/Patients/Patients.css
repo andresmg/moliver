@@ -12,6 +12,7 @@
 
 .patients .custom-info .card .card-body {
   padding: 4rem 0 0 0;
+  font-size: 1.4rem;
 }
 
 .patients .custom-info .card .card-body .card-text .patient-dni {
@@ -53,12 +54,24 @@
 }
 
 .patients .calendar-icon {
-  border-top: solid 0.1rem rgba(42, 55, 67, 0.3);
-  padding-top: 1rem;
+  border-top: solid 0.1rem #43d9b2;
+  padding: 1rem;
+  background: rgba(67, 217, 178, 0.16);
 }
 
 .patients .calendar-icon:before {
   background: url(../../images/calendar.svg) no-repeat center center/contain;
+}
+
+.patients .calendar-icon .next-date {
+  position: absolute;
+  top: -1rem;
+  left: 0;
+  background: #c0c8cf;
+  padding: 0.3rem 1rem 0.3rem 2rem;
+  border-radius: 0 1rem 1rem 0;
+  color: #fff;
+  font-size: 1.2rem;
 }
 
 .patients .card-footer {
@@ -78,19 +91,28 @@
 
 .patients .icons [class*='-icon'] {
   border: 0;
-  width: 4rem;
-  height: 4rem;
+  width: 2.4rem;
+  height: 2.4rem;
   border-radius: 4rem;
   margin-right: 1rem;
 }
 
+.patients .icons [class*='-icon']:hover {
+  opacity: 0.5;
+}
+
 .patients .icons .edit-icon {
   background: #43d9b2 url(../../images/edit_white.svg) no-repeat center center/contain;
-  background-size: 2rem;
+  background-size: 1.2rem;
 }
 
 .patients .icons .delete-icon {
   background: #e96571 url(../../images/delete_white.svg) no-repeat center center/contain;
-  margin-right: 2.4rem;
-  background-size: 2rem;
+  margin-top: 0.5rem;
+  background-size: 1.2rem;
+}
+
+.patients .icons .position-absolute {
+  top: 0.5rem;
+  right: 0.5rem;
 }
