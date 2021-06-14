@@ -15,7 +15,7 @@ const Header = () => {
                 <nav className="navbar navbar-expand-lg">
                     <div className="header-user">
                         <div className="navbar-brand">
-                            <NavLink to="/mi-info">
+                            <NavLink to="/biopsias">
                                 <h1 className="logo-header"><strong>Margarita</strong></h1>
                             </NavLink>
                         </div>
@@ -60,7 +60,7 @@ const Header = () => {
                             {user && user.role === 'Admin' &&
                                 <>
                                     <li className="nav-item">
-                                        <NavLink className="nav-link" to="/mi-info">Biopsias</NavLink>
+                                        <NavLink className="nav-link" to="/biopsias">Biopsias</NavLink>
                                     </li>
                                     <li className="nav-item">
                                         <NavLink className="nav-link" to="/pacientes">Pacientes</NavLink>

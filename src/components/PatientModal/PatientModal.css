@@ -1,0 +1,11 @@
+.PatientModal h1 {
+  font-weight: 300;
+  color: #43d9b2;
+}
+
+.PatientModal .user-info {
+  left: 3rem;
+  right: unset;
+  top: -6rem;
+  bottom: unset;
+}

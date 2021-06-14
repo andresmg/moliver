@@ -5,7 +5,7 @@ import Button from '../Form/FormButton/FormButton'
 import {useHistory} from 'react-router-dom'
 import {useFormState} from '../../hooks/useFormState'
 import {addPatient} from '../../services/ApiClient'
-import CheckBoxWithLabel from '../Form/CheckBoxWithLabel/CheckBoxWithLabel'
+import RadioButtonWithLabel from '../Form/RadioButtonWithLabel/RadioButtonWithLabel'
 
 export default function NewPatient({user}) {
 
@@ -23,6 +23,7 @@ export default function NewPatient({user}) {
                 phone: "",
                 birthdate: "",
                 sex: "",
+                work: "",
                 insurance_carrier: "",
                 marital_status: ""
             },
@@ -36,6 +37,7 @@ export default function NewPatient({user}) {
                 phone: true,
                 birthdate: true,
                 sex: true,
+                work: true,
                 insurance_carrier: true,
                 marital_status: true
             },
@@ -51,6 +53,7 @@ export default function NewPatient({user}) {
             phone: v => v.length,
             birthdate: v => v.length,
             sex: v => v.length,
+            work: v => v.length,
             insurance_carrier: v => v.length,
             marital_status: v => v.length
         }
@@ -170,16 +173,28 @@ export default function NewPatient({user}) {
                             </div>
 
                             <div className="row">
-                                <div className="col-12 col-sm-6">
-                                    <CheckBoxWithLabel data={['Hombre', 'Mujer']} name="sex"
+                                <div className="col-12 col-sm-4">
+                                    <InputWithLabel
+                                        value={data.work}
+                                        onBlur={onBlur}
+                                        onChange={onChange}
+                                        name="work"
+                                        type="text"
+                                        label="Ocupación"
+                                        className={`form-control ${touch.work && error.work ? "is-invalid" : ""}`}
+                                        placeholder="Ingresa ocupación del paciente"
+                                    />
+                                </div>
+                                <div className="col-12 col-sm-4">
+                                    <RadioButtonWithLabel data={['Hombre', 'Mujer']} name="sex"
                                         value={data.sex}
                                         onBlur={onBlur}
                                         onChange={onChange}
                                         label="Sexo"
                                     />
                                 </div>
-                                <div className="col-12 col-sm-6">
-                                    <CheckBoxWithLabel data={['Soltero/a', 'Casado/a']} name="marital_status"
+                                <div className="col-12 col-sm-4">
+                                    <RadioButtonWithLabel data={['Soltero/a', 'Casado/a']} name="marital_status"
                                         value={data.marital_status}
                                         onBlur={onBlur}
                                         onChange={onChange}

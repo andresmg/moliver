@@ -48,7 +48,7 @@ export default function UpdatePassword({user}) {
             setMessage('La contraseña ha sido actualizada')
             setTimeout(() => {
                 document.querySelector('.message').classList.add('d-none')
-                history.push('/mi-info')
+                history.push('/biopsias')
             }, 3000)
         } catch (err) {
             setRegisterError(err.response?.data?.message)

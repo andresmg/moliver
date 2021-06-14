@@ -49,7 +49,7 @@ export default function NewBiopsy({user}) {
 
         try {
             await addBiopsy(data)
-            history.push('/mi-info')
+            history.push('/biopsias')
         } catch (err) {
             setRegisterError(err.response?.data?.message)
         }
