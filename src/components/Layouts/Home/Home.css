@@ -1,1 +1,10 @@
-/* No CSS */
+.Home__h1 {
+  margin-bottom: 3rem;
+}
+
+.Home__card {
+  position: relative;
+  height: 20rem;
+  border-radius: 2rem;
+  margin: 1rem;
+}

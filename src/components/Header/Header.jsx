@@ -71,6 +71,9 @@ const Header = () => {
                                     <li className="nav-item">
                                         <NavLink className="nav-link" to="/nuevo-paciente">Agregar paciente</NavLink>
                                     </li>
+                                    <li className="nav-item">
+                                        <NavLink className="nav-link" to="/nuevo-blog">Agregar blog</NavLink>
+                                    </li>
                                 </>
                             }
                             {user &&
@@ -83,9 +86,6 @@ const Header = () => {
                                 <>
                                     <li className="nav-item">
                                         <NavLink activeClassName="active" className="nav-link" to="/">Inicio</NavLink>
-                                    </li>
-                                    <li className="nav-item">
-                                        <NavLink activeClassName="active" className="nav-link" to="/blog">Blog</NavLink>
                                     </li>
                                     <span className="user-logs">
                                         <li className="nav-item">

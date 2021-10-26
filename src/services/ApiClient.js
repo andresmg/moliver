@@ -64,6 +64,11 @@ export const dropBiopsy = (id) => http.get(`/biopsy/${id}/delete`)
 export const updateBiopsy = (id) => http.patch(`/biopsy/${id}/update`)
 export const addBiopsy = ({clinic_diagnosis, diagnostics, dni, material, name, reference, report}) => http.post('/biopsy/add', {clinic_diagnosis, diagnostics, dni, material, name, reference, report})
 
+//blog.routes
+export const getAllBlogs = () => http.get('/blogs')
+
+
+
 //crud.routes
 export const register = ({name, email, password, dni}) =>
     http.post("/register", {name, email, password, dni})
