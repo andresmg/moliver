@@ -1,0 +1,31 @@
+{
+  "files": {
+    "main.css": "/static/css/main.5a343526.chunk.css",
+    "main.js": "/static/js/main.d08d3fec.chunk.js",
+    "main.js.map": "/static/js/main.d08d3fec.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.0e34ab47.js",
+    "runtime-main.js.map": "/static/js/runtime-main.0e34ab47.js.map",
+    "static/css/2.34d5f2e6.chunk.css": "/static/css/2.34d5f2e6.chunk.css",
+    "static/js/2.d02c15ca.chunk.js": "/static/js/2.d02c15ca.chunk.js",
+    "static/js/2.d02c15ca.chunk.js.map": "/static/js/2.d02c15ca.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/2.34d5f2e6.chunk.css.map": "/static/css/2.34d5f2e6.chunk.css.map",
+    "static/css/main.5a343526.chunk.css.map": "/static/css/main.5a343526.chunk.css.map",
+    "static/js/2.d02c15ca.chunk.js.LICENSE.txt": "/static/js/2.d02c15ca.chunk.js.LICENSE.txt",
+    "static/media/Patients.css": "/static/media/phone.fb2b01d7.svg",
+    "static/media/Modal.css": "/static/media/edit.5841b2f0.svg",
+    "static/media/MyInfo.css": "/static/media/user-profile.a641f6a4.svg",
+    "static/media/Header.css": "/static/media/icon-logo.0449c8a6.svg",
+    "static/media/NewBiopsy.css": "/static/media/fondo-biopsy.ac4f44f3.jpg",
+    "static/media/styles.css": "/static/media/loader.16cb82e0.gif",
+    "static/media/Login.css": "/static/media/login-bg.ec9d3623.jpg",
+    "static/media/NewPatient.css": "/static/media/new-patient.2296898c.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.0e34ab47.js",
+    "static/css/2.34d5f2e6.chunk.css",
+    "static/js/2.d02c15ca.chunk.js",
+    "static/css/main.5a343526.chunk.css",
+    "static/js/main.d08d3fec.chunk.js"
+  ]
+}
