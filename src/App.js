@@ -21,7 +21,7 @@ function App() {
     <div className="App">
       <Header />
       <Switch>
-        <Route exact path="/" component={Home} />
+        {/* <Route exact path="/" component={Home} /> */}
         <Route exact path="/login" login component={Login} />
         <Route exact path="/register" login component={Register} />
         <Route exact path='/activate/:token' render={(props) => <Login {...props} confirmed />} />

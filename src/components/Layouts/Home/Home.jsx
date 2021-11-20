@@ -9,14 +9,6 @@ export default function Home() {
         return string?.length > n ? string.substr(0, n - 1) + '...' : string
     }
 
-    const date = (date) => {
-        const format = (s) => (s < 10 ? '0' + s : s)
-        var d = new Date(date)
-        return [format(d.getDate()), format(d.getMonth() + 1), d.getFullYear()].join(
-            '/'
-        )
-    }
-
     const [blogs, setBlogs] = useState([])
 
     useEffect(() => {
