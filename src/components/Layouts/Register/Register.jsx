@@ -44,7 +44,6 @@ const Register = (props) => {
         event.preventDefault()
 
         try {
-            console.log(data)
             await register(data)
             history.push('/login')
         } catch (err) {

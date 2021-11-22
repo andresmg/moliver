@@ -12,7 +12,6 @@ export default function PatientModal({user, onClick}) {
     useEffect(() => {
         const fetchData = async () => {
             const allHistories = await getPatientHistories(user.id)
-            console.log(allHistories)
             setPatientHistories(allHistories)
         }
         fetchData()

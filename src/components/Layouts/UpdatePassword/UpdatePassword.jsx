@@ -37,7 +37,6 @@ export default function UpdatePassword({user}) {
     const {data, error, touch} = state
 
     const updatePass = async (event) => {
-        console.log(data)
 
         event.preventDefault()
 

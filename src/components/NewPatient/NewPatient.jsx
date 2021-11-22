@@ -67,7 +67,6 @@ export default function NewPatient({user}) {
 
     const handleSubmit = async (event) => {
         event.preventDefault()
-        console.log(data)
         try {
             await addPatient(data)
             history.push('/pacientes')

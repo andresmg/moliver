@@ -15,7 +15,6 @@ export default function Home() {
         const fetchData = async () => {
             const allBlogs = await getAllBlogs()
             setBlogs(allBlogs)
-            console.log(allBlogs)
         }
         fetchData()
         // eslint-disable-next-line react-hooks/exhaustive-deps
