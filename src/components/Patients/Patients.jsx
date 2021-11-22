@@ -137,7 +137,8 @@ export default function Patients({user}) {
                                             {user.role === 'Admin' &&
                                                 <>
                                                     <p className="card-text biopsia">{el.name} <span className="patient-dni"><strong>CI </strong>{el.dni}</span></p>
-                                                    <p className="card-text biopsy-date"><strong>Edad</strong> {new Date().getFullYear() - new Date(el.birthdate).getFullYear()}  año(s)</p>
+                                                    {el.birthdate &&
+                                                    <p className="card-text biopsy-date"><strong>Edad</strong> {new Date().getFullYear() - new Date(el.birthdate).getFullYear()}  año(s)</p>}
                                                 </>
                                             }
                                             <div className="card-text email-icon mt-5"><span className="">Email</span><br /> {el.email}</div>

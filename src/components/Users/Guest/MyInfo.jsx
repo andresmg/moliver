@@ -65,7 +65,8 @@ export default function MyInfo({user}) {
                         {user.role === 'Admin' ? <div className="col-12"><strong>Admin</strong></div> :
                             <>
                                 <div className="col-6  dni"><strong>CI</strong> {userData.dni}</div>
-                                <div className="col-4 age"><strong>Edad</strong> {new Date().getFullYear() - new Date(userData.birthdate).getFullYear()}</div>
+                                {userData.birthdate &&
+                                    <div className="col-4 age"><strong>Edad</strong> {new Date().getFullYear() - new Date(userData.birthdate).getFullYear()}</div>}
                             </>
                         }
                     </div>
