@@ -63,7 +63,7 @@ const Login = (props) => {
         return <Redirect to="/biopsias" />
     }
     if (user && user.role === 'Admin') {
-        return <Redirect to="/biopsias" />
+        return <Redirect to="/admin" />
     }
     if (user && user.role === 'Temporary') {
         return <Redirect to="/update-password" />

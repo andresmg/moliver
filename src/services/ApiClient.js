@@ -1,8 +1,8 @@
 import axios from "axios"
 
 const http = axios.create({
-    baseURL: process.env.REACT_APP_API_URL || "http://localhost:3001",
-    // baseURL: "https://moliver-api.herokuapp.com/",
+    //baseURL: process.env.REACT_APP_API_URL || "http://localhost:3001",
+    baseURL: "https://moliver-api.herokuapp.com/",
     withCredentials: true,
 })
 
@@ -21,6 +21,7 @@ http.interceptors.response.use(
 )
 
 //admin.routes
+export const getSession = (user) => http.get('/session', user)
 export const getAllbiopsies = () => http.get('/biopsies')
 export const getAllPatients = () => http.get('/patients')
 export const deleteDate = (dateId) => http.get(`/delete-date/${dateId}`)

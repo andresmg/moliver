@@ -12,6 +12,7 @@ import NewBiopsy from './components/NewBiopsy/NewBiopsy'
 import Patients from './components/Patients/Patients'
 import NewPatient from './components/NewPatient/NewPatient'
 import UpdatePassword from './components/Layouts/UpdatePassword/UpdatePassword'
+import MyAdminInfo from './components/Users/Admin/MyAdminInfo'
 
 function App() {
 
@@ -27,6 +28,7 @@ function App() {
         <Route exact path='/activate/:token' render={(props) => <Login {...props} confirmed />} />
         <AuthenticatedRoute exact path="/pacientes" render={(props) => <Patients {...props} user={user} />} />
         <AuthenticatedRoute exact path="/biopsias" render={(props) => <MyInfo {...props} user={user} />} />
+        <AuthenticatedRoute exact path="/admin" render={(props) => <MyAdminInfo {...props} user={user} />} />
         <AuthenticatedRoute exact path="/update-password" render={(props) =>
           <UpdatePassword {...props} user={user} />} />
         <AuthenticatedRoute exact path="/nueva-biopsia" render={(props) => <NewBiopsy {...props} user={user} />} />
