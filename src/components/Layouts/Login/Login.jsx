@@ -68,6 +68,7 @@ const Login = (props) => {
     if (user && user.role === 'Temporary') {
         return <Redirect to="/update-password" />
     }
+    
 
     return (
         <>
