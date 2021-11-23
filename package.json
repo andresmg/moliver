@@ -10,6 +10,7 @@
     "@tinymce/tinymce-react": "^3.10.1",
     "axios": "^0.21.1",
     "bootstrap": "^5.0.0-beta1",
+    "firebase": "^9.5.0",
     "html-react-parser": "^1.2.4",
     "joi": "^17.4.2",
     "react": "^17.0.1",
