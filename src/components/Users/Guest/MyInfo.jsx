@@ -6,8 +6,6 @@ import {getAllbiopsies} from '../../../services/ApiClient'
 
 export default function MyInfo({user}) {
 
-    console.log(`paso por aquí soy un ${user.role}`)
-
     const [userData] = useState(user)
     const [admin, setAdmin] = useState(false)
     const [userBiopsies, setUserBiopsies] = useState(user.biopsies)
@@ -46,7 +44,6 @@ export default function MyInfo({user}) {
 
 
     useEffect(() => {
-        console.log(`HAGO EL USEFFECT COMO ${user.role}`)
         if (user.role === 'Admin') {
             const fetchData = async () => {
                 const allBiopsies = await getAllbiopsies()

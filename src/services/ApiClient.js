@@ -21,7 +21,6 @@ http.interceptors.response.use(
 )
 
 //admin.routes
-export const getSession = (user) => http.get('/session', user)
 export const getAllbiopsies = () => http.get('/biopsies')
 export const getAllPatients = () => http.get('/patients')
 export const deleteDate = (dateId) => http.get(`/delete-date/${dateId}`)
