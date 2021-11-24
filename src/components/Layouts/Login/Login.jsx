@@ -6,6 +6,8 @@ import InputWithLabel from '../../Form/InputWithLabel/InputWithLabel'
 import Button from '../../Form/FormButton/FormButton'
 import {Link, Redirect} from 'react-router-dom'
 import {useFormState} from '../../../hooks/useFormState'
+import {Reveal} from "react-awesome-reveal"
+import {keyframes} from "@emotion/react"
 
 
 const Login = (props) => {
@@ -68,59 +70,72 @@ const Login = (props) => {
     if (user && user.role === 'Temporary') {
         return <Redirect to="/update-password" />
     }
-    
+
+    const customAnimation = keyframes`
+    from {
+      opacity: 0;
+      transform: translate3d(0, -10rem, 0);
+    }
+  
+    to {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+    }`
+
 
     return (
         <>
             <section className="login container head-bg"></section>
-            <div className={props.login ? 'container-fluid my-info' : 'container-fluid my-info login-bg'}>
-                <div className="row justify-content-center">
-                    <div className="col-sm-6 col-xl-4 col-11 login-block">
-                        <h1>Ingresa con tu cuenta</h1>
+            <Reveal direction="up" duration={700} keyframes={customAnimation}>
+                <div className={props.login ? 'container-fluid my-info' : 'container-fluid my-info login-bg'}>
+                    <div className="row justify-content-center">
+                        <div className="col-sm-6 col-xl-4 col-11 login-block">
+                            <h1>Ingresa con tu cuenta</h1>
 
-                        {activate && <div className="message">Tu usuario ha sido activado exitosamente, por favor ingresa con tu usuario y contraseña.</div>}
+                            {activate && <div className="message">Tu usuario ha sido activado exitosamente, por favor ingresa con tu usuario y contraseña.</div>}
 
-                        <form onSubmit={handleSubmit}>
+                            <form onSubmit={handleSubmit}>
 
-                            <InputWithLabel
-                                value={data.email}
-                                onBlur={onBlur}
-                                onChange={onChange}
-                                name="email"
-                                type="text"
-                                label="Correo electrónico"
-                                className={`form-control ${touch.email && error.email ? "is-invalid" : ""}`}
-                                placeholder="Enter email"
+                                <InputWithLabel
+                                    value={data.email}
+                                    onBlur={onBlur}
+                                    onChange={onChange}
+                                    name="email"
+                                    type="text"
+                                    label="Correo electrónico"
+                                    className={`form-control ${touch.email && error.email ? "is-invalid" : ""}`}
+                                    placeholder="Enter email"
 
-                            />
+                                />
 
-                            <InputWithLabel
-                                value={data.password}
-                                onBlur={onBlur}
-                                onChange={onChange}
-                                name="password"
-                                type="password"
-                                label="Contraseña"
-                                className={`form-control ${touch.password && error.password ? "is-invalid" : ""}`}
-                                placeholder="Enter password"
-                            />
+                                <InputWithLabel
+                                    value={data.password}
+                                    onBlur={onBlur}
+                                    onChange={onChange}
+                                    name="password"
+                                    type="password"
+                                    label="Contraseña"
+                                    className={`form-control ${touch.password && error.password ? "is-invalid" : ""}`}
+                                    placeholder="Enter password"
+                                />
 
-                            {loginError && <div className="alert alert-danger">{loginError}</div>}
+                                {loginError && <div className="alert alert-danger">{loginError}</div>}
 
 
-                            <Button
-                                type="submit"
-                                className="Button Button__enter"
-                                disabled={isError}
-                            >Ingresa</Button>
-                        </form>
-                        <div className="col-12 d-flex justify-content-center options">
-                            <Link to="/register"><strong>Registrate aquí</strong></Link>
-                            <Link to="/forgot-password">¿Olvidaste tu contraseña?</Link>
+                                <Button
+                                    type="submit"
+                                    className="Button Button__enter"
+                                    disabled={isError}
+                                >Ingresa</Button>
+                            </form>
+                            <div className="col-12 d-flex justify-content-center options">
+                                <Link to="/register"><strong>Registrate aquí</strong></Link>
+                                <Link to="/forgot-password">¿Olvidaste tu contraseña?</Link>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            </Reveal>
         </>
     )
 }

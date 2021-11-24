@@ -5,6 +5,7 @@ import InputWithLabel from '../../Form/InputWithLabel/InputWithLabel'
 import Button from '../../Form/FormButton/FormButton'
 import {useHistory} from 'react-router-dom'
 import {useFormState} from '../../../hooks/useFormState'
+import {Fade} from 'react-awesome-reveal'
 
 
 
@@ -59,66 +60,68 @@ const Register = (props) => {
             <div className={props.login ? 'container-fluid my-info' : 'container-fluid my-info login-bg'}>
                 <div className="row justify-content-center">
                     <div className="col-sm-6 col-xl-4 col-11 login-block">
-                        <h1>Regístrate</h1>
+                        <Fade cascade triggerOnce>
+                            <h1>Regístrate</h1>
 
-                        <form onSubmit={handleSubmit}>
+                            <form onSubmit={handleSubmit}>
 
-                            <InputWithLabel
-                                value={data.name}
-                                onBlur={onBlur}
-                                onChange={onChange}
-                                name="name"
-                                type="text"
-                                label="Nombre completo"
-                                className={`form-control ${touch.name && error.name ? "is-invalid" : ""}`}
-                                placeholder="Ingresa tu nombre completo"
+                                <InputWithLabel
+                                    value={data.name}
+                                    onBlur={onBlur}
+                                    onChange={onChange}
+                                    name="name"
+                                    type="text"
+                                    label="Nombre completo"
+                                    className={`form-control ${touch.name && error.name ? "is-invalid" : ""}`}
+                                    placeholder="Ingresa tu nombre completo"
 
-                            />
+                                />
 
 
-                            <InputWithLabel
-                                value={data.email}
-                                onBlur={onBlur}
-                                onChange={onChange}
-                                name="email"
-                                type="text"
-                                label="Correo electrónico"
-                                className={`form-control ${touch.email && error.email ? "is-invalid" : ""}`}
-                                placeholder="Ingresa tu correo"
+                                <InputWithLabel
+                                    value={data.email}
+                                    onBlur={onBlur}
+                                    onChange={onChange}
+                                    name="email"
+                                    type="text"
+                                    label="Correo electrónico"
+                                    className={`form-control ${touch.email && error.email ? "is-invalid" : ""}`}
+                                    placeholder="Ingresa tu correo"
 
-                            />
+                                />
 
-                            <InputWithLabel
-                                value={data.dni}
-                                onBlur={onBlur}
-                                onChange={onChange}
-                                name="dni"
-                                type="text"
-                                label="Cédula o documento de identidad"
-                                className={`form-control ${touch.dni && error.dni ? "is-invalid" : ""}`}
-                                placeholder="Ingresa tu cédula"
+                                <InputWithLabel
+                                    value={data.dni}
+                                    onBlur={onBlur}
+                                    onChange={onChange}
+                                    name="dni"
+                                    type="text"
+                                    label="Cédula o documento de identidad"
+                                    className={`form-control ${touch.dni && error.dni ? "is-invalid" : ""}`}
+                                    placeholder="Ingresa tu cédula"
 
-                            />
+                                />
 
-                            <InputWithLabel
-                                value={data.password}
-                                onBlur={onBlur}
-                                onChange={onChange}
-                                name="password"
-                                type="password"
-                                label="Contraseña"
-                                className={`form-control ${touch.password && error.password ? "is-invalid" : ""}`}
-                                placeholder="Ingresa tu contraseña"
-                            />
+                                <InputWithLabel
+                                    value={data.password}
+                                    onBlur={onBlur}
+                                    onChange={onChange}
+                                    name="password"
+                                    type="password"
+                                    label="Contraseña"
+                                    className={`form-control ${touch.password && error.password ? "is-invalid" : ""}`}
+                                    placeholder="Ingresa tu contraseña"
+                                />
 
-                            {registerError && <div className="alert alert-danger">{registerError}</div>}
+                                {registerError && <div className="alert alert-danger">{registerError}</div>}
 
-                            <Button
-                                type="submit"
-                                className="Button Button__enter"
-                                disabled={isError}
-                            >Crear cuenta</Button>
-                        </form>
+                                <Button
+                                    type="submit"
+                                    className="Button Button__enter"
+                                    disabled={isError}
+                                >Crear cuenta</Button>
+                            </form>
+                        </Fade>
                     </div>
                 </div>
             </div>

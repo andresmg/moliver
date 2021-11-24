@@ -19,7 +19,6 @@ export default function MyInfo({user}) {
         setSearch(e.target.value)
     }
 
-
     const filteredBiopsies = userBiopsies.filter(biopsy => {
         return (
             (biopsy.number.toLowerCase()).indexOf(search.toLocaleLowerCase()) > -1 || (biopsy.reference.toLowerCase()).indexOf(search.toLocaleLowerCase()) > -1 || (biopsy.user.name.toLowerCase()).indexOf(search.toLocaleLowerCase()) > -1 || (biopsy.user.dni.toLowerCase()).indexOf(search.toLocaleLowerCase()) > -1
@@ -35,10 +34,22 @@ export default function MyInfo({user}) {
         }
     }
 
-    const hideModal = () => {
+    const onUpdate = async () => {
+        hideModal()
+        const allBiopsies = await getAllbiopsies()
+        setUserBiopsies(allBiopsies)
+    }
+
+    const hideModal = async (biopsyWasUpdated) => {
+
         setBool(!bool)
         if (user.role === 'Admin') {
             setAdmin(!admin)
+        }
+
+        if (biopsyWasUpdated) {
+            const allBiopsies = await getAllbiopsies()
+            setUserBiopsies(allBiopsies)
         }
     }
 
@@ -56,7 +67,7 @@ export default function MyInfo({user}) {
 
     return (
         <>
-            {bool && <Modal onClick={hideModal} data={biopsyData} admin={admin} />}
+            {bool && <Modal onUpdate={(updateData) => onUpdate(updateData)} onClick={(biopsyWasUpdated) => hideModal(biopsyWasUpdated)} biopsy={biopsyData} admin={admin} />}
             <section className="container head-bg">
                 <div className="user-info">
                     <div className="user-profile"></div>

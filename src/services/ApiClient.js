@@ -1,8 +1,8 @@
 import axios from "axios"
 
 const http = axios.create({
-    //baseURL: process.env.REACT_APP_API_URL || "http://localhost:3001",
-    baseURL: "https://moliver-api.herokuapp.com/",
+    baseURL: process.env.REACT_APP_API_URL || "http://localhost:3001",
+    //baseURL: "https://moliver-api.herokuapp.com/",
     withCredentials: true,
 })
 
@@ -62,7 +62,7 @@ export const activateUser = (token) => http.get(`/activate/${token}`)
 
 //biopsy.routes
 export const dropBiopsy = (id) => http.get(`/biopsy/${id}/delete`)
-export const updateBiopsy = (id) => http.patch(`/biopsy/${id}/update`)
+export const updateBiopsy = (id, data) => http.patch(`/biopsy/${id}/update`, {data})
 export const addBiopsy = ({clinic_diagnosis, diagnostics, dni, material, name, reference, report}) => http.post('/biopsy/add', {clinic_diagnosis, diagnostics, dni, material, name, reference, report})
 
 //blog.routes
