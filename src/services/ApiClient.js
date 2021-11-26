@@ -1,8 +1,8 @@
 import axios from "axios"
 
 const http = axios.create({
-    //baseURL: process.env.REACT_APP_API_URL || "http://localhost:3001",
-    baseURL: "https://moliver-api.herokuapp.com/",
+    baseURL: process.env.REACT_APP_API_URL || "http://localhost:3001",
+    //baseURL: "https://moliver-api.herokuapp.com/",
     withCredentials: true,
 })
 
@@ -67,8 +67,7 @@ export const addBiopsy = ({clinic_diagnosis, diagnostics, dni, material, name, r
 
 //blog.routes
 export const getAllBlogs = () => http.get('/blogs')
-
-
+export const createBlog = (data) => http.post('/blogs/add', {data})
 
 //crud.routes
 export const register = ({name, email, password, dni}) =>

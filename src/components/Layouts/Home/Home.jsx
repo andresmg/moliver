@@ -1,6 +1,7 @@
 import './Home.css'
 import React, {useState, useEffect} from 'react'
 import {getAllBlogs} from '../../../services/ApiClient'
+import {Link} from 'react-router-dom'
 
 
 export default function Home() {
@@ -33,7 +34,10 @@ export default function Home() {
 
                 <div class="row row-cols-1 row-cols-md-3 g-4">
                     {blogs.map(el =>
-                        <div class="col">
+                        <Link to={{
+                            pathname: '/blog',
+                            blogData: el
+                        }} class="col">
                             <div class="card h-100">
                                 <img src={el.picPath} class="card-img-top" alt={el.title} />
                                 <div class="card-body">
@@ -45,10 +49,9 @@ export default function Home() {
                                     <small class="text-muted">creado el {new Date(el.date).toLocaleDateString('es')}</small>
                                 </div>
                             </div>
-                        </div>)}
+                        </Link>
+                    )}
                 </div>
-
-
             </section>
         </>
     )

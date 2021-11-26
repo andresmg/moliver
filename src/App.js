@@ -12,6 +12,9 @@ import NewBiopsy from './components/NewBiopsy/NewBiopsy'
 import Patients from './components/Patients/Patients'
 import NewPatient from './components/NewPatient/NewPatient'
 import UpdatePassword from './components/Layouts/UpdatePassword/UpdatePassword'
+import NewBlog from './components/NewBlog/NewBlog'
+import Home from './components/Layouts/Home/Home'
+import BlogSingle from './components/Layouts/BlogSingle/BlogSingle'
 
 function App() {
 
@@ -21,17 +24,18 @@ function App() {
     <div className="App">
       <Header />
       <Switch>
-        {/* <Route exact path="/" component={Home} /> */}
+        <Route exact path="/" component={Home} />
         <Route exact path="/login" login component={Login} />
         <Route exact path="/register" login component={Register} />
         <Route exact path='/activate/:token' render={(props) => <Login {...props} confirmed />} />
+        <Route exact path='/blog' render={(props) => <BlogSingle {...props} confirmed />} />
         <AuthenticatedRoute exact path="/pacientes" render={(props) => <Patients {...props} user={user} />} />
         <AuthenticatedRoute exact path="/biopsias" render={(props) => <MyInfo {...props} user={user} />} />
         <AuthenticatedRoute exact path="/update-password" render={(props) =>
           <UpdatePassword {...props} user={user} />} />
         <AuthenticatedRoute exact path="/nueva-biopsia" render={(props) => <NewBiopsy {...props} user={user} />} />
         <AuthenticatedRoute exact path="/nuevo-paciente" render={(props) => <NewPatient {...props} user={user} />} />
-        {/* {user && <Redirect to='/biopsias' />} */}
+        <AuthenticatedRoute exact path="/nuevo-blog" render={(props) => <NewBlog {...props} user={user} />} />
         {!user && <Redirect to='/login' />}
       </Switch>
       <Footer />
