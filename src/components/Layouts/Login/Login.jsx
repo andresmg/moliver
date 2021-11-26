@@ -90,7 +90,7 @@ const Login = (props) => {
                 <div className={props.login ? 'container-fluid my-info' : 'container-fluid my-info login-bg'}>
                     <div className="row justify-content-center">
                         <div className="col-sm-6 col-xl-4 col-11 login-block">
-                            <h1>HOLAAAAAAAA Ingresa con tu cuenta</h1>
+                            <h1>Ingresa con tu cuenta</h1>
 
                             {activate && <div className="message">Tu usuario ha sido activado exitosamente, por favor ingresa con tu usuario y contraseña.</div>}
 
