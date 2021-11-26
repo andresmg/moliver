@@ -25,7 +25,6 @@ export default function MyInfo({user}) {
         )
     })
 
-
     const showModal = (data) => {
         setBool(!bool)
         setBiopsyData(data)
@@ -52,7 +51,6 @@ export default function MyInfo({user}) {
             setUserBiopsies(allBiopsies)
         }
     }
-
 
     useEffect(() => {
         if (user.role === 'Admin') {
@@ -83,7 +81,6 @@ export default function MyInfo({user}) {
                     </div>
                 </div>
             </section>
-
             <section className="container">
                 <div className="col-12">
                     {user.role === 'Admin' ?
@@ -91,7 +88,6 @@ export default function MyInfo({user}) {
                         <h1 className="title">Mis <span>biopsias</span></h1>}
                 </div>
             </section>
-
             <section className="container gray-bg">
                 <div className="row">
                     <div className="col-12 form-group search-icon">
