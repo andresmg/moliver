@@ -9,15 +9,12 @@ function BlogSingle(props) {
             <section className="container head-bg" style={{
                 background: `url(${data.picPath}) no-repeat center center / cover`,
             }}></section>
-            <section className="container Home">
+            <section className="container BlogSingle">
                 <div className="row">
-                    <div className="col-12 mt-5 Home__h1">
-                        <h1>{data.title}</h1>
+                    <div className="col-12 mt-5">
+                        <h1 className="BlogSingle__h1">{data.title}</h1>
+                        <p className="BlogSingle__desc" dangerouslySetInnerHTML={{__html: data.content}}></p>
                     </div>
-                </div>
-
-                <div class="row row-cols-1 row-cols-md-3 g-4">
-                    {data.content}
                 </div>
             </section>
         </>
