@@ -7,10 +7,13 @@ import {useFormState} from '../../hooks/useFormState'
 import {createBlog} from '../../services/ApiClient'
 import {Editor} from '@tinymce/tinymce-react'
 import InputFile from '../Form/InputFile/InputFile'
+import {app} from '../../services/firebase'
+
 
 function NewBlog({user}) {
 
     const [userData] = useState(user)
+    const [disabled, setDisabled] = useState(true)
 
     const {state, onChange} = useFormState(
         {
@@ -32,10 +35,36 @@ function NewBlog({user}) {
 
     const history = useHistory()
 
-    const {data, } = state
+    const {data} = state
+
+    const onFileSelected = async (e) => {
+        // Get file
+        const file = e.target.files[0]
+
+        // Create storage ref
+        const storageRef = app.storage().ref()
+        const filePath = storageRef.child('images/' + file.name)
+
+        // Upload file
+        await filePath.put(file)
+            .then(() => {
+                console.log('Uploaded')
+                //Se habilita el botón para subir el blog
+                setDisabled(!disabled)
+            })
+            .catch(err => {console.log(err)})
+
+
+        // Get file url
+        const fileUrl = await filePath.getDownloadURL()
+        data.picPath = fileUrl
+        console.log(fileUrl)
+
+    }
 
     const handleSubmit = async (event) => {
         event.preventDefault()
+        console.log(data)
 
         try {
             await createBlog(data)
@@ -80,15 +109,16 @@ function NewBlog({user}) {
                                 onChange={onChange}
                                 name="title"
                                 type="text"
-                                label="Nombre"
+                                label="Título"
                                 className="form-control"
-                                placeholder="Ingresa el nombre del paciente"
+                                placeholder="Ingresa título de la noticia"
 
                             />
 
                             <InputFile
                                 value={data.picpath}
-                                onChange={onChange}
+                                onChange={onFileSelected}
+                                id="fileButton"
                                 name="picpath"
                                 type="file"
                                 label="Imagen de portada"
@@ -96,7 +126,7 @@ function NewBlog({user}) {
                                 placeholder="Ingresa imagen de portada del paciente"
                             />
 
-                            <label>Contenido del blog</label>
+                            <label>Contenido</label>
                             <Editor
                                 apiKey="54r6mw2o9ngrlah90uhsoq3nelou082lxiq0tvwml3ryyfqw"
                                 init={{
@@ -117,6 +147,7 @@ function NewBlog({user}) {
                             <Button
                                 type="submit"
                                 className="Button Button__enter"
+                                disabled={disabled}
                             >Agregar biopsia</Button>
                         </form>
                     </div>
