@@ -7,6 +7,12 @@
   margin-left: 2rem;
 }
 
+.Home__falselink {
+  font-weight: 700;
+  color: #43d9b2;
+  margin: 0;
+}
+
 .Home__loadmore {
   font-size: 1.8rem;
   margin-top: 4rem;

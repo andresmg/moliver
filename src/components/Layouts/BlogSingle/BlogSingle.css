@@ -31,3 +31,9 @@
   font-weight: 700;
   display: block;
 }
+
+@media (max-width: 576px) {
+  .BlogSingle .login-block {
+    padding: 2rem;
+  }
+}

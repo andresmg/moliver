@@ -60,6 +60,7 @@ export default function Home() {
                                                 <small className="text-muted">{new Date(el.date).toLocaleDateString('es')}</small>
                                                 <small>{el.authorId.name}</small>
                                                 <p className="Home__desc" dangerouslySetInnerHTML={{__html: truncate(el.content, 200)}}></p>
+                                                <p className="Home__falselink">+ ver más</p>
                                             </div>
                                         </div>
                                     </Link>

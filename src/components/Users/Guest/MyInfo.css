@@ -222,3 +222,17 @@
 .title span {
   font-weight: 300;
 }
+
+@media (max-width: 576px) {
+  .user-info {
+    left: 1rem;
+    right: 1rem;
+  }
+  .user-info .user-profile {
+    height: 6.9rem;
+  }
+  .head-bg {
+    height: 20rem;
+    border-radius: 0;
+  }
+}

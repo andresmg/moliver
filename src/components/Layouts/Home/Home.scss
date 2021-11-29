@@ -9,6 +9,12 @@
     margin-left: 2rem;
   }
 
+  &__falselink {
+    font-weight: 700;
+    color: $green;
+    margin: 0;
+  }
+
   &__loadmore {
     font-size: 1.8rem;
     margin-top: 4rem;

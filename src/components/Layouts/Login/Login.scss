@@ -49,6 +49,9 @@
 }
 
 @media (max-width: 576px) {
+  .login-block {
+    padding: 3rem;
+  }
   .options {
     a:first-child {
       border-right: 0;

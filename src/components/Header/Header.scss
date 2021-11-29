@@ -1,197 +1,174 @@
 @import '../../stylesheets/variables';
 
-.navbar {
-  font-weight: 400;
-  align-items: center;
-  width: 100%;
-  padding: 0;
-  padding-right: 2rem;
-  margin: 2rem auto;
-
-  .logout {
-    font-weight: 700;
-    position: relative;
-    display: flex;
+.Header {
+  &__navbar {
+    font-weight: 400;
     align-items: center;
-    color: $green;
-
-    &:after {
-      content: '';
-      background: url(../../images/exit.svg) no-repeat center center;
-      display: inline-block;
-      width: 2rem;
-      height: 2rem;
-      margin-left: 1rem;
-      transition: all 200ms ease-in-out;
-    }
-
-    &:hover {
-      &:after {
-        margin-left: 1.6rem;
-      }
-    }
-  }
-
-  .user-logs {
-    border-left: 0;
-  }
-
-  .header-user {
+    width: 100%;
+    padding: 0;
+    padding-right: 2rem;
+    margin: 2rem auto;
     display: flex;
     justify-content: space-between;
-    align-items: center;
 
-    .user-hi {
-      color: $white;
-      border-left: solid 0.1rem $blue;
-      padding-left: 2rem;
-    }
-  }
-
-  .navbar-brand {
-    padding: 3rem 1rem 3rem 3rem;
-
-    a {
-      text-decoration: none;
+    .navbar-nav {
+      float: right;
     }
 
-    h1 {
-      color: $text;
-    }
-
-    .logo-header {
+    .logout {
+      font-weight: 700;
+      position: relative;
       display: flex;
       align-items: center;
-      position: relative;
-      font-size: 3rem;
-      text-transform: uppercase;
-      color: $green;
-
-      &:before {
-        content: '';
-        display: inline-block;
-        background: url(../../images/icon-logo.svg) no-repeat center center /
-          contain;
-        width: 3.2rem;
-        height: 3.2rem;
-        margin-right: 1.6rem;
-      }
+      color: $green !important;
 
       &:after {
-        content: 'Oliver';
-        display: block;
-        font-weight: 300;
-        color: $blue;
-        margin-left: 0.8rem;
-        position: absolute;
-        left: 4rem;
-        top: 2.4rem;
-
+        content: '';
+        background: url(../../images/exit.svg) no-repeat center center;
+        display: inline-block;
+        width: 2rem;
+        height: 2rem;
+        margin-left: 1rem;
+        transition: all 200ms ease-in-out;
       }
-    }
-  }
-
-  .navbar-collapse {
-    justify-content: flex-end;
-
-    ul {
-      justify-content: flex-end;
-    }
-  }
-
-  .nav-item {
-    margin-right: 3rem;
-    a {
-      color: rgba($text, 0.6);
-      transition: all 200ms ease;
 
       &:hover {
+        &:after {
+          margin-left: 1.6rem;
+        }
+      }
+    }
+
+    .user-logs {
+      border-left: 0;
+    }
+
+    .header-user {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .user-hi {
+        color: $white;
+        border-left: solid 0.1rem $blue;
+        padding-left: 2rem;
+      }
+    }
+
+    .navbar-brand {
+      padding: 3rem 1rem 3rem 3rem;
+
+      a {
+        text-decoration: none;
+      }
+
+      h1 {
+        color: $text;
+      }
+
+      .logo-header {
+        display: flex;
+        align-items: center;
+        position: relative;
+        font-size: 3rem;
+        text-transform: uppercase;
+        color: $green;
+
+        &:before {
+          content: '';
+          display: inline-block;
+          background: url(../../images/icon-logo.svg) no-repeat center center /
+            contain;
+          width: 3.2rem;
+          height: 3.2rem;
+          margin-right: 1.6rem;
+        }
+
+        &:after {
+          content: 'Oliver';
+          display: block;
+          font-weight: 300;
+          color: $blue;
+          margin-left: 0.8rem;
+          position: absolute;
+          left: 4rem;
+          top: 2.4rem;
+        }
+      }
+    }
+
+    .navbar-collapse {
+      justify-content: flex-end;
+
+      ul {
+        justify-content: flex-end;
+      }
+    }
+
+    .nav-item {
+      margin-right: 3rem;
+      display: inline-block;
+
+      a {
+        color: rgba($text, 0.6);
+        transition: all 200ms ease;
+
+        &.login {
+          background: $green;
+          color: $white;
+          padding: 0.8rem 3.2rem;
+          border-radius: 4rem;
+          position: relative;
+          margin-left: 3rem;
+
+          &:hover,
+          &.active {
+            color: $white;
+            background: $blue;
+          }
+
+          &.active {
+            pointer-events: none;
+          }
+        }
+
+        &:hover {
+          color: $blue;
+        }
+      }
+
+      .active {
         color: $blue;
       }
-    }
-
-    .active {
-      color: $blue;
-    }
-  }
-
-  .user-logs {
-    display: flex;
-
-    .login {
-      background: $green;
-      color: $white;
-      padding: 0.8rem 3.2rem;
-      border-radius: 4rem;
-      position: relative;
-      margin-left: 3rem;
-
-      &:hover,
-      &.active {
-        color: $white;
-        background: $blue;
-      }
-
-      &.active {
-        pointer-events: none;
-      }
-    }
-  }
-
-  .navbar-toggler {
-    color: $white;
-    outline: none;
-    margin-right: 1.6rem;
-    svg {
-      width: 2.4rem;
     }
   }
 }
 
 @media (max-width: 576px) {
-  .navbar {
-    .user-logs {
-      border-left: 0;
-      display: flex;
-      flex-direction: column;
-      border-top: solid 0.1rem $light-gray;
+  .Header {
+    &__navbar {
+      padding: 0;
+      padding-right: 0;
+      margin-bottom: 0;
+      position: relative;
 
-      .nav-item {
-        &:first-child {
-          display: flex;
-        }
-      }
-
-      .login {
-        margin-left: 0;
-        padding: 0;
-        padding-top: 1rem;
-        color: $blue;
-        background: none;
-        font-weight: 900;
+      .navbar-brand {
+        padding: 0 0 4rem 2rem;
       }
     }
 
-    .navbar-collapse {
-      padding: 0 2rem;
+    .resp_login {
+      color: $green;
+      text-decoration: none;
+      width: 4rem;
+      height: 4rem;
+      border-radius: 50%;
+      background: $green url(../../images/sign-in.svg) no-repeat center center /
+        2rem;
+      display: block;
       position: absolute;
-      width: 100%;
-      top: 8.4rem;
-      left: 0;
-      z-index: 50;
-    }
-  }
-
-  .module {
-    &.bg {
-      h1 {
-        margin-bottom: 4rem;
-        line-height: 3rem;
-        font-size: 10rem;
-        strong {
-          font-size: 7rem;
-        }
-      }
+      top: 1rem;
+      right: 1rem;
     }
   }
 }

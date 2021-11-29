@@ -37,3 +37,11 @@
     display: block;
   }
 }
+
+@media (max-width: 576px) {
+  .BlogSingle {
+    .login-block {
+      padding: 2rem;
+    }
+  }
+}

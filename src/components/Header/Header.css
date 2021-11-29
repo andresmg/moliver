@@ -1,21 +1,27 @@
-.navbar {
+.Header__navbar {
   font-weight: 400;
   align-items: center;
   width: 100%;
   padding: 0;
   padding-right: 2rem;
   margin: 2rem auto;
+  display: flex;
+  justify-content: space-between;
 }
 
-.navbar .logout {
+.Header__navbar .navbar-nav {
+  float: right;
+}
+
+.Header__navbar .logout {
   font-weight: 700;
   position: relative;
   display: flex;
   align-items: center;
-  color: #43d9b2;
+  color: #43d9b2 !important;
 }
 
-.navbar .logout:after {
+.Header__navbar .logout:after {
   content: '';
   background: url(../../images/exit.svg) no-repeat center center;
   display: inline-block;
@@ -25,39 +31,39 @@
   transition: all 200ms ease-in-out;
 }
 
-.navbar .logout:hover:after {
+.Header__navbar .logout:hover:after {
   margin-left: 1.6rem;
 }
 
-.navbar .user-logs {
+.Header__navbar .user-logs {
   border-left: 0;
 }
 
-.navbar .header-user {
+.Header__navbar .header-user {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.navbar .header-user .user-hi {
+.Header__navbar .header-user .user-hi {
   color: #fff;
   border-left: solid 0.1rem #4289dd;
   padding-left: 2rem;
 }
 
-.navbar .navbar-brand {
+.Header__navbar .navbar-brand {
   padding: 3rem 1rem 3rem 3rem;
 }
 
-.navbar .navbar-brand a {
+.Header__navbar .navbar-brand a {
   text-decoration: none;
 }
 
-.navbar .navbar-brand h1 {
+.Header__navbar .navbar-brand h1 {
   color: #2a3743;
 }
 
-.navbar .navbar-brand .logo-header {
+.Header__navbar .navbar-brand .logo-header {
   display: flex;
   align-items: center;
   position: relative;
@@ -66,7 +72,7 @@
   color: #43d9b2;
 }
 
-.navbar .navbar-brand .logo-header:before {
+.Header__navbar .navbar-brand .logo-header:before {
   content: '';
   display: inline-block;
   background: url(../../images/icon-logo.svg) no-repeat center center/contain;
@@ -75,7 +81,7 @@
   margin-right: 1.6rem;
 }
 
-.navbar .navbar-brand .logo-header:after {
+.Header__navbar .navbar-brand .logo-header:after {
   content: 'Oliver';
   display: block;
   font-weight: 300;
@@ -86,36 +92,25 @@
   top: 2.4rem;
 }
 
-.navbar .navbar-collapse {
+.Header__navbar .navbar-collapse {
   justify-content: flex-end;
 }
 
-.navbar .navbar-collapse ul {
+.Header__navbar .navbar-collapse ul {
   justify-content: flex-end;
 }
 
-.navbar .nav-item {
+.Header__navbar .nav-item {
   margin-right: 3rem;
+  display: inline-block;
 }
 
-.navbar .nav-item a {
+.Header__navbar .nav-item a {
   color: rgba(42, 55, 67, 0.6);
   transition: all 200ms ease;
 }
 
-.navbar .nav-item a:hover {
-  color: #4289dd;
-}
-
-.navbar .nav-item .active {
-  color: #4289dd;
-}
-
-.navbar .user-logs {
-  display: flex;
-}
-
-.navbar .user-logs .login {
+.Header__navbar .nav-item a.login {
   background: #43d9b2;
   color: #fff;
   padding: 0.8rem 3.2rem;
@@ -124,57 +119,43 @@
   margin-left: 3rem;
 }
 
-.navbar .user-logs .login:hover, .navbar .user-logs .login.active {
+.Header__navbar .nav-item a.login:hover, .Header__navbar .nav-item a.login.active {
   color: #fff;
   background: #4289dd;
 }
 
-.navbar .user-logs .login.active {
+.Header__navbar .nav-item a.login.active {
   pointer-events: none;
 }
 
-.navbar .navbar-toggler {
-  color: #fff;
-  outline: none;
-  margin-right: 1.6rem;
+.Header__navbar .nav-item a:hover {
+  color: #4289dd;
 }
 
-.navbar .navbar-toggler svg {
-  width: 2.4rem;
+.Header__navbar .nav-item .active {
+  color: #4289dd;
 }
 
 @media (max-width: 576px) {
-  .navbar .user-logs {
-    border-left: 0;
-    display: flex;
-    flex-direction: column;
-    border-top: solid 0.1rem #c0c8cf;
-  }
-  .navbar .user-logs .nav-item:first-child {
-    display: flex;
-  }
-  .navbar .user-logs .login {
-    margin-left: 0;
+  .Header__navbar {
     padding: 0;
-    padding-top: 1rem;
-    color: #4289dd;
-    background: none;
-    font-weight: 900;
+    padding-right: 0;
+    margin-bottom: 0;
+    position: relative;
   }
-  .navbar .navbar-collapse {
-    padding: 0 2rem;
+  .Header__navbar .navbar-brand {
+    padding: 0 0 4rem 2rem;
+  }
+  .Header .resp_login {
+    color: #43d9b2;
+    text-decoration: none;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    background: #43d9b2 url(../../images/sign-in.svg) no-repeat center center/2rem;
+    display: block;
     position: absolute;
-    width: 100%;
-    top: 8.4rem;
-    left: 0;
-    z-index: 50;
-  }
-  .module.bg h1 {
-    margin-bottom: 4rem;
-    line-height: 3rem;
-    font-size: 10rem;
-  }
-  .module.bg h1 strong {
-    font-size: 7rem;
+    top: 1rem;
+    right: 1rem;
   }
 }
