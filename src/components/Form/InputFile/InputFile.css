@@ -2,17 +2,34 @@ input {
   overflow: hidden;
 }
 
-.file-group .custom-file-label:after {
-  background: #211e35;
-  color: #fff;
-  border-radius: 0;
-  height: 3.8rem;
-  display: flex;
-  align-items: center;
+.custom-file-input {
+  display: block;
+  background: #fff;
+  font-size: 1.6rem;
+  border: solid 0.1rem rgba(66, 137, 221, 0.5);
+  border-radius: 0.8rem;
+  height: 4rem;
+  margin-bottom: 2rem;
+  width: 100%;
 }
 
-.file-group .custom-file-input {
+.custom-file-input::-webkit-file-upload-button {
+  display: none;
+}
+
+.custom-file-input:before {
+  content: 'Selecciona una imagen';
+  display: inline-flex;
+  align-content: center;
+  padding: 0 2rem;
+  padding-top: 0.6rem;
+  background: #43d9b2;
+  border: 0;
+  border-radius: 0.8rem 0 0 0.8rem;
   height: 4rem;
-  align-items: center;
-  display: flex;
+  outline: none;
+  white-space: nowrap;
+  cursor: pointer;
+  color: #fff;
+  margin-right: 1rem;
 }

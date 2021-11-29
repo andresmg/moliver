@@ -4,21 +4,34 @@ input {
   overflow: hidden;
 }
 
-.file-group {
-  .custom-file-label {
-    &:after {
-      background: $dark-blue;
-      color: $white;
-      border-radius: 0;
-      height: 3.8rem;
-      display: flex;
-      align-items: center;
-    }
+.custom-file-input {
+  display: block;
+  background: $white;
+  font-size: 1.6rem;
+  border: solid 0.1rem rgba(66, 137, 221, 0.5);
+  border-radius: 0.8rem;
+  height: 4rem;
+  margin-bottom: 2rem;
+  width: 100%;
+
+  &::-webkit-file-upload-button {
+    display: none;
   }
 
-  .custom-file-input {
-      height: 4rem;
-      align-items: center;
-      display: flex;
+  &:before {
+    content: 'Selecciona una imagen';
+    display: inline-flex;
+    align-content: center;
+    padding: 0 2rem;
+    padding-top: 0.6rem;
+    background: $green;
+    border: 0;
+    border-radius: 0.8rem 0 0 0.8rem;
+    height: 4rem;
+    outline: none;
+    white-space: nowrap;
+    cursor: pointer;
+    color: $white;
+    margin-right: 1rem;
   }
 }

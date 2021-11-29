@@ -139,7 +139,7 @@ function NewBlog({user}) {
                                         'insertdatetime media table paste wordcount'
                                     ],
                                     toolbar:
-                                        'bold italic | alignleft aligncenter alignright | bullist numlist'
+                                        'image | bold italic | alignleft aligncenter alignright | bullist numlist'
                                 }}
                                 onChange={handleContentChange}
                             />

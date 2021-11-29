@@ -1,0 +1,10 @@
+@import '../../../stylesheets/variables';
+
+.BlogSingle {
+  &__h1 {
+    color: $green;
+  }
+  .login-block {
+      background: $white;
+  }
+}

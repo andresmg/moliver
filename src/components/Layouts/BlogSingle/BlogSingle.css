@@ -1,1 +1,7 @@
-/* No CSS */
+.BlogSingle__h1 {
+  color: #43d9b2;
+}
+
+.BlogSingle .login-block {
+  background: #fff;
+}
