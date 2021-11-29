@@ -1,0 +1,15 @@
+.Footer {
+  background: #43d9b2;
+  color: #fff;
+  font-size: 1.2rem;
+  padding: 1rem;
+  margin-top: 3rem;
+}
+
+.Footer__link {
+  text-align: right;
+}
+
+.Footer__link a {
+  color: #fff;
+}
