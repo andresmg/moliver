@@ -1,0 +1,20 @@
+.NotFoundPage__h1 {
+  color: #43d9b2;
+  font-size: 6rem;
+}
+
+.NotFoundPage__btn {
+  background: #43d9b2;
+  color: #fff;
+  text-decoration: none;
+  padding: 0.8rem 3.2rem;
+  border-radius: 2rem;
+  margin-top: 3rem;
+  display: inline-block;
+  transition: all 0.3s ease-in-out;
+}
+
+.NotFoundPage__btn:hover {
+  background: #4289dd;
+  color: #fff;
+}
