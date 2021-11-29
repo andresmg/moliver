@@ -9,7 +9,7 @@
 
 .Home__loadmore {
   font-size: 1.8rem;
-  margin: 4rem auto;
+  margin-top: 4rem;
   color: #fff;
   background: #43d9b2;
   display: inline-block;
@@ -43,6 +43,7 @@
 
 .Home__img h2 {
   color: #fff;
+  font-weight: 400;
   background: rgba(67, 217, 178, 0.9);
   position: absolute;
   bottom: 0;
@@ -52,6 +53,7 @@
   z-index: 10;
   font-size: 1.4rem;
   margin: 0;
+  border-bottom: solid 0.1rem #aa8acf;
 }
 
 .Home__card {
@@ -91,4 +93,13 @@
 
 .Home__link:hover img {
   transform: scale(1.2);
+}
+
+@media (max-width: 576px) {
+  .Home__banner {
+    border-radius: 0;
+  }
+  .Home .login-block {
+    padding: 2rem 1rem;
+  }
 }

@@ -96,7 +96,7 @@ export default function NewPatient({user}) {
             <div className="container my-info new-patient">
                 <div className="row justify-content-center">
                     <div className="col-11 login-block">
-                        <h1>Nuevo paciente</h1>
+                        <h1 className="title">Nuevo <span>paciente</span></h1>
                         <h3>Datos del paciente</h3>
 
                         <form onSubmit={handleSubmit}>

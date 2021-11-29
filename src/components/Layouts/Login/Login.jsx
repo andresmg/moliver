@@ -86,7 +86,7 @@ const Login = (props) => {
     return (
         <>
             <section className="login container head-bg"></section>
-            <Reveal direction="up" duration={700} keyframes={customAnimation}>
+            <Reveal duration={700} keyframes={customAnimation}>
                 <div className={props.login ? 'container-fluid my-info' : 'container-fluid my-info login-bg'}>
                     <div className="row justify-content-center">
                         <div className="col-sm-6 col-xl-4 col-11 login-block">

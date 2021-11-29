@@ -1,9 +1,14 @@
 .Footer {
-  background: #43d9b2;
+  border-top: solid 0.1rem #43d9b2;
   color: #fff;
   font-size: 1.2rem;
   padding: 1rem;
   margin-top: 3rem;
+  background: linear-gradient(to right, #43d9b2, #4289dd);
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 20;
 }
 
 .Footer__link {
@@ -12,4 +17,11 @@
 
 .Footer__link a {
   color: #fff;
+  text-decoration: none;
+}
+
+@media (max-width: 576px) {
+  .Footer, .Footer__link {
+    text-align: center;
+  }
 }

@@ -1,17 +1,29 @@
 @import '../../stylesheets/variables';
 
 .Footer {
-  background: $green;
+  border-top: solid 0.1rem $green;
   color: $white;
   font-size: 1.2rem;
   padding: 1rem;
   margin-top: 3rem;
+  background: linear-gradient(to right, $green, $blue);
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 20;
 
   &__link {
       text-align: right;
 
       a {
           color: $white;
+          text-decoration: none;
       }
+  }
+}
+
+@media (max-width: 576px) {
+  .Footer, .Footer__link {
+    text-align: center;
   }
 }
