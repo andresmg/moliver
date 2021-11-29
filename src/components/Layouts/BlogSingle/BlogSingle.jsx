@@ -12,7 +12,9 @@ function BlogSingle(props) {
             }}></section>
             <div className="container my-info new-biopsy BlogSingle">
                 <div className="row justify-content-center">
-                    <div className="col-11 login-block">
+                    <div className="col-11 col-sm-8 login-block">
+                        <span className="BlogSingle__date">{new Date(data.date).toISOString().replace(/T.*/, '').split('-').reverse().join('-')}</span>
+                        <span className="BlogSingle__author">{data?.authorId?.name}</span>
                         <h1 className="BlogSingle__h1">{data?.title}</h1>
                         <p className="BlogSingle__desc" dangerouslySetInnerHTML={{__html: data?.content}}></p>
                     </div>

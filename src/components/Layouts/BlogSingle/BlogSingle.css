@@ -1,7 +1,32 @@
 .BlogSingle__h1 {
   color: #43d9b2;
+  border-top: solid 0.1rem #43d9b2;
+  padding-top: 1rem;
 }
 
 .BlogSingle .login-block {
   background: #fff;
+}
+
+.BlogSingle .login-block h1 {
+  margin-bottom: 4rem;
+}
+
+.BlogSingle__desc img {
+  width: 100%;
+  height: auto;
+  border-radius: 1.6rem;
+}
+
+.BlogSingle__author {
+  color: #4289dd;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.BlogSingle__date {
+  color: #aa8acf;
+  font-size: 1rem;
+  font-weight: 700;
+  display: block;
 }

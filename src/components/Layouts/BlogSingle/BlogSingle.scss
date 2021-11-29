@@ -3,8 +3,36 @@
 .BlogSingle {
   &__h1 {
     color: $green;
+    border-top: solid 0.1rem $green;
+    padding-top: 1rem;
   }
+
   .login-block {
-      background: $white;
+    background: $white;
+
+    h1 {
+      margin-bottom: 4rem;
+    }
+  }
+
+  &__desc {
+    img {
+      width: 100%;
+      height: auto;
+      border-radius: 1.6rem;
+    }
+  }
+
+  &__author {
+    color: $blue;
+    display: block;
+    margin-bottom: 1rem;
+  }
+
+  &__date {
+    color: $purple;
+    font-size: 1rem;
+    font-weight: 700;
+    display: block;
   }
 }
