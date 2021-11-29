@@ -1,11 +1,98 @@
+@import '../../../stylesheets/variables';
+
 .Home {
+  &__banner {
+    position: relative;
+  }
   &__h1 {
     margin-bottom: 3rem;
+    margin-left: 2rem;
   }
+
+  &__loadmore {
+    font-size: 1.8rem;
+    margin: 4rem auto;
+    color: $white;
+    background: $green;
+    display: inline-block;
+    padding: 0.8rem 3.2rem;
+    border-radius: 2rem;
+    transition: all 0.3s ease-in-out;
+
+
+    &:hover {
+      cursor: pointer;
+      background: $blue;
+    }
+  }
+
+  &__desc {
+    margin-top: 1rem;
+    border-top: solid 0.1rem $green;
+    padding-top: 1rem;
+  }
+
+  &__img {
+    overflow: hidden;
+    height: 14rem;
+    position: relative;
+
+    img {
+      height: auto;
+      width: 100%;
+      transition: all 0.3s ease-in-out;
+    }
+
+    h2 {
+      color: $white;
+      background: rgba($green, 0.9);
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      padding: 1rem;
+      z-index: 10;
+      font-size: 1.4rem;
+      margin: 0;
+    }
+  }
+
   &__card {
     position: relative;
     height: 20rem;
-    border-radius: 2rem;
+    border-radius: 1.6rem;
     margin: 1rem;
+    overflow: hidden;
+    border: 0;
+    box-shadow: 0 1.4rem 4.2rem -0.5rem rgba(0, 0, 0, 0.5);
+
+    .card-body {
+      padding: 2rem;
+
+      small {
+        color: $blue;
+        font-weight: 700;
+
+        &.text-muted {
+          color: $purple !important;
+          display: block;
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    color: $text;
+    margin-bottom: 2rem;
+
+    &:hover {
+      color: $text;
+
+      img {
+        transform: scale(1.2);
+      }
+    }
   }
 }
