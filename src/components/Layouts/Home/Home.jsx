@@ -66,11 +66,13 @@ export default function Home() {
                                     </Link>
                                 )}
                             </div>
-                            <div className="row">
-                                <div className="col-12 d-flex justify-content-center">
-                                    <div className="Home__loadmore" onClick={showMore}>Cargar más casos</div>
+                            {blogs.length > blogLoaded &&
+                                <div className="row">
+                                    <div className="col-12 d-flex justify-content-center">
+                                        <div className="Home__loadmore" onClick={showMore}>Ver más casos</div>
+                                    </div>
                                 </div>
-                            </div>
+                            }
                         </div>
                     </div>
                 </section>
