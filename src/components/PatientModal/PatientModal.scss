@@ -1,10 +1,37 @@
 @import '../../stylesheets/variables';
 
 .PatientModal {
-
-  h1 {
+  &__patient {
     font-weight: 300;
-    color: $green;
+    color: $white;
+    display: inline-flex;
+    padding: 0.8rem 3.2rem;
+    border-radius: 0.8rem 4rem 4rem 0;
+    position: absolute;
+    top: -0.2rem;
+    left: -0.2rem;
+    background: $green;
+    font-size: 1.8rem;
+    align-items: center;
+
+    &:after {
+      content: 'Historias';
+      font-weight: 700;
+      color: $white;
+      display: inline-block;
+      padding: 0.4rem 3.2rem;
+      border-radius: 0.8rem 4rem 4rem 0;
+      position: absolute;
+      top: 4.2rem;
+      left: 0;
+      background: $purple;
+      font-size: 1.4rem;
+    }
+
+    strong {
+      font-size: 1.4rem;
+      margin-left: 1rem;
+    }
   }
 
   .user-info {
@@ -12,5 +39,11 @@
     right: unset;
     top: -6rem;
     bottom: unset;
+  }
+
+  .modal-body {
+    padding-top: 12rem;
+    height: 80vh;
+    overflow: scroll;
   }
 }

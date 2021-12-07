@@ -3,7 +3,7 @@ import React, {useState, useEffect} from 'react'
 import {getPatientHistories} from '../../services/ApiClient'
 
 
-export default function PatientModal({user, onClick}) {
+export default function PatientModal({patient, onClick}) {
 
     // eslint-disable-next-line no-unused-vars
     const [closeModal, setCloseModal] = useState(false)
@@ -11,7 +11,7 @@ export default function PatientModal({user, onClick}) {
 
     useEffect(() => {
         const fetchData = async () => {
-            const allHistories = await getPatientHistories(user.id)
+            const allHistories = await getPatientHistories(patient.id)
             setPatientHistories(allHistories)
         }
         fetchData()
@@ -26,19 +26,18 @@ export default function PatientModal({user, onClick}) {
                     <div className="row justify-content-center">
                         <div className="col-11 modal-body">
                             <span className="close" onClick={onClick}></span>
-                            <h1>{user.name}</h1>
-                            <div>{user.dni}</div>
-                            <h1>Historias</h1>
+                            <p className="PatientModal__patient">{patient.name} <strong>{patient.dni}</strong></p>
                             {patientHistories.map(el =>
                                 <>
                                     <div className="patient-history">
-                                        {el.date}
-                                        {el.visit_reason}
-                                        {el.clinic_history}
-                                        {el.diagnostics}
-                                        {el.treatment}
+                                        <p className="PatientModal__date"><small>Consulta del </small>{new Date(el.date).getDate()} / {new Date(el.date).getMonth()} / {new Date(el.date).getFullYear()}</p>
+                                        <p className="PatientModal__reason"><small>Razón de la visita</small> {el.visit_reason}</p>
+                                        <p className="PatientModal__history"><small>Historia clínica</small> {el.clinic_history}</p>
+                                        <p className="PatientModal__diagnostic"><small>Diagnóstico</small> {el.diagnostics}</p>
+                                        <p className="PatientModal__treatment"><small>Tratamiento</small> {el.treatment}</p>
                                     </div><hr></hr>
-                                </>)}
+                                </>
+                            )}
                         </div>
                     </div>
                 </div>

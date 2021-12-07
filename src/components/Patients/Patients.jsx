@@ -96,7 +96,7 @@ export default function Patients({user}) {
     return (
         <>
             {bool && <AddDateModal onClick={hideModal} user={addUserDate} onSetDate={updateUserDate} />}
-            {patientModalBool && <PatientModal onClick={hidePatientHistoryModal} user={patientData} />}
+            {patientModalBool && <PatientModal onClick={hidePatientHistoryModal} patient={patientData} />}
             <section className="container head-bg">
                 <div className="user-info">
                     <div className="user-profile"></div>
