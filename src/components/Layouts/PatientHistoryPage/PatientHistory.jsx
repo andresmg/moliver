@@ -22,7 +22,7 @@ function PatientHistory(props) {
 
     return (
         <>
-        {histModal && <HistModal patient={patient} onClick={() => setHistModal(!histModal)}/>}
+        {histModal && <HistModal updatedHistories={(data) => setPatientHistories(data)} patient={patient} onClick={() => setHistModal(!histModal)}/>}
             <section className="container head-bg PatientHistory__bg">
                 <div className="user-info">
                     <div className="user-profile"></div>

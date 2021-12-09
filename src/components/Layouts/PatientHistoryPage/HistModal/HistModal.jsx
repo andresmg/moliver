@@ -10,7 +10,7 @@ import {addHistory} from '../../../../services/ApiClient'
 import DateTimePicker from "react-datetime-picker"
 
 
-function HistModal({patient, onClick}) {
+function HistModal({patient, onClick, updatedHistories}) {
     const {state, onBlur, onChange} = useFormState(
         {
             data: {
@@ -39,9 +39,33 @@ function HistModal({patient, onClick}) {
         }
     )
 
+    const customAnimation = keyframes`
+    from {
+      opacity: 0;
+      transform: translate3d(0, -10rem, 0);
+    }
+  
+    to {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+    }`
+
+    const hideUp = keyframes`
+    from {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+    }
+
+    to {
+    opacity: 0;
+    transform: translate3d(0, -10rem, 0);
+    }`
+
     const [registerError, setRegisterError] = useState(null)
     // eslint-disable-next-line no-unused-vars
     const [date, setDate] = useState(new Date())
+    const [animation, setAnimation] = useState(customAnimation)
+
     const {data, error} = state
 
     const setTime = (e) => {
@@ -53,8 +77,10 @@ function HistModal({patient, onClick}) {
         event.preventDefault()
 
         try {
-            console.log(patient.id, data)
-            // await addHistory(patient.id, data)
+            const updateHistories = await addHistory(patient.id, data)
+            updatedHistories(updateHistories)
+            setAnimation(hideUp)
+            onClick()
 
         } catch (err) {
             setRegisterError(err.response?.data?.message)
@@ -71,20 +97,9 @@ function HistModal({patient, onClick}) {
 
     const isError = Object.values(error).some(err => err)
 
-    const customAnimation = keyframes`
-    from {
-      opacity: 0;
-      transform: translate3d(0, -10rem, 0);
-    }
-  
-    to {
-      opacity: 1;
-      transform: translate3d(0, 0, 0);
-    }`
-
     return (
         <div className="HistModal">
-            <Reveal direction="up" duration={700} keyframes={customAnimation}>
+            <Reveal direction="up" duration={700} keyframes={animation}>
                 <>
                     <div className="container HistModal__body">
                         <span className="close" onClick={onClick}></span>
@@ -95,7 +110,7 @@ function HistModal({patient, onClick}) {
                                 </h1>
                                 <form onSubmit={handleSubmit}>
                                     <div className="row">
-                                        <div className="col-12">
+                                        <div className="col-12 col-sm-4">
                                             <div className="form-group">
                                                 <label className="label" htmlFor="date">
                                                     Fecha de la visita
@@ -108,7 +123,7 @@ function HistModal({patient, onClick}) {
                                                 />
                                             </div>
                                         </div>
-                                        <div className="col-12 col-sm-6">
+                                        <div className="col-12 col-sm-4">
                                             <InputWithLabel
                                                 value={data.visit_reason}
                                                 onChange={onChange}
@@ -120,7 +135,7 @@ function HistModal({patient, onClick}) {
 
                                             />
                                         </div>
-                                        <div className="col-12 col-sm-6">
+                                        <div className="col-12 col-sm-4">
                                             <InputWithLabel
                                                 value={data.clinic_history}
                                                 onBlur={onBlur}
