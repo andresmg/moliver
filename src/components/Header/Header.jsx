@@ -40,20 +40,20 @@ const Header = () => {
                                     <NavLink className="nav-link" to="/pacientes">Pacientes</NavLink>
                                 </li>
                                 <li className="nav-item">
-                                    <NavLink className="nav-link" to="/nueva-biopsia">Agregar biopsia</NavLink>
+                                    <NavLink className="nav-link" to="/nueva-biopsia">Nueva biopsia</NavLink>
                                 </li>
                                 <li className="nav-item">
-                                    <NavLink className="nav-link" to="/nuevo-paciente">Agregar paciente</NavLink>
+                                    <NavLink className="nav-link" to="/nuevo-paciente">Nuevo paciente</NavLink>
                                 </li>
                                 <li className="nav-item">
-                                    <NavLink className="nav-link" to="/nuevo-blog">Agregar blog</NavLink>
+                                    <NavLink className="nav-link" to="/nuevo-blog">Nuevo caso</NavLink>
                                 </li>
                             </>
                         }
                         {user &&
-                                <li className="nav-item">
-                                    <NavLink to="/"  activeClassName="active" className="nav-link logout" onClick={logout}>Salir</NavLink>
-                                </li>
+                            <li className="nav-item">
+                                <NavLink to="/" activeClassName="active" className="nav-link logout" onClick={logout}>Salir</NavLink>
+                            </li>
                         }
                         {!user &&
                             <>

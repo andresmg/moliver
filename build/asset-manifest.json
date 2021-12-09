@@ -1,23 +1,24 @@
 {
   "files": {
-    "main.css": "/static/css/main.64aaf21b.chunk.css",
-    "main.js": "/static/js/main.cc168611.chunk.js",
-    "main.js.map": "/static/js/main.cc168611.chunk.js.map",
+    "main.css": "/static/css/main.3c1eadbb.chunk.css",
+    "main.js": "/static/js/main.fb12efec.chunk.js",
+    "main.js.map": "/static/js/main.fb12efec.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.34e82882.js",
     "runtime-main.js.map": "/static/js/runtime-main.34e82882.js.map",
     "static/css/2.06d3bf38.chunk.css": "/static/css/2.06d3bf38.chunk.css",
-    "static/js/2.2a28d3f4.chunk.js": "/static/js/2.2a28d3f4.chunk.js",
-    "static/js/2.2a28d3f4.chunk.js.map": "/static/js/2.2a28d3f4.chunk.js.map",
+    "static/js/2.e4973ea7.chunk.js": "/static/js/2.e4973ea7.chunk.js",
+    "static/js/2.e4973ea7.chunk.js.map": "/static/js/2.e4973ea7.chunk.js.map",
     "index.html": "/index.html",
     "static/css/2.06d3bf38.chunk.css.map": "/static/css/2.06d3bf38.chunk.css.map",
-    "static/css/main.64aaf21b.chunk.css.map": "/static/css/main.64aaf21b.chunk.css.map",
-    "static/js/2.2a28d3f4.chunk.js.LICENSE.txt": "/static/js/2.2a28d3f4.chunk.js.LICENSE.txt",
+    "static/css/main.3c1eadbb.chunk.css.map": "/static/css/main.3c1eadbb.chunk.css.map",
+    "static/js/2.e4973ea7.chunk.js.LICENSE.txt": "/static/js/2.e4973ea7.chunk.js.LICENSE.txt",
     "static/media/Patients.css": "/static/media/phone.fb2b01d7.svg",
-    "static/media/EditModal.css": "/static/media/close.41e117c7.svg",
+    "static/media/HistModal.css": "/static/media/close.41e117c7.svg",
     "static/media/Modal.css": "/static/media/edit.5841b2f0.svg",
     "static/media/MyInfo.css": "/static/media/user-profile.a641f6a4.svg",
     "static/media/Header.css": "/static/media/sign-in.d0f1bc4f.svg",
     "static/media/NewBiopsy.css": "/static/media/fondo-biopsy.ac4f44f3.jpg",
+    "static/media/PatientHistory.css": "/static/media/plus-white.4c487db4.svg",
     "static/media/styles.css": "/static/media/loader.16cb82e0.gif",
     "static/media/Login.css": "/static/media/login-bg.ec9d3623.jpg",
     "static/media/NewPatient.css": "/static/media/new-patient.2296898c.jpg"
@@ -25,8 +26,8 @@
   "entrypoints": [
     "static/js/runtime-main.34e82882.js",
     "static/css/2.06d3bf38.chunk.css",
-    "static/js/2.2a28d3f4.chunk.js",
-    "static/css/main.64aaf21b.chunk.css",
-    "static/js/main.cc168611.chunk.js"
+    "static/js/2.e4973ea7.chunk.js",
+    "static/css/main.3c1eadbb.chunk.css",
+    "static/js/main.fb12efec.chunk.js"
   ]
 }

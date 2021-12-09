@@ -24,6 +24,8 @@
 
       &:after {
         content: '';
+        position: absolute;
+        right: -2.4rem;
         background: url(../../images/exit.svg) no-repeat center center;
         display: inline-block;
         width: 2rem;
@@ -35,6 +37,7 @@
       &:hover {
         &:after {
           margin-left: 1.6rem;
+          right: -2.8rem;
         }
       }
     }

@@ -23,6 +23,8 @@
 
 .Header__navbar .logout:after {
   content: '';
+  position: absolute;
+  right: -2.4rem;
   background: url(../../images/exit.svg) no-repeat center center;
   display: inline-block;
   width: 2rem;
@@ -33,6 +35,7 @@
 
 .Header__navbar .logout:hover:after {
   margin-left: 1.6rem;
+  right: -2.8rem;
 }
 
 .Header__navbar .user-logs {
