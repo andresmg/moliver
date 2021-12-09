@@ -21,6 +21,7 @@ http.interceptors.response.use(
 )
 
 //admin.routes
+export const addHistory = (id, data) => http.post(`/add-history/${id}`, {data})
 export const getAllbiopsies = () => http.get('/biopsies')
 export const getAllPatients = () => http.get('/patients')
 export const deleteDate = (dateId) => http.get(`/delete-date/${dateId}`)

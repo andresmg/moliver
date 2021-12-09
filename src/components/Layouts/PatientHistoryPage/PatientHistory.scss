@@ -2,8 +2,8 @@
 
 .PatientHistory {
   &__bg {
-    background: url(../../../images/history-patientbg.jpg) no-repeat center center /
-      cover;
+    background: url(../../../images/history-patientbg.jpg) no-repeat center
+      center / cover;
   }
   &__patient {
     font-weight: 300;
@@ -45,8 +45,22 @@
     bottom: unset;
   }
 
-  .modal-body {
-    padding-top: 10rem;
+  &__add-history {
+    width: 5rem;
+    height: 7.6rem;
+    background: $green url(../../../images/plus-white.svg) no-repeat
+      center center/contain;
+    background-size: 2rem 2rem;
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-radius: 0 1.6rem 1.6rem 0;
+    border: 0;
+  }
+
+  &__body {
+    padding-top: 8rem;
     position: relative;
     border-radius: 0 0 0.8rem 0.8rem;
   }

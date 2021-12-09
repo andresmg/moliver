@@ -2,12 +2,13 @@ import './PatientHistory.css'
 import React, {useState, useEffect} from 'react'
 import {getPatientHistories} from '../../../services/ApiClient'
 import {drawTime} from '../../../helpers/globals'
+import HistModal from './HistModal/HistModal'
 
 function PatientHistory(props) {
     const patient = props.location.patientData
-    const user = props.user
 
     const [patientHistories, setPatientHistories] = useState([])
+    const [histModal, setHistModal] = useState(false)
 
     useEffect(() => {
         const fetchData = async () => {
@@ -21,22 +22,26 @@ function PatientHistory(props) {
 
     return (
         <>
+        {histModal && <HistModal patient={patient} onClick={() => setHistModal(!histModal)}/>}
             <section className="container head-bg PatientHistory__bg">
                 <div className="user-info">
                     <div className="user-profile"></div>
                     <div className="row user-info-row">
                         <div className="col-12 col-sm-10 name"><h1>{patient.name}</h1></div>
-                        <div className="col-6  dni"><strong>CI</strong> {patient.dni}</div>
+                        <div className="col-6 dni"><strong>CI</strong> {patient.dni}</div>
                         {patient.birthdate &&
-                            <div className="col-4 age"><strong>Edad</strong> {new Date().getFullYear() - new Date(patient.birthdate).getFullYear()}</div>}
+                            <div className="col-4 age">
+                                <strong>Edad</strong> {new Date().getFullYear() - new Date(patient.birthdate).getFullYear()}
+                            </div>
+                        }
                     </div>
+                    <div className="PatientHistory__add-history" onClick={() => setHistModal(!histModal)}></div>
                 </div>
             </section>
             <div className="PatientHistory">
                 <div className="container">
                     <div className="row justify-content-end">
-                        <div className="col-2 PatientHistory__addHistory">Añadir historia</div>
-                        <div className="col-12 modal-body">
+                        <div className="col-12 PatientHistory__body">
                             {patientHistories.map(el =>
                                 <>
                                     <div className="PatientHistory__history">
