@@ -1,3 +1,7 @@
+.PatientHistory__bg {
+  background: url(../../../images/history-patientbg.jpg) no-repeat center center/cover;
+}
+
 .PatientHistory__patient {
   font-weight: 300;
   color: #fff;
