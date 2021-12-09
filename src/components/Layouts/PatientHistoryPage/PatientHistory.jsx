@@ -1,6 +1,7 @@
 import './PatientHistory.css'
 import React, {useState, useEffect} from 'react'
 import {getPatientHistories} from '../../../services/ApiClient'
+import {drawTime} from '../../../helpers/globals'
 
 function PatientHistory(props) {
     const patient = props.location.patientData
@@ -27,7 +28,7 @@ function PatientHistory(props) {
                         {patientHistories.map(el =>
                             <>
                                 <div className="PatientHistory__history">
-                                    <p className="PatientHistory__date">Consulta del {new Date(el.date).getDate()} / {new Date(el.date).getMonth()} / {new Date(el.date).getFullYear()}</p>
+                                    <p className="PatientHistory__date">Consulta del {drawTime(el.date)}</p>
                                     <small>Razón de la visita</small>
                                     <p className="PatientHistory__reason"> {el.visit_reason}</p>
                                     <small>Historia clínica</small>

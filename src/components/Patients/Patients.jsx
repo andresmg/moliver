@@ -3,31 +3,10 @@ import React, {useState, useEffect} from 'react'
 import {getAllPatients, createDate, deleteDate} from '../../services/ApiClient'
 import Button from '../Button/Button'
 import AddDateModal from '../AddDateModal/AddDateModal'
-import PatientModal from '../PatientModal/PatientModal'
 import {Link} from 'react-router-dom'
+import {drawTime} from '../../helpers/globals'
 
 export default function Patients({user}) {
-
-    const drawTime = (time) => {
-        var months = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"]
-        var days = ["Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"]
-        var d = new Date(time)
-        var day = days[d.getDay()]
-        var hr = d.getHours()
-        var min = d.getMinutes()
-        if (min < 10) {
-            min = "0" + min
-        }
-        var ampm = "am"
-        if (hr > 12) {
-            hr -= 12
-            ampm = "pm"
-        }
-        var date = d.getDate()
-        var month = months[d.getMonth()]
-        var year = d.getFullYear()
-        return day + " " + date + " " + month + " " + year + ' - ' + hr + ":" + min + ampm + " "
-    }
 
     const [userData] = useState(user)
     const [message, setMessage] = useState('')
@@ -148,7 +127,7 @@ export default function Patients({user}) {
                                             {((new Date(el.next_date.date) < new Date()) || el.next_date.isDate === false) &&
                                                 <p className="card-text purple-bg"><Button className="secondary plus-icon" onClick={() => showModal(el)}>Agendar cita</Button></p>
                                             }
-                                            
+
                                             <Link to={{
                                                 pathname: '/historia-paciente',
                                                 patientData: el
