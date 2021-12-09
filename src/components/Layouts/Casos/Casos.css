@@ -1,0 +1,267 @@
+.user-info {
+  background: #fff;
+  padding: 1rem;
+  padding-left: 6.4rem;
+  margin-top: 2rem;
+  border-radius: 1.6rem;
+  position: absolute;
+  bottom: -3rem;
+  right: 3rem;
+  box-shadow: 0px 14px 42px -5px rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.user-info .user-info-row {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.user-info .user-info-row .name h1 {
+  color: #aa8acf;
+  font-weight: 300;
+}
+
+.user-info .user-info-row strong {
+  color: #443754;
+}
+
+.user-info .user-profile {
+  width: 5rem;
+  height: 7.6rem;
+  background: #aa8acf url(../../../images/user-profile.svg) no-repeat center center/contain;
+  background-size: 2rem 2rem;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 1.6rem 0 0 1.6rem;
+  border: 0;
+}
+
+.head-bg {
+  height: 30rem;
+  background: url(../../../images/page-bg.jpg) no-repeat center center/cover;
+  border-radius: 1.6rem;
+  position: relative;
+}
+
+.custom-card {
+  background: #fff;
+  margin: 1rem 0;
+}
+
+.custom-card .custom-info {
+  padding: 2rem 0;
+}
+
+.custom-card .custom-info span {
+  color: #43d9b2;
+}
+
+.custom-card .custom-info .card {
+  font-size: 1.6rem;
+  border-radius: 0.8rem;
+  border: 0;
+  box-shadow: 0px 14px 42px -5px rgba(0, 0, 0, 0.5);
+  margin-bottom: 1rem;
+}
+
+.custom-card .custom-info .card .card-body {
+  position: relative;
+  padding-top: 8rem;
+  font-size: 1.4rem;
+}
+
+.custom-card .custom-info .card .card-body .biopsia,
+.custom-card .custom-info .card .card-body .biopsy-date {
+  position: absolute;
+  color: white;
+  padding: 0.2rem 1.6rem;
+  padding-bottom: 0.6rem;
+  border-radius: 0 0.8rem 0.8rem 0;
+  left: 0;
+  font-size: 1.2rem;
+}
+
+.custom-card .custom-info .card .card-body .biopsia {
+  top: 0;
+  background: #aa8acf;
+  border-radius: 0.8rem 0.8rem 0.8rem 0;
+}
+
+.custom-card .custom-info .card .card-body .biopsy-date {
+  background: #43d9b2;
+  display: inline-block;
+  top: 2.4rem;
+}
+
+.custom-card .custom-info .card .card-body .card-text {
+  margin-bottom: 2rem;
+}
+
+.custom-card .custom-info .card .card-body .card-text:last-child {
+  margin-bottom: 0;
+}
+
+.custom-card .custom-info .card .card-footer {
+  background: #43d9b2;
+  border: 0;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  border-radius: 0 0 0.8rem 0.8rem;
+}
+
+.custom-card .custom-info .patient-name {
+  padding: 0.2rem 1.6rem;
+  border-radius: 0 0.8rem 0.8rem 0;
+  color: #fff;
+  font-size: 1.2rem;
+  position: absolute;
+  left: 0;
+}
+
+.custom-card .custom-info .patient-name {
+  top: 2.9rem;
+  background: #92b8eb;
+}
+
+.custom-card .custom-info .patient-name span {
+  color: #fff;
+  margin-left: 1rem;
+  padding-left: 1rem;
+  border-left: solid 0.1rem #fff;
+}
+
+.doctor-icon,
+.cal-icon,
+.micro-icon,
+.scalpel-icon,
+.note-icon,
+.search-icon {
+  position: relative;
+}
+
+.doctor-icon:before,
+.cal-icon:before,
+.micro-icon:before,
+.scalpel-icon:before,
+.note-icon:before,
+.search-icon:before {
+  content: '';
+  width: 2rem;
+  height: 5rem;
+  margin-right: 1.6rem;
+  float: left;
+}
+
+.doctor-icon:before {
+  background: url(../../../images/doctor.svg) no-repeat center center/contain;
+}
+
+.cal-icon:before {
+  background: url(../../../images/calendar.svg) no-repeat center center/contain;
+}
+
+.micro-icon:before {
+  background: url(../../../images/microscope.svg) no-repeat center center/contain;
+}
+
+.scalpel-icon:before {
+  background: url(../../../images/scalpel.svg) no-repeat center center/contain;
+}
+
+.note-icon:before {
+  background: url(../../../images/note.svg) no-repeat center center/contain;
+}
+
+.search-icon:before {
+  background: url(../../../images/search-icon.svg) no-repeat center center/contain;
+  position: absolute;
+  top: 50%;
+  margin-top: -2.5rem;
+  left: 1.6rem;
+  z-index: 0;
+}
+
+.search-icon .form-control {
+  padding-left: 3.6rem;
+  background: transparent;
+  border: 0;
+}
+
+.plus-icon:after {
+  content: '';
+  width: 2rem;
+  height: 2rem;
+  display: inline-block;
+  margin-left: 1rem;
+}
+
+.plus-icon:after {
+  background: url(../../../images/plus-white.svg) no-repeat center center/contain;
+}
+
+.gray-bg {
+  border-radius: 1.6rem;
+}
+
+.gray-bg .form-control {
+  margin-bottom: 0;
+}
+
+.form-group {
+  margin-top: 0rem;
+}
+
+.title {
+  margin-top: 6rem;
+}
+
+.title span {
+  font-weight: 300;
+}
+
+.Casos__card {
+  border-radius: 0.8rem;
+  box-shadow: 0px 14px 42px -5px rgba(42, 55, 67, 0.5);
+}
+
+.Casos__footer {
+  margin-bottom: 1rem;
+  padding-top: 1rem;
+  display: flex;
+  justify-content: space-around;
+  border-top: 0.1rem solid rgba(42, 55, 67, 0.1);
+}
+
+.Casos__edit, .Casos__delete {
+  border: 0;
+  padding: 0.8rem 2.2rem 0.8rem 4rem;
+  color: #fff;
+  border-radius: 2rem;
+  text-align: center;
+}
+
+.Casos__edit {
+  background: #43d9b2 url(../../../images/edit_white.svg) no-repeat 1.8rem center/1.6rem;
+}
+
+.Casos__delete {
+  background: #e96571 url(../../../images/delete_white.svg) no-repeat 1.8rem center/1.6rem;
+}
+
+@media (max-width: 576px) {
+  .user-info {
+    left: 1rem;
+    right: 1rem;
+  }
+  .user-info .user-profile {
+    height: 6.9rem;
+  }
+  .head-bg {
+    height: 20rem;
+    border-radius: 0;
+  }
+}

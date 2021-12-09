@@ -17,6 +17,7 @@ import Home from './components/Layouts/Home/Home'
 import BlogSingle from './components/Layouts/BlogSingle/BlogSingle'
 import NotFoundPage from './components/Layouts/NotFoundPage/NotFoundPage'
 import PatientHistory from './components/Layouts/PatientHistoryPage/PatientHistory'
+import Casos from './components/Layouts/Casos/Casos'
 
 function App() {
 
@@ -31,6 +32,7 @@ function App() {
         <Route exact path="/register" login component={Register} />
         <Route exact path='/activate/:token' render={(props) => <Login {...props} confirmed />} />
         <Route exact path='/blog' render={(props) => <BlogSingle {...props} confirmed />} />
+        <AuthenticatedRoute exact path="/casos" render={(props) => <Casos {...props} user={user} />} />
         <AuthenticatedRoute exact path="/pacientes" render={(props) => <Patients {...props} user={user} />} />
         <AuthenticatedRoute exact path="/biopsias" render={(props) => <MyInfo {...props} user={user} />} />
         <AuthenticatedRoute exact path="/update-password" render={(props) =>
