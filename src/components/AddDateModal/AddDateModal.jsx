@@ -68,7 +68,7 @@ export default function AddDateModal({user, onClick, onSetDate}) {
                                 <div className="form-group">
                                     <label className="label" htmlFor="date">
                                         Date
-                  </label>
+                  </label>  
                                     <DateTimePicker
                                         onChange={setTime}
                                         value={data.date}

@@ -7,6 +7,7 @@ import InputWithLabel from '../../../Form/InputWithLabel/InputWithLabel'
 import Reveal from 'react-awesome-reveal'
 import {keyframes} from "@emotion/react"
 import {addHistory} from '../../../../services/ApiClient'
+import DateTimePicker from "react-datetime-picker"
 
 
 function HistModal({patient, onClick}) {
@@ -14,6 +15,7 @@ function HistModal({patient, onClick}) {
         {
             data: {
                 userId: patient.id,
+                date: new Date(),
                 visit_reason: "",
                 clinic_history: "",
                 diagnostic: "",
@@ -24,10 +26,12 @@ function HistModal({patient, onClick}) {
                 clinic_history: true,
                 diagnostic: true,
                 treatment: true,
+                date: true,
             },
             touch: {},
         },
         {
+            date: v => v.length,
             visit_reason: v => v.length,
             clinic_history: v => v.length,
             diagnostic: v => v.length,
@@ -36,15 +40,21 @@ function HistModal({patient, onClick}) {
     )
 
     const [registerError, setRegisterError] = useState(null)
-
+    // eslint-disable-next-line no-unused-vars
+    const [date, setDate] = useState(new Date())
     const {data, error} = state
+
+    const setTime = (e) => {
+        setDate(e)
+        data.date = e
+    }
 
     const handleSubmit = async (event) => {
         event.preventDefault()
 
         try {
             console.log(patient.id, data)
-            // await addHistory(patient, data)
+            // await addHistory(patient.id, data)
 
         } catch (err) {
             setRegisterError(err.response?.data?.message)
@@ -85,6 +95,19 @@ function HistModal({patient, onClick}) {
                                 </h1>
                                 <form onSubmit={handleSubmit}>
                                     <div className="row">
+                                        <div className="col-12">
+                                            <div className="form-group">
+                                                <label className="label" htmlFor="date">
+                                                    Fecha de la visita
+                                                </label>
+                                                <DateTimePicker
+                                                    onChange={setTime}
+                                                    value={data.date}
+                                                    locale="es-ES"
+                                                    format="dd-MM-y"
+                                                />
+                                            </div>
+                                        </div>
                                         <div className="col-12 col-sm-6">
                                             <InputWithLabel
                                                 value={data.visit_reason}
@@ -155,7 +178,7 @@ function HistModal({patient, onClick}) {
                                         type="submit"
                                         className="Button Button__enter"
                                         disabled={isError}
-                                    >Guardar historia</Button>
+                                    >Añadir historia</Button>
                                 </form>
                             </div>
                         </div>
