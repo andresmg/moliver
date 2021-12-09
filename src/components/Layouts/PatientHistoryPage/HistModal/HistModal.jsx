@@ -15,7 +15,7 @@ function HistModal({patient, onClick, updatedHistories}) {
         {
             data: {
                 userId: patient.id,
-                date: new Date(),
+                date: "",
                 visit_reason: "",
                 clinic_history: "",
                 diagnostic: "",
@@ -78,7 +78,7 @@ function HistModal({patient, onClick, updatedHistories}) {
 
         try {
             const updateHistories = await addHistory(patient.id, data)
-            updatedHistories(updateHistories)
+            await updatedHistories(updateHistories)
             setAnimation(hideUp)
             onClick()
 

@@ -10,6 +10,10 @@ function PatientHistory(props) {
     const [patientHistories, setPatientHistories] = useState([])
     const [histModal, setHistModal] = useState(false)
 
+    const getAllHistories = (data) => {
+        setPatientHistories(data)
+    }
+
     useEffect(() => {
         const fetchData = async () => {
             const allHistories = await getPatientHistories(patient.id)
@@ -22,7 +26,7 @@ function PatientHistory(props) {
 
     return (
         <>
-        {histModal && <HistModal updatedHistories={(data) => setPatientHistories(data)} patient={patient} onClick={() => setHistModal(!histModal)}/>}
+            {histModal && <HistModal updatedHistories={(data) => getAllHistories(data)} patient={patient} onClick={() => setHistModal(!histModal)} />}
             <section className="container head-bg PatientHistory__bg">
                 <div className="user-info">
                     <div className="user-profile"></div>
@@ -51,9 +55,9 @@ function PatientHistory(props) {
                                         <small>Historia clínica</small>
                                         <p className="PatientHistory__clinic"> {el.clinic_history}</p>
                                         <small>Diagnóstico</small>
-                                        <p className="PatientHistory__diagnostic"> {el.diagnostics}</p>
+                                        <p className="PatientHistory__diagnostic" dangerouslySetInnerHTML={{__html: el?.diagnostics}}></p>
                                         <small>Tratamiento</small>
-                                        <p className="PatientHistory__treatment"> {el.treatment}</p>
+                                        <p className="PatientHistory__treatment" dangerouslySetInnerHTML={{__html: el?.treatment}}></p>
                                     </div>
                                 </>
                             )}

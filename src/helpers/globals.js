@@ -21,18 +21,8 @@ export const drawTime = (time) => {
     var days = ["Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"]
     var d = new Date(time)
     var day = days[d.getDay()]
-    var hr = d.getHours()
-    var min = d.getMinutes()
-    if (min < 10) {
-        min = "0" + min
-    }
-    var ampm = "am"
-    if (hr > 12) {
-        hr -= 12
-        ampm = "pm"
-    }
     var date = d.getDate()
     var month = months[d.getMonth()]
     var year = d.getFullYear()
-    return day + " " + date + " " + month + " " + year + ' - ' + hr + ":" + min + ampm + " "
+    return day + " " + date + " " + month + " " + year
 }
