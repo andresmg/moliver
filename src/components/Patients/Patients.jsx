@@ -4,6 +4,7 @@ import {getAllPatients, createDate, deleteDate} from '../../services/ApiClient'
 import Button from '../Button/Button'
 import AddDateModal from '../AddDateModal/AddDateModal'
 import PatientModal from '../PatientModal/PatientModal'
+import {Link} from 'react-router-dom'
 
 export default function Patients({user}) {
 
@@ -33,9 +34,7 @@ export default function Patients({user}) {
     const [patients, setPatients] = useState([])
     const [search, setSearch] = useState('')
     const [bool, setBool] = useState(false)
-    const [patientModalBool, setPatientModalBool] = useState(false)
     const [addUserDate, setAddUserDate] = useState('')
-    const [patientData, setPatientData] = useState([])
 
     const handleChange = (e) => {
         setSearch(e.target.value)
@@ -54,15 +53,6 @@ export default function Patients({user}) {
 
     const hideModal = () => {
         setBool(!bool)
-    }
-
-    const showPatientHistoryModal = (data) => {
-        setPatientModalBool(!patientModalBool)
-        setPatientData(data)
-    }
-
-    const hidePatientHistoryModal = () => {
-        setPatientModalBool(!patientModalBool)
     }
 
     const updateUserDate = async (data) => {
@@ -96,7 +86,6 @@ export default function Patients({user}) {
     return (
         <>
             {bool && <AddDateModal onClick={hideModal} user={addUserDate} onSetDate={updateUserDate} />}
-            {patientModalBool && <PatientModal onClick={hidePatientHistoryModal} patient={patientData} />}
             <section className="container head-bg">
                 <div className="user-info">
                     <div className="user-profile"></div>
@@ -138,7 +127,7 @@ export default function Patients({user}) {
                                                 <>
                                                     <p className="card-text biopsia">{el.name} <span className="patient-dni"><strong>CI </strong>{el.dni}</span></p>
                                                     {el.birthdate &&
-                                                    <p className="card-text biopsy-date"><strong>Edad</strong> {new Date().getFullYear() - new Date(el.birthdate).getFullYear()}  año(s)</p>}
+                                                        <p className="card-text biopsy-date"><strong>Edad</strong> {new Date().getFullYear() - new Date(el.birthdate).getFullYear()}  año(s)</p>}
                                                 </>
                                             }
                                             <div className="card-text email-icon mt-5"><span className="">Email</span><br /> {el.email}</div>
@@ -159,7 +148,11 @@ export default function Patients({user}) {
                                             {((new Date(el.next_date.date) < new Date()) || el.next_date.isDate === false) &&
                                                 <p className="card-text purple-bg"><Button className="secondary plus-icon" onClick={() => showModal(el)}>Agendar cita</Button></p>
                                             }
-                                            <Button className="primary plus-icon" onClick={() => showPatientHistoryModal(el)}>Ver historia de {el.name}</Button>
+                                            
+                                            <Link to={{
+                                                pathname: '/historia-paciente',
+                                                patientData: el
+                                            }} className="primary plus-icon">Ver historia de {el.name}</Link>
                                         </div>
                                     </div>
                                 </div>

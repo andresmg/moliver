@@ -16,6 +16,7 @@ import NewBlog from './components/NewBlog/NewBlog'
 import Home from './components/Layouts/Home/Home'
 import BlogSingle from './components/Layouts/BlogSingle/BlogSingle'
 import NotFoundPage from './components/Layouts/NotFoundPage/NotFoundPage'
+import PatientHistory from './components/Layouts/PatientHistoryPage/PatientHistory'
 
 function App() {
 
@@ -36,6 +37,7 @@ function App() {
           <UpdatePassword {...props} user={user} />} />
         <AuthenticatedRoute exact path="/nueva-biopsia" render={(props) => <NewBiopsy {...props} user={user} />} />
         <AuthenticatedRoute exact path="/nuevo-paciente" render={(props) => <NewPatient {...props} user={user} />} />
+        <AuthenticatedRoute exact path="/historia-paciente" render={(props) => <PatientHistory {...props} user={user} />} />
         <AuthenticatedRoute exact path="/nuevo-blog" render={(props) => <NewBlog {...props} user={user} />} />
         <Route path="*" render={() => <NotFoundPage />} />
         {!user && <Redirect to='/login' />}

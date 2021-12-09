@@ -1,4 +1,4 @@
-.PatientModal__patient {
+.PatientHistory__patient {
   font-weight: 300;
   color: #fff;
   display: inline-flex;
@@ -12,7 +12,7 @@
   align-items: center;
 }
 
-.PatientModal__patient:after {
+.PatientHistory__patient:after {
   content: 'Historias';
   font-weight: 700;
   color: #fff;
@@ -26,27 +26,25 @@
   font-size: 1.4rem;
 }
 
-.PatientModal__patient strong {
+.PatientHistory__patient strong {
   font-size: 1.4rem;
   margin-left: 1rem;
 }
 
-.PatientModal .user-info {
+.PatientHistory .user-info {
   left: 3rem;
   right: unset;
   top: -6rem;
   bottom: unset;
 }
 
-.PatientModal .modal-body {
+.PatientHistory .modal-body {
   padding-top: 10rem;
-  height: 80vh;
-  overflow: scroll;
   position: relative;
   border-radius: 0 0 0.8rem 0.8rem;
 }
 
-.PatientModal small {
+.PatientHistory small {
   font-weight: 400;
   font-size: 1.4rem;
   display: table;
@@ -57,12 +55,12 @@
   padding-left: 2rem;
 }
 
-.PatientModal__reason, .PatientModal__clinic, .PatientModal__diagnostic, .PatientModal__treatment {
+.PatientHistory__reason, .PatientHistory__clinic, .PatientHistory__diagnostic, .PatientHistory__treatment {
   padding: 0 2rem;
   margin-bottom: 2rem;
 }
 
-.PatientModal__date {
+.PatientHistory__date {
   position: absolute;
   top: 0;
   left: 0;
@@ -74,7 +72,7 @@
   margin-bottom: 0;
 }
 
-.PatientModal__history {
+.PatientHistory__history {
   padding: 2rem 0;
   border-radius: 0.8rem;
   margin-bottom: 6rem;
@@ -83,7 +81,7 @@
   box-shadow: 0 1.4rem 4.2rem -0.5rem rgba(42, 55, 67, 0.5);
 }
 
-.PatientModal__addHistory {
+.PatientHistory__addHistory {
   display: flex;
   align-items: center;
   justify-content: center;
