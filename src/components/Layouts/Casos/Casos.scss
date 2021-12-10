@@ -259,16 +259,21 @@
     color: $white;
     border-radius: 2rem;
     text-align: center;
+    transition: all 0.2s ease-in-out;
+
+    &:hover {
+      filter: brightness(1.1);
+    }
   }
 
   &__edit {
-    background: $green url(../../../images/edit_white.svg) no-repeat 1.8rem center /
-      1.6rem;
+    background: $green url(../../../images/edit_white.svg) no-repeat 1.8rem
+      center / 1.6rem;
   }
 
   &__delete {
-    background: $red url(../../../images/delete_white.svg) no-repeat 1.8rem center /
-      1.6rem;
+    background: $red url(../../../images/delete_white.svg) no-repeat 1.8rem
+      center / 1.6rem;
   }
 }
 

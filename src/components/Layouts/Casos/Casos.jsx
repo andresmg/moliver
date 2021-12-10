@@ -6,11 +6,14 @@ import {truncate} from '../../../helpers/globals'
 import {Reveal} from 'react-awesome-reveal'
 import {keyframes} from "@emotion/react"
 import Button from '../../Button/Button'
+import ModalPrev from './ModalPrev/ModalPrev'
 
 
 export default function Casos({user}) {
 
     const [blogs, setBlogs] = useState([])
+    const [showModalPrev, setShowModalPrev] = useState(false)
+    const [caseData, setCaseData] = useState()
 
     const customAnimation = keyframes`
     from {
@@ -23,8 +26,10 @@ export default function Casos({user}) {
       transform: translate3d(0, 0, 0);
     }`
 
-    const deleteBlog = async (data) => {
-        console.log(data.id)
+    const deleteBlog = (data) => {
+        setShowModalPrev(!showModalPrev)
+        setCaseData(data)
+
     }
 
     const showModal = () => {
@@ -43,6 +48,7 @@ export default function Casos({user}) {
 
     return (
         <>
+            {showModalPrev && <ModalPrev data={caseData} hideModalPrev={() => setShowModalPrev(!showModalPrev)} />}
             <section className="container head-bg Home__banner"></section>
             <Reveal duration={700} keyframes={customAnimation} triggerOnce>
                 <section className="container">

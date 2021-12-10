@@ -242,6 +242,11 @@
   color: #fff;
   border-radius: 2rem;
   text-align: center;
+  transition: all 0.2s ease-in-out;
+}
+
+.Casos__edit:hover, .Casos__delete:hover {
+  filter: brightness(1.1);
 }
 
 .Casos__edit {

@@ -1,0 +1,54 @@
+.ModalPrev {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(67, 217, 178, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  z-index: 30;
+}
+
+.ModalPrev__body {
+  border: solid 0.1rem #43d9b2;
+  border-radius: 0.8rem;
+  background: #fff;
+  padding: 3rem;
+  position: relative;
+}
+
+.ModalPrev__body:before {
+  content: '';
+  width: 100.9%;
+  height: 109%;
+  position: absolute;
+  top: -4%;
+  left: -0.4%;
+  border: solid 0.2rem #fff;
+  border-radius: 0.8rem;
+  z-index: -1;
+}
+
+.ModalPrev__delete, .ModalPrev__cancel {
+  border: 0;
+  padding: 0rem 3.2rem;
+  border-radius: 4rem;
+  height: 4rem;
+  color: #fff;
+  transition: all 0.2s ease-in-out;
+}
+
+.ModalPrev__delete:hover, .ModalPrev__cancel:hover {
+  cursor: pointer;
+  filter: brightness(1.1);
+}
+
+.ModalPrev__delete {
+  background: #e96571;
+}
+
+.ModalPrev__cancel {
+  background: #43d9b2;
+}
