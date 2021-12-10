@@ -34,6 +34,10 @@ export default function Casos({user}) {
         console.log('modal')
     }
 
+    const updateData = (data) => {
+        setBlogs(data)
+    }
+
     useEffect(() => {
         const fetchData = async () => {
             const allBlogs = await getAllBlogs()
@@ -46,7 +50,7 @@ export default function Casos({user}) {
 
     return (
         <>
-            {showModalPrev && <ModalPrev data={caseData} hideModalPrev={() => setShowModalPrev(!showModalPrev)} />}
+            {showModalPrev && <ModalPrev data={caseData} hideModalPrev={() => setShowModalPrev(!showModalPrev)} updateData={(updatedCases) => updateData(updatedCases)} />}
             <section className="container head-bg Home__banner"></section>
             <Reveal duration={700} keyframes={customAnimation} triggerOnce>
                 <section className="container">

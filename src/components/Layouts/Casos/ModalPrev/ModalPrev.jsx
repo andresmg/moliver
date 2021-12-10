@@ -5,7 +5,7 @@ import {keyframes} from "@emotion/react"
 import Button from '../../../Button/Button'
 import {deleteBlog} from '../../../../services/ApiClient'
 
-function ModalPrev({data, hideModalPrev}) {
+function ModalPrev({data, hideModalPrev, updateData}) {
 
     const customAnimation = keyframes`
     from {
@@ -32,9 +32,12 @@ function ModalPrev({data, hideModalPrev}) {
     const [animation, setAnimation] = useState(customAnimation)
 
     const deleteCase = async (data) => {
-        await deleteBlog(data.id)
-        await setAnimation(hideUp)
-        hideModalPrev()
+        const updatedCases = await deleteBlog(data.id)
+        setAnimation(hideUp)
+        setTimeout(() => {
+            hideModalPrev()
+        }, 700)
+        updateData(updatedCases)
     }
 
     return (
