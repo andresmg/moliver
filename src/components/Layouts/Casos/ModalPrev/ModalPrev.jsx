@@ -1,9 +1,9 @@
 import './ModalPrev.css'
-import React from 'react'
+import React, {useState} from 'react'
 import {Reveal} from "react-awesome-reveal"
 import {keyframes} from "@emotion/react"
 import Button from '../../../Button/Button'
-
+import {deleteBlog} from '../../../../services/ApiClient'
 
 function ModalPrev({data, hideModalPrev}) {
 
@@ -18,9 +18,28 @@ function ModalPrev({data, hideModalPrev}) {
       transform: translate3d(0, 0, 0);
     }`
 
+    const hideUp = keyframes`
+    from {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+    }
+
+    to {
+    opacity: 0;
+    transform: translate3d(0, -10rem, 0);
+    }`
+
+    const [animation, setAnimation] = useState(customAnimation)
+
+    const deleteCase = async (data) => {
+        await deleteBlog(data.id)
+        await setAnimation(hideUp)
+        hideModalPrev()
+    }
+
     return (
         <div className="ModalPrev">
-            <Reveal className="container ModalPrev__body" direction="up" duration={700} keyframes={customAnimation}>
+            <Reveal className="container ModalPrev__body" direction="up" duration={700} keyframes={animation}>
                 <>
                     <span className="close" onClick={hideModalPrev}></span>
                     <div className="row justify-content-center">
@@ -30,7 +49,7 @@ function ModalPrev({data, hideModalPrev}) {
                             <span>{data.title}</span>
                         </div>
                         <div className="col-6 d-flex justify-content-around align-items-center">
-                            <Button className="ModalPrev__delete">SI</Button>
+                            <Button className="ModalPrev__delete" onClick={() => deleteCase(data)}>SI</Button>
                             <Button className="ModalPrev__cancel" onClick={hideModalPrev}>NO</Button>
                         </div>
                     </div>

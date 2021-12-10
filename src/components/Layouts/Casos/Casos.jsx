@@ -1,7 +1,6 @@
 import './Casos.css'
 import React, {useState, useEffect} from 'react'
 import {getAllBlogs} from '../../../services/ApiClient'
-import {Link} from 'react-router-dom'
 import {truncate} from '../../../helpers/globals'
 import {Reveal} from 'react-awesome-reveal'
 import {keyframes} from "@emotion/react"
@@ -29,7 +28,6 @@ export default function Casos({user}) {
     const deleteBlog = (data) => {
         setShowModalPrev(!showModalPrev)
         setCaseData(data)
-
     }
 
     const showModal = () => {

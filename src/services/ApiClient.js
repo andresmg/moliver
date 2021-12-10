@@ -69,6 +69,7 @@ export const addBiopsy = ({clinic_diagnosis, diagnostics, dni, material, name, r
 //blog.routes
 export const getAllBlogs = () => http.get('/blogs')
 export const createBlog = (data) => http.post('/blogs/add', {data})
+export const deleteBlog = (id) => http.get(`/blogs/delete/${id}`)
 
 //crud.routes
 export const register = ({name, email, password, dni}) =>
