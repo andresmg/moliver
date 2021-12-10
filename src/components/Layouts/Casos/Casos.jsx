@@ -6,12 +6,14 @@ import {Reveal} from 'react-awesome-reveal'
 import {keyframes} from "@emotion/react"
 import Button from '../../Button/Button'
 import ModalPrev from './ModalPrev/ModalPrev'
+import EditModal from './EditModal/EditModal'
 
 
 export default function Casos({user}) {
 
     const [blogs, setBlogs] = useState([])
     const [showModalPrev, setShowModalPrev] = useState(false)
+    const [showEditModal, setShowEditModal] = useState(false)
     const [caseData, setCaseData] = useState()
 
     const customAnimation = keyframes`
@@ -25,17 +27,18 @@ export default function Casos({user}) {
       transform: translate3d(0, 0, 0);
     }`
 
-    const deleteBlog = (data) => {
+    const deleteBlog = (blogcase) => {
         setShowModalPrev(!showModalPrev)
-        setCaseData(data)
+        setCaseData(blogcase)
     }
 
-    const showModal = () => {
-        console.log('modal')
+    const showModal = (blogcase) => {
+        setShowEditModal(!showEditModal)
+        setCaseData(blogcase)
     }
 
-    const updateData = (data) => {
-        setBlogs(data)
+    const updateData = (blogcase) => {
+        setBlogs(blogcase)
     }
 
     useEffect(() => {
@@ -51,6 +54,7 @@ export default function Casos({user}) {
     return (
         <>
             {showModalPrev && <ModalPrev data={caseData} hideModalPrev={() => setShowModalPrev(!showModalPrev)} updateData={(updatedCases) => updateData(updatedCases)} />}
+            {showEditModal && <EditModal blogcase={caseData} hideEditModal={() => setShowEditModal(!showEditModal)} updateData={(updatedCases) => updateData(updatedCases)} />}
             <section className="container head-bg Home__banner"></section>
             <Reveal duration={700} keyframes={customAnimation} triggerOnce>
                 <section className="container">
