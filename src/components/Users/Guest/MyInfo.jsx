@@ -19,9 +19,9 @@ export default function MyInfo({user}) {
         setSearch(e.target.value)
     }
 
-    const filteredBiopsies = userBiopsies.filter(biopsy => {
+    const filteredBiopsies = userBiopsies?.filter(biopsy => {
         return (
-            (biopsy.number.toLowerCase()).indexOf(search.toLocaleLowerCase()) > -1 || (biopsy.reference.toLowerCase()).indexOf(search.toLocaleLowerCase()) > -1 || (biopsy.user.name.toLowerCase()).indexOf(search.toLocaleLowerCase()) > -1 || (biopsy.user.dni.toLowerCase()).indexOf(search.toLocaleLowerCase()) > -1
+            (biopsy?.number.toLowerCase()).indexOf(search.toLocaleLowerCase()) > -1 || (biopsy?.reference.toLowerCase()).indexOf(search.toLocaleLowerCase()) > -1 || (biopsy?.user.name.toLowerCase()).indexOf(search.toLocaleLowerCase()) > -1 || (biopsy?.user.dni.toLowerCase()).indexOf(search.toLocaleLowerCase()) > -1
         )
     })
 
@@ -98,8 +98,8 @@ export default function MyInfo({user}) {
             <section className="container-fluid custom-card">
                 <section className="container custom-info">
                     <div className="row row-cols-1 row-cols-md-3 g-5">
-                        {filteredBiopsies.length === 0 ?
-                            <h1 className="col-12 loader">Sin <span>resultados</span></h1> : filteredBiopsies.map(el =>
+                        {filteredBiopsies?.length === 0 ?
+                            <h1 className="col-12 loader">Sin <span>resultados</span></h1> : filteredBiopsies?.map(el =>
                                 <div className="col custom-block">
                                     <div className="card h-100">
                                         <div className="card-body">

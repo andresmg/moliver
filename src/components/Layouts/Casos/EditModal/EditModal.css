@@ -1,51 +1,29 @@
-.EditModal {
+.EditCaseModal {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   z-index: 10;
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: rgba(255, 255, 255, 0.9);
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 20;
+  z-index: 30;
 }
 
-.EditModal__body {
+.EditCaseModal__body {
   background: #fff;
-  padding: 3rem;
-  height: 90vh;
+  padding: 6rem 3rem;
   overflow: scroll;
   position: relative;
   border: solid 0.2rem #43d9b2;
-  display: flex;
-  align-items: center;
   border-radius: 0.8rem;
 }
 
-.EditModal__body h1 {
+.EditCaseModal__body h1 {
   position: relative;
-}
-
-.EditModal__body h1 span {
-  margin-top: 0.8rem;
-  color: #fff;
-  font-size: 1.4rem;
-  display: table;
-  border-radius: 2rem;
-  padding: 0.5rem 1rem;
-  margin-bottom: 3rem;
-  background: #43d9b2;
-}
-
-.EditModal__body h1:before {
-  content: '';
-  width: 6rem;
-  height: 6rem;
-  background: url(../../../../images/biopsy.svg) no-repeat center center;
-  float: left;
-  margin-right: 1rem;
+  margin-bottom: 2rem;
 }
 
 .close {

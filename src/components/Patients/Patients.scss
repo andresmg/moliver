@@ -135,3 +135,12 @@
     }
   }
 }
+
+.primary {
+  text-decoration: none;
+
+  &:hover {
+    color: $white;
+    font-weight: 700;
+  }
+}

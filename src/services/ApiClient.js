@@ -60,6 +60,7 @@ export const login = ({email, password}) =>
     http.post("/login", {email, password})
 export const logOut = () => http.post("/logout")
 export const activateUser = (token) => http.get(`/activate/${token}`)
+export const googleUserLogin = (gooleUser) => http.post("/google-login", {gooleUser})
 
 //biopsy.routes
 export const dropBiopsy = (id) => http.get(`/biopsy/${id}/delete`)

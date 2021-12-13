@@ -34,13 +34,13 @@ const Header = () => {
                         {user && user.role === 'Admin' &&
                             <>
                                 <li className="nav-item">
-                                    <NavLink className="nav-link" to="/casos">Casos</NavLink>
-                                </li>
-                                <li className="nav-item">
                                     <NavLink className="nav-link" to="/biopsias">Biopsias</NavLink>
                                 </li>
                                 <li className="nav-item">
                                     <NavLink className="nav-link" to="/pacientes">Pacientes</NavLink>
+                                </li>
+                                <li className="nav-item">
+                                    <NavLink className="nav-link" to="/casos">Casos</NavLink>
                                 </li>
                                 <li className="nav-item">
                                     <NavLink className="nav-link" to="/nueva-biopsia">Nueva biopsia</NavLink>

@@ -12,13 +12,13 @@ import {app} from '../../../../services/firebase'
 import {useHistory} from 'react-router-dom'
 
 
-function EditModal({blogcase, hideEditModal, updateData}) {
+function EditModal({blogcase, hideEditModal}) {
     const {state, onChange} = useFormState(
         {
             data: {
-                title: "",
-                content: "",
-                picpath: ""
+                title: blogcase.title,
+                content: blogcase.content,
+                picpath: blogcase.picpath,
             },
             error: {},
             touch: {},
@@ -38,10 +38,9 @@ function EditModal({blogcase, hideEditModal, updateData}) {
 
     const handleSubmit = async (event) => {
         event.preventDefault()
-        console.log(data)
 
         try {
-            await updateBlog(data)
+            await updateBlog(blogcase.id, data)
             history.push({
                 pathname: '/blog',
                 blogData: data
@@ -93,69 +92,65 @@ function EditModal({blogcase, hideEditModal, updateData}) {
     }
 
     return (
-        <div className="EditModal">
+        <Reveal className="container-fluid EditCaseModal" direction="up" duration={700} keyframes={customAnimation}>
+            <div className="EditCaseModal__body container">
+                <span className="close" onClick={hideEditModal}></span>
+                <div className="row justify-content-center">
+                    <div className="col-11">
+                        <h1>Editar caso</h1>
+                        <form onSubmit={handleSubmit}>
 
-            <Reveal direction="up" duration={700} keyframes={customAnimation}>
-                <>
-                    <div className="container EditModal__body">
-                        <span className="close" onClick={hideEditModal}></span>
-                        <div className="row justify-content-center">
-                            <div className="col-11">
-                                <h1>Editar caso</h1>
-                                <form onSubmit={handleSubmit}>
+                            <InputWithLabel
+                                value={data.title}
+                                onChange={onChange}
+                                name="title"
+                                type="text"
+                                label="Título"
+                                className="form-control"
+                                placeholder="Ingresa título de la noticia"
 
-                                    <InputWithLabel
-                                        value={data.title}
-                                        onChange={onChange}
-                                        name="title"
-                                        type="text"
-                                        label="Título"
-                                        className="form-control"
-                                        placeholder="Ingresa título de la noticia"
+                            />
 
-                                    />
+                            <InputFile
+                                value={data.picpath}
+                                onChange={onFileSelected}
+                                id="fileButton"
+                                name="picpath"
+                                type="file"
+                                label="Imagen de portada"
+                                className="form-control"
+                                placeholder="Ingresa imagen de portada del paciente"
+                            />
 
-                                    <InputFile
-                                        value={data.picpath}
-                                        onChange={onFileSelected}
-                                        id="fileButton"
-                                        name="picpath"
-                                        type="file"
-                                        label="Imagen de portada"
-                                        className="form-control"
-                                        placeholder="Ingresa imagen de portada del paciente"
-                                    />
+                            <label>Contenido</label>
+                            <Editor
+                                initialValue={data.content}
+                                apiKey="54r6mw2o9ngrlah90uhsoq3nelou082lxiq0tvwml3ryyfqw"
+                                init={{
+                                    height: 500,
+                                    menubar: false,
+                                    plugins: [
+                                        'advlist autolink lists link image',
+                                        'charmap print preview anchor help',
+                                        'searchreplace visualblocks code',
+                                        'insertdatetime media table paste wordcount'
+                                    ],
+                                    toolbar:
+                                        'image | bold italic | alignleft aligncenter alignright | bullist numlist'
+                                }}
+                                onChange={handleContentChange}
+                            />
 
-                                    <label>Contenido</label>
-                                    <Editor
-                                        apiKey="54r6mw2o9ngrlah90uhsoq3nelou082lxiq0tvwml3ryyfqw"
-                                        init={{
-                                            height: 500,
-                                            menubar: false,
-                                            plugins: [
-                                                'advlist autolink lists link image',
-                                                'charmap print preview anchor help',
-                                                'searchreplace visualblocks code',
-                                                'insertdatetime media table paste wordcount'
-                                            ],
-                                            toolbar:
-                                                'image | bold italic | alignleft aligncenter alignright | bullist numlist'
-                                        }}
-                                        onChange={handleContentChange}
-                                    />
-
-                                    <Button
-                                        type="submit"
-                                        className="Button Button__enter"
-                                        disabled={disabled}
-                                    >Agregar biopsia</Button>
-                                </form>
-                            </div>
-                        </div>
+                            <Button
+                                type="submit"
+                                className="Button Button__enter"
+                                disabled={disabled}
+                            >Guardar cambios</Button>
+                        </form>
                     </div>
-                </>
-            </Reveal>
-        </div>
+                </div>
+            </div>
+        </Reveal>
     )
 }
 

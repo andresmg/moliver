@@ -1,13 +1,14 @@
 import './Login.css'
 import React, {useState, useEffect} from 'react'
 import {useAuthContext} from '../../../contexts/AuthContext'
-import {login, activateUser} from '../../../services/ApiClient'
+import {login, activateUser, googleUserLogin} from '../../../services/ApiClient'
 import InputWithLabel from '../../Form/InputWithLabel/InputWithLabel'
 import Button from '../../Form/FormButton/FormButton'
 import {Link, Redirect} from 'react-router-dom'
 import {useFormState} from '../../../hooks/useFormState'
 import {Reveal} from "react-awesome-reveal"
 import {keyframes} from "@emotion/react"
+import {getAuth, signInWithPopup, GoogleAuthProvider} from "firebase/auth"
 
 
 const Login = (props) => {
@@ -57,6 +58,23 @@ const Login = (props) => {
         } catch (err) {
             setLoginError(err.response?.data?.message)
         }
+    }
+
+
+    const googleLogin = async () => {
+        const auth = getAuth()
+        const provider = new GoogleAuthProvider()
+
+        signInWithPopup(auth, provider)
+            .then((result) => {
+                GoogleAuthProvider.credentialFromResult(result)
+                const gooleUser = result.user
+                googleUserLogin(gooleUser)
+                    .then(user => authContext.login(user))
+                    .catch(err => console.log(err))
+            }).catch((error) => {
+                console.log(GoogleAuthProvider.credentialFromError(error))
+            })
     }
 
     const isError = Object.values(error).some(err => err)
@@ -132,6 +150,7 @@ const Login = (props) => {
                                 <Link to="/register"><strong>Registrate aquí</strong></Link>
                                 <Link to="/forgot-password">¿Olvidaste tu contraseña?</Link>
                             </div>
+                            <div className="col-12" onClick={googleLogin}>Login with google</div>
                         </div>
                     </div>
                 </div>

@@ -116,3 +116,12 @@
   top: 0.5rem;
   right: 0.5rem;
 }
+
+.primary {
+  text-decoration: none;
+}
+
+.primary:hover {
+  color: #fff;
+  font-weight: 700;
+}

@@ -54,7 +54,7 @@ export default function Casos({user}) {
     return (
         <>
             {showModalPrev && <ModalPrev data={caseData} hideModalPrev={() => setShowModalPrev(!showModalPrev)} updateData={(updatedCases) => updateData(updatedCases)} />}
-            {showEditModal && <EditModal blogcase={caseData} hideEditModal={() => setShowEditModal(!showEditModal)} updateData={(updatedCases) => updateData(updatedCases)} />}
+            {showEditModal && <EditModal blogcase={caseData} hideEditModal={() => setShowEditModal(!showEditModal)} />}
             <section className="container head-bg Home__banner"></section>
             <Reveal duration={700} keyframes={customAnimation} triggerOnce>
                 <section className="container">
