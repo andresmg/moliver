@@ -17,7 +17,7 @@
 }
 
 .Button:hover {
-  background: #4289dd;
+  filter: brightness(1.1);
 }
 
 button:disabled {

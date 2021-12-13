@@ -33,18 +33,51 @@
   }
 }
 
-.options {
-  margin: 3rem auto 0 auto;
+.Login {
 
-  a {
-    color: $text;
-
-    &:first-child {
-      border-right: solid 0.1rem $text;
-      padding-right: 1rem;
-      margin-right: 1rem;
-      color: $green;
+  &__options {
+    margin: 2rem auto 0 auto;
+    border-top: solid 0.1rem rgba($text, 0.1);
+    padding-top: 2rem;
+  
+    a {
+      color: $text;
+  
+      &:first-child {
+        border-right: solid 0.1rem $text;
+        padding-right: 1rem;
+        margin-right: 1rem;
+        color: $green;
+      }
     }
+  }
+
+  &__img {
+    width: 2rem;
+    margin-right: 1rem;
+  }
+
+  &__google {
+    background: $red;
+    color: $white;
+    border-radius: 1.6rem;
+    height: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+    font-size: 1.6rem;
+    transition: all 0.3s ease;
+
+    &:hover {
+      cursor: pointer;
+      filter: brightness(1.1);
+    }
+  }
+
+  &__form {
+    border-bottom: solid 0.1rem rgba($text, 0.1);
+    padding-bottom: 2rem;
   }
 }
 

@@ -112,7 +112,7 @@ const Login = (props) => {
 
                             {activate && <div className="message">Tu usuario ha sido activado exitosamente, por favor ingresa con tu usuario y contraseña.</div>}
 
-                            <form onSubmit={handleSubmit}>
+                            <form className="Login__form" onSubmit={handleSubmit}>
 
                                 <InputWithLabel
                                     value={data.email}
@@ -146,11 +146,11 @@ const Login = (props) => {
                                     disabled={isError}
                                 >Ingresa</Button>
                             </form>
-                            <div className="col-12 d-flex justify-content-center options">
+                            <div className="col-12 Login__google" onClick={googleLogin}><img src="./images/google.svg" alt="Login con google" className="Login__img" />Ingresa con google</div>
+                            <div className="col-12 d-flex justify-content-center Login__options">
                                 <Link to="/register"><strong>Registrate aquí</strong></Link>
                                 <Link to="/forgot-password">¿Olvidaste tu contraseña?</Link>
                             </div>
-                            <div className="col-12" onClick={googleLogin}>Login with google</div>
                         </div>
                     </div>
                 </div>

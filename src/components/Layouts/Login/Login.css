@@ -26,19 +26,49 @@
   text-align: center;
 }
 
-.options {
-  margin: 3rem auto 0 auto;
+.Login__options {
+  margin: 2rem auto 0 auto;
+  border-top: solid 0.1rem rgba(42, 55, 67, 0.1);
+  padding-top: 2rem;
 }
 
-.options a {
+.Login__options a {
   color: #2a3743;
 }
 
-.options a:first-child {
+.Login__options a:first-child {
   border-right: solid 0.1rem #2a3743;
   padding-right: 1rem;
   margin-right: 1rem;
   color: #43d9b2;
+}
+
+.Login__img {
+  width: 2rem;
+  margin-right: 1rem;
+}
+
+.Login__google {
+  background: #e96571;
+  color: #fff;
+  border-radius: 1.6rem;
+  height: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+  font-size: 1.6rem;
+  transition: all 0.3s ease;
+}
+
+.Login__google:hover {
+  cursor: pointer;
+  filter: brightness(1.1);
+}
+
+.Login__form {
+  border-bottom: solid 0.1rem rgba(42, 55, 67, 0.1);
+  padding-bottom: 2rem;
 }
 
 @media (max-width: 576px) {
